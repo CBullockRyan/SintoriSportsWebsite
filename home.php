@@ -33,6 +33,12 @@ Description: Home page
 			</div>
 		</div>
 	</div>
+
+	<div>
+		<h1>Opening Times</h1>
+		<p>Monday-Thursday 7:00am - 10:00pm</p>
+		<p>Friday-Saturday 9:00am - 8:00pm</p>
+	</div>
 </body>
 
 </html>
