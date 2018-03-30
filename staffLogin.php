@@ -120,7 +120,7 @@ Description: staff login page
 	<h1>Staff Login</h1>
 	<form action="staffLogin.php" method="post">
 		<p>Staff ID: <input type="text" name="staffID" maxlength="20" value='<?php echo $staffID ?>' /></p>
-		<p>Password: <input type="password" name="staffPass" maxlength="40" value='<?php echo $staffPass ?>' /></p>
+		<p>Password: <input type="password" name="staffPass" maxlength="40" /></p>
 		<p><input type="submit" name="submit" value="submit" /></p>
 </body>
 
