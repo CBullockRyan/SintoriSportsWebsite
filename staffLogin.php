@@ -96,22 +96,22 @@ Description: staff login page
 				}
 
 				//display any errors
-		/*		if(!empty($errors)){
+				if(!empty($errors)){
 					foreach($errors as $error){
 						echo "<font color=\"red\">ERROR: $error </font>";
 					}
-				} */
+				}
 
 				//diconnect from database
-				mysqli_close($dbc);
+			//	mysqli_close($dbc);
 
-				exit();
+			//	exit();
 			}
-			//else{
+			else{
 				foreach($errors as $error){
 					echo "<font color=\"red\">ERROR: $error </font>";
 				}
-			//}
+			}
 		}
 	?>
 
