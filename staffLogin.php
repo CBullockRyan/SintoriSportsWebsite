@@ -25,11 +25,6 @@ Description: staff login page
 		$DBstaffID="";
 		$DBstaffPass="";
 
-		//variables for any errors
-		$errID="";
-		$errPass="";
-		$errLogin="";
-
 		//function for security of entered data
 		function validateInput($data){
 			$data = trim($data);
@@ -40,23 +35,24 @@ Description: staff login page
 
 		//check that login has been entered
 		if($_SERVER['REQUEST_METHOD'] == 'POST'){
+			$errors = array();
 
 			//validate that information has been entered correctly
 			if(empty($_POST['staffID'])){
-				$errID="Please enter staff id. <br/>";
+				array_push($errors, "Please enter staff id. <br/>");
 			}
 			else{
 				$staffID = validateInput($_POST['staffID']);
 			}
 			if(empty($_POST['staffPass'])){
-				$errPass="Please enter password. <br/>";
+				array_push($errors, "Please enter password. <br/>");
 			}
 			else{
 				$staffPass = validateInput($_POST['staffPass']);
 			}
 
 			//check the login if there are no errors
-			if(empty($errID && $errPass)){
+			if(empty($errors)){
 				// connect to database
 				require ('connectDB.php');
 
@@ -91,17 +87,29 @@ Description: staff login page
 						redirect('loggedin.php');
 					}
 					else{
-						$errLogin="ID and password do not match. <br/>";
+						array_push($errors, "ID and password do not match. <br/>");
 					}
 				}
 				else{
-					$errLogin="That admin ID does not exist. <br/>";
+					array_push($errors, "That admin ID does not exist. <br/>");
+				}
+
+				//display any errors
+				if(!empty($errors)){
+					foreach($errors as $error){
+						echo "<font color=\"red\">ERROR: $error </font>";
+					}
 				}
 
 				//diconnect from database
 				mysqli_close($dbc);
 
 				exit();
+			}
+			else{
+				foreach($errors as $error){
+					echo "<font color=\"red\">ERROR: $error </font>";
+				}
 			}
 		}
 	?>
@@ -110,12 +118,9 @@ Description: staff login page
 
 	<h1>Staff Login</h1>
 	<form action="staffLogin.php" method="post">
-		<p>Staff ID: <input type="text" name="staffID" maxlength="20" />
-		<span class="error"><?php echo $errID ?></span></p>
-		<p>Password: <input type="password" name="staffPass" maxlength="40" />
-		<span class="error"><?php echo $errPass ?></span></p>
+		<p>Staff ID: <input type="text" name="staffID" maxlength="20" /></p>
+		<p>Password: <input type="password" name="staffPass" maxlength="40" /></p>
 		<p><input type="submit" name="submit" value="submit" /></p>
-		<span class="error"><?php echo $errLogin ?></span>
 </body>
 
 </html>
