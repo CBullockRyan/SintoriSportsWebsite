@@ -85,7 +85,7 @@ Description: staff login page
 
 						//redirect to logged in
 						require ('redirect.inc.php');
-						redirect('loggedin.php');
+						redirect('loggedIn.php');
 					}
 					else{
 						array_push($errors, "ID and password do not match. <br/>");
