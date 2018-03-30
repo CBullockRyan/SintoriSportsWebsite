@@ -97,7 +97,7 @@ Description: staff login page
 				//display any errors
 				if(!empty($errors)){
 					foreach($errors as $error){
-						echo "<font color=\"red\">ERROR: $error </font>";
+						echo "<p><font color=\"red\">ERROR: $error </font></p>";
 					}
 				}
 
@@ -108,7 +108,7 @@ Description: staff login page
 			}
 			else{
 				foreach($errors as $error){
-					echo "<font color=\"red\">ERROR: $error </font>";
+					echo "<p><font color=\"red\">ERROR: $error </font></p>";
 				}
 			}
 		}
