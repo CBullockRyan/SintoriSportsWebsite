@@ -18,7 +18,7 @@ Description: navigation bar to be included on
 </head>
 
 <body>
-	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<span class="navbar-brand">
 			<!--<img src="img/navLogo.jpg" width="30" height="30" alt="">-->
 			Sintori Sports Club
