@@ -66,7 +66,7 @@ Description: staff login page
 				$staffPass = sha1($staffPass);
 
 				//get database staff login info
-				$q = "SELECT staffID, staffPass, position FROM staff";
+				$q = "SELECT staffID, staffPass, position FROM staff where staffID='$staffID'";
 				$r = @mysqli_query($dbc, $q);
 
 				$row = mysqli_fetch_array($r);
