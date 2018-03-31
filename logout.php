@@ -22,6 +22,7 @@ if (isset($_SESSION['user'])) {
 
 <head>
    <title>Log Out Successful</title>
+	 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>

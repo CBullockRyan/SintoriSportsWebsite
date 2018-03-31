@@ -15,6 +15,7 @@ Description: redirected from login page, confirms login
 
 <head>
 	<title>Login Successful</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
