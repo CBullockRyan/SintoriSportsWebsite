@@ -41,6 +41,66 @@ Description: navigation bar to be included on
 				<li class="nav-item">
 					<a class="nav-link" href="#">Make Payment</a>
 				</li>
+				<?php
+					//add manager settings
+				if($_SESSION('user')=='manager') : ?>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Manage Staff
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Add Staff</a>
+						<a class="dropdown-item" href="#">Update Staff</a>
+						<a class="dropdown-item" href="#">Delete Staff</a>
+						<a class="dropdown-item" href="#">View Staff</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Manage Members
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Add Member</a>
+						<a class="dropdown-item" href="#">Update Member</a>
+						<a class="dropdown-item" href="#">Delete Member</a>
+						<a class="dropdown-item" href="#">View Members</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Membership Type
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Add Type</a>
+						<a class="dropdown-item" href="#">Update Type</a>
+						<a class="dropdown-item" href="#">Delete Type</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Events
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Add Event</a>
+						<a class="dropdown-item" href="#">Update Event</a>
+					</div>
+				</li>
+				<li class='nav-item'>
+					<a class="nav-link" href="#">Add News Post</a>
+				</li>
+				<li class='nav-item'>
+					<a class="nav-link" href="#">View All Enquiries</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					View Reports
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Enquiries</a>
+						<a class="dropdown-item" href="#">Membership Fees</a>
+					</div>
+				</li>
+				<?php	endif; ?>
 				<li class="nav-item"><?php // Create a login/logout link:
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
