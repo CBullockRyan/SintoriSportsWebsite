@@ -43,7 +43,7 @@ Description: navigation bar to be included on
 				</li>
 				<?php
 					//add manager settings
-				if($_SESSION('user')=='manager') : ?>
+				if($_SESSION('user')=='manager') { ?>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Manage Staff
@@ -100,7 +100,7 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="#">Membership Fees</a>
 					</div>
 				</li>
-				<?php	endif; ?>
+			<?php	} ?>
 				<li class="nav-item"><?php // Create a login/logout link:
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
