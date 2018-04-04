@@ -33,7 +33,7 @@ Description: navigation bar to be included on
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">New Membership</a>
+					<a class="nav-link" href="membership_create.php">New Membership</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Update Membership</a>
