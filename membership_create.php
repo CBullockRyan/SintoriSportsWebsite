@@ -26,7 +26,8 @@ Description: Create membership page, works with
 
 <body>
 	<?php include ('staffnav.inc.php'); ?>
-	
+
+	<h1>Add Membership</h1>
 	<!-- form to create membership -->
 	<form action="membership_create.php" method="post">
 		<p>Membership Type: <select name="type">
