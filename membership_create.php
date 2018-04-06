@@ -35,6 +35,15 @@ Description: Create membership page, works with
 			<option value="2">Family Membership</option>
 			<option value="3">Couple Membership</option>
 		</select></p>
+		<p>First Name: <input type="text" name="fname" value="<?php echo $fname ?>" /></p>
+		<p>Last Name: <input type="text" name="lname" value="<?php echo $lname ?>" /></p>
+		<p>Mobile Phone: <input type="text" name="phone" value="<?php echo $phone ?>" /></p>
+		<p>Email: <input type="email" name="email" value="<?php echo $email ?>" /></p>
+		<p>Date of Birth: <input type="date" name="dob" value="<?php echo $DoB ?>" /></p>
+		<p>Gender: </p>
+		<p><input type="radio" name="gender" value="male" <?php if($gender=="male"){echo " checked=\"checked\" ";} ?> /> Male</p>
+		<p><input type="radio" name="gender" value="female" <?php if($gender=="female"){echo " checked=\"checked\" ";} ?> /> Female</p>
+		<p>Payment: <input type="number" min="0.00" max="10000.00" step="0.01" name="payment" value="<?php echo $payment ?>" /></p>
 		<p><input type="submit" name="Submit" value="submit" /></p>
 </body>
 
