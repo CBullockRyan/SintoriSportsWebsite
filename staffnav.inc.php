@@ -37,8 +37,8 @@ Description: navigation bar to be included on
 					Manage Membership
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="nav-link" href="membership_create.php">New Membership</a>
-						<a class="nav-link" href="#">Update Membership</a>
+						<a class="dropdown-item" href="membership_create.php">New Membership</a>
+						<a class="dropdown-item" href="#">Update Membership</a>
 					</div>
 				</li>
 				<li class="nav-item">
