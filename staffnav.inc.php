@@ -32,11 +32,14 @@ Description: navigation bar to be included on
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="membership_create.php">New Membership</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Update Membership</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Manage Membership
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="nav-link" href="membership_create.php">New Membership</a>
+						<a class="nav-link" href="#">Update Membership</a>
+					</div>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Make Payment</a>
