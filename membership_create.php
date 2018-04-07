@@ -88,15 +88,17 @@ Description: Create membership page, works with
 			else{
 				$payment = $_POST['payment'];
 			}
+			//mtype should have a value no matter what
+			$mType = $_POST['mType']
 
 			if(empty($errors)){
 				//connect to database
 				require ('connect.php');
 
 				//fill variables
-				$mType
+				$mType = mysqli_real_escape_string($dbc, trim($mType));
 				$fname = mysqli_real_escape_string($dbc, trim($fname));
-				$lname
+				$lname = mysqli_real_escape_string($dbc, trim($lname));
 				$gender = mysqli_real_escape_string($dbc, trim($gender));
 				$phone = mysqli_real_escape_string($dbc, trim($phone));
 				$address = mysqli_real_escape_string($dbc, trim($address));
