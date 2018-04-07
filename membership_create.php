@@ -122,8 +122,10 @@ Description: Create membership page, works with
 					if($r2){
 						//insert data into payment tables
 						$paymentDate=date();
-						$q3 = "Insert into payment (datePaid, amount) values ('$paymentDate', '$payment')";
-						//check payment query array_rand
+						$q3 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$payment', '$membershipID')";
+						$r3 = @mysqli_query($dbc, $q3);
+
+						//check payment query ran.
 						if($r3){
 							echo "<h2>Membership successfully registered</h2>";
 						}
