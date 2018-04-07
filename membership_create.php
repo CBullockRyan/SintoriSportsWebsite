@@ -93,7 +93,7 @@ Description: Create membership page, works with
 
 			if(empty($errors)){
 				//connect to database
-				require ('connect.php');
+				require ('connectDB.php');
 
 				//fill variables
 				$mType = mysqli_real_escape_string($dbc, trim($mType));
