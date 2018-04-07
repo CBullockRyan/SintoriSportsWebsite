@@ -109,7 +109,7 @@ Description: Create membership page, works with
 				//insert data into membership table
 				$q1 = "Insert into membership (infoID) values ('$mType')";
 				$r1 = @mysqli_query($dbc, $q1); //run query
-				$membershipID= mysqli_insert_id($r1);
+				$membershipID= mysqli_insert_id($dbc);
 				//$q1_2 = "Select LAST_INSERT_ID";
 				//$r1_2 = @mysqli_query($dbc, $q1_2);
 				//if (false === $r1_2) {
