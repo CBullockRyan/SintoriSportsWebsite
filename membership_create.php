@@ -107,10 +107,12 @@ Description: Create membership page, works with
 				$email = mysqli_real_escape_string($dbc, trim($email));
 
 				//insert data into membership table
-				$q1 = "Insert into membership (infoID) values ('$mType')";
+				$q1 = "Insert into membership (infoID) values ('$mType');
+							Select * from membership Where membershipID=SCOPE_IDENTITY()";
 				$r1 = @mysqli_query($dbc, $q1); //run query
+				$row1 = mysqli_fetch_array($r1); //for getting membershipID
+				$membershipID = $row1['membershipID'];
 				//check membership table query ran
-				$membershipID = SCOPE_IDENTITY();
 				if($r1){
 					//insert data into member table
 					$q2 = "Insert into member (fname, lname, phone, email, address, gender, DoB, membershipID) values ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$Dob', '$membershipID')";
