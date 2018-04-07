@@ -111,7 +111,7 @@ Description: Create membership page, works with
 				$r1 = @mysqli_query($dbc, $q1); //run query
 				$q1_2 = "Select LAST_INSERT_ID";
 				$r1_2 = @mysqli_query($dbc, $q1_2);
-				$row1_2 = mysqli_fetch_array($r1); //for getting membershipID
+				$row1_2 = mysqli_fetch_array($r1_2); //for getting membershipID
 				$membershipID = $row1_2['membershipID'];
 
 				//check membership table query ran
