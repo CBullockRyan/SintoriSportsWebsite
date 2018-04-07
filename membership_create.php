@@ -121,7 +121,7 @@ Description: Create membership page, works with
 					//check member table query array ran
 					if($r2){
 						//insert data into payment tables
-						$paymentDate=date();
+						$paymentDate=date('Y-m-d H:i:s');
 						$q3 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$payment', '$membershipID')";
 						$r3 = @mysqli_query($dbc, $q3);
 
