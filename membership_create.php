@@ -176,8 +176,8 @@ Description: Create membership page, works with
 		<p>Email: <input type="email" name="email" value="<?php echo $email ?>" /></p>
 		<p>Date of Birth: <input type="date" name="dob" value="<?php echo $DoB ?>" /></p>
 		<p>Gender: </p>
-		<p><input type="radio" name="gender" value="male" <?php if($gender=="male"){echo " checked=\"checked\" ";} ?> /> Male</p>
-		<p><input type="radio" name="gender" value="female" <?php if($gender=="female"){echo " checked=\"checked\" ";} ?> /> Female</p>
+		<p><input type="radio" name="gender" value="M" <?php if($gender=="M"){echo " checked=\"checked\" ";} ?> /> Male</p>
+		<p><input type="radio" name="gender" value="F" <?php if($gender=="F"){echo " checked=\"checked\" ";} ?> /> Female</p>
 		<p>Payment: <input type="number" min="0.00" max="10000.00" step="0.01" name="payment" value="<?php echo $payment ?>" /></p>
 		<p><input type="submit" name="Submit" value="submit" /></p>
 </body>
