@@ -58,21 +58,35 @@ Description: Create membership page, works with
 			else{
 				$gender = $_POST['gender'];
 			}
-
-			//check hire date
-			if (empty($_POST['hire_date'])){
-				array_push($errors, "Please enter your hire date <br/>");
+			if (empty($_POST['dob'])){
+				array_push($errors, "Please enter your date of birth. <br/>");
 			}
 			else{
-				$hired = $_POST['hire_date'];
+				$Dob = $_POST['dob'];
 			}
-
-			//check for email
-			if(empty($_POST['emp_email'])){
+			if(empty($_POST['email'])){
 				array_push($errors, "Please enter valid email address <br/>");
 			}
 			else{
-				$email=trim($_POST['emp_email']);
+				$email=trim($_POST['email']);
+			}
+			if (empty($_POST['phone'])){
+				array_push($errors, "Please enter a phone number <br/>");
+			}
+			else{
+				$phone = $_POST['phone'];
+			}
+			if (empty($_POST['address'])){
+				array_push($errors, "Please enter your address. <br/>");
+			}
+			else{
+				$address = $_POST['address'];
+			}
+			if (empty($_POST['payment'])){
+				array_push($errors, "Please add a payment <br/>");
+			}
+			else{
+				$payment = $_POST['payment'];
 			}
 
 			if(empty($errors)){
@@ -80,23 +94,52 @@ Description: Create membership page, works with
 				require ('connect.php');
 
 				//fill variables
-				$empName = mysqli_real_escape_string($dbc, trim($empName));
+				$mType
+				$fname = mysqli_real_escape_string($dbc, trim($fname));
+				$lname
 				$gender = mysqli_real_escape_string($dbc, trim($gender));
-				$hired = mysqli_real_escape_string($dbc, trim($hired));
+				$phone = mysqli_real_escape_string($dbc, trim($phone));
+				$address = mysqli_real_escape_string($dbc, trim($address));
+				$payment = mysqli_real_escape_string($dbc, trim($payment));
+				$Dob = mysqli_real_escape_string($dbc, trim($Dob));
 				$email = mysqli_real_escape_string($dbc, trim($email));
 
-				//insert data into database
-				$query = "Insert into employees (emp_name, gender, hire_date, emp_email) values ('$empName', '$gender', '$hired', '$email')";
-				$r = @mysqli_query($dbc, $query); //run query
-				//responses if it ran or didn't run correctly
-				if($r){
-					echo '<h1>Thank you for registering!</h1>';
+				//insert data into membership table
+				$q1 = "Insert into membership (infoID) values ('$mType')";
+				$r1 = @mysqli_query($dbc, $q1); //run query
+				//check membership table query ran
+				if($r1){
+					//insert data into member table
+					$q2 = "Insert into member (fname, lname, phone, email, address, gender, DoB) values ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$Dob')";
+					$r2 = @mysqli_query($dbc, $q2);
+					//check member table query array ran
+					if($r2){
+						//insert data into payment tables
+						$paymentDate=date();
+						$q3 = "Insert into payment (datePaid, amount) values ('$paymentDate', '$payment')";
+						//check payment query array_rand
+						if($r3){
+							echo "<h2>Membership successfully registered</h2>";
+						}
+						else{
+							echo '<h1>System Error</h1>
+							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
+
+							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
+						}
+					}
+					else{
+						echo '<h1>System Error</h1>
+						<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
+
+						echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
+					}
 				}
 				else{
 					echo '<h1>System Error</h1>
 					<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
 
-					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $query . '</p>';
+					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';
 				}
 
 				//disconnect from database
@@ -126,6 +169,7 @@ Description: Create membership page, works with
 		</select></p>
 		<p>First Name: <input type="text" name="fname" value="<?php echo $fname ?>" /></p>
 		<p>Last Name: <input type="text" name="lname" value="<?php echo $lname ?>" /></p>
+		<p>Mailing Address: <input type="text" name="address" value="<?php echo $address ?>" /></p>
 		<p>Mobile Phone: <input type="text" name="phone" value="<?php echo $phone ?>" /></p>
 		<p>Email: <input type="email" name="email" value="<?php echo $email ?>" /></p>
 		<p>Date of Birth: <input type="date" name="dob" value="<?php echo $DoB ?>" /></p>
