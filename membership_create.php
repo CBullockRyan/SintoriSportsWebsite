@@ -110,9 +110,10 @@ Description: Create membership page, works with
 				$q1 = "Insert into membership (infoID) values ('$mType')";
 				$r1 = @mysqli_query($dbc, $q1); //run query
 				//check membership table query ran
+				$membershipID = SCOPE_IDENTITY();
 				if($r1){
 					//insert data into member table
-					$q2 = "Insert into member (fname, lname, phone, email, address, gender, DoB) values ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$Dob')";
+					$q2 = "Insert into member (fname, lname, phone, email, address, gender, DoB, membershipID) values ('$fname', '$lname', '$phone', '$email', '$address', '$gender', '$Dob', '$membershipID')";
 					$r2 = @mysqli_query($dbc, $q2);
 					//check member table query array ran
 					if($r2){
