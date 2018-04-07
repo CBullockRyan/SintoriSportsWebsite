@@ -89,7 +89,7 @@ Description: Create membership page, works with
 				$payment = $_POST['payment'];
 			}
 			//mtype should have a value no matter what
-			$mType = $_POST['mType']
+			$mType = $_POST['mType'];
 
 			if(empty($errors)){
 				//connect to database
