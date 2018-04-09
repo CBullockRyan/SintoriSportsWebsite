@@ -38,11 +38,11 @@ Description: View all staff member
 		if($num > 0){
 			//create table
 			echo '<table>
-						<tr><td align="left"><b>Staff ID | </b></td><td align="left"><b>Position | </b></td>
-						<td align="left"><b>First Name | </b></td><td align="left"><b>Last Name | </b></td>
-						<td align="left"><b>Email | </b></td><td align="left"><b>Address | </b></td>
-						<td align="left"><b>Phone | </b></td><td align="left"><b>Gender | </b></td>
-						<td align="left"><b>Date of Birth | </b></td><td align="left"><b>Hire Date | </b></td></tr>';
+						<tr><td align="left"><b>Staff ID</b></td><td align="left"><b>| Position</b></td>
+						<td align="left"><b>| First Name</b></td><td align="left"><b>| Last Name</b></td>
+						<td align="left"><b>| Email</b></td><td align="left"><b>| Address</b></td>
+						<td align="left"><b>| Phone</b></td><td align="left"><b>| Gender</b></td>
+						<td align="left"><b>| Date of Birth</b></td><td align="left"><b>| Hire Date</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
@@ -66,7 +66,7 @@ Description: View all staff member
 					}
 
 					mysqli_free_result ($r); // Free up the resources.
-			
+
 				}
 				else{ // If it did not run OK.
 
