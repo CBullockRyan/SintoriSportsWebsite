@@ -76,7 +76,7 @@ Description: Make a payment
 						//check query ran
 						if($r2){
 							echo "<h2>Payment successful</h2>";
-							echo "<form method='get'><p><input type='Submit' name='Make another payment'value='submit'></p> "
+							echo "<form method='get'><p><input type='Submit' name='Make another payment'value='submit'></p>";
 							if($_SERVER['REQUEST_METHOD'] == 'GET'){
 								//if make new payment require redirect
 								require ('redirect.inc.php');
