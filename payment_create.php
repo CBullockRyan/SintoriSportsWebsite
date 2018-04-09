@@ -51,36 +51,56 @@ Description: Make a payment
 				$paymentDate = $_POST['paymentDate'];
 			}
 
-			if(empty($errors)){
-				//connect to database
-				require ('connectDB.php');
+			//connect to database
+			require ('connectDB.php');
 
-				//fill variables
-				$amount = mysqli_real_escape_string($dbc, trim($amount));
-				$paymentDate = mysqli_real_escape_string($dbc, trim($paymentDate));
-				$membershipID = mysqli_real_escape_string($dbc, trim($membershipID));
+			//verify that membership number exists
+			$q1 = "Select * From membership where membershipID=$membershipID";
+			$r1 = @mysqli_query($dbc, $q1); //run Query
+			if($r1){
+				//make sure row was returned
+				$num = mysqli_num_rows($r1);
+				if($num > 0){
+					//make sure there were no errors
+					if(empty($errors)){
 
-				//insert data into payment table
-				$q1 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$amount', '$membershipID')";
-				$r1 = @mysqli_query($dbc, $q1); //run query
+						//fill variables
+						$amount = mysqli_real_escape_string($dbc, trim($amount));
+						$paymentDate = mysqli_real_escape_string($dbc, trim($paymentDate));
+						$membershipID = mysqli_real_escape_string($dbc, trim($membershipID));
 
-				//check query ran
-				if($r1){
-					echo "<h2>Payment successful</h2>";
+						//insert data into payment table
+						$q2 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$amount', '$membershipID')";
+						$r2 = @mysqli_query($dbc, $q2); //run query
+
+						//check query ran
+						if($r2){
+							echo "<h2>Payment successful</h2>";
+							echo "<form method='get'><p><input type='Submit' name='Make another payment'value='submit'></p> "
+							if($_SERVER['REQUEST_METHOD'] == 'GET'){
+								//if make new payment require redirect
+								require ('redirect.inc.php');
+								redirect('payment_create.php');
+							}
+						}
+						else{
+							echo '<h1>System Error</h1>
+							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
+
+							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
+						}
+
+						//disconnect from database
+						mysqli_close($dbc);
+
+						exit();
+					}
 				}
 				else{
-					echo '<h1>System Error</h1>
-					<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
-
-					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';
+					array_push($errors, "Membership not found. <br/>");
 				}
-
-				//disconnect from database
-				mysqli_close($dbc);
-
-				exit();
 			}
-			else{
+			if($errors){
 				echo "<h1>Errors</h1>";
 				echo "<p>The following errors occurred:<br/>";
 				foreach($errors as $error){
