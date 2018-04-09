@@ -42,7 +42,7 @@ Description: navigation bar to be included on
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Make Payment</a>
+					<a class="nav-link" href="payment_create.php">Make Payment</a>
 				</li>
 				<?php
 					//add manager settings
