@@ -53,8 +53,6 @@ Description: navigation bar to be included on
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="staff_create.php">Add Staff</a>
-						<a class="dropdown-item" href="#">Update Staff</a>
-						<a class="dropdown-item" href="#">Delete Staff</a>
 						<a class="dropdown-item" href="staff_viewall.php">View Staff</a>
 					</div>
 				</li>
@@ -64,8 +62,6 @@ Description: navigation bar to be included on
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Add Member</a>
-						<a class="dropdown-item" href="#">Update Member</a>
-						<a class="dropdown-item" href="#">Delete Member</a>
 						<a class="dropdown-item" href="#">View Members</a>
 					</div>
 				</li>
