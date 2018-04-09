@@ -3,13 +3,6 @@ Author: Cassidy Bullock
 Date: April 9, 2018
 Description: Create new staff member
 ************************************************-->
-<!--************************************************
-Author: Cassidy Bullock
-Date: April 4, 2018
-Description: Create membership page, works with
-             sql tables membership and membershipinfo
-             and payment (initial payment is required)
-************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
 		session_start();
@@ -37,7 +30,6 @@ Description: Create membership page, works with
 		$gender="";
 		$phone="";
 		$address="";
-		$payment="";
 		$Dob="";
     $hiredate="";
 		$email="";
@@ -120,7 +112,6 @@ Description: Create membership page, works with
 				$gender = mysqli_real_escape_string($dbc, trim($gender));
 				$phone = mysqli_real_escape_string($dbc, trim($phone));
 				$address = mysqli_real_escape_string($dbc, trim($address));
-				$payment = mysqli_real_escape_string($dbc, trim($payment));
 				$Dob = mysqli_real_escape_string($dbc, trim($Dob));
         $hiredate = mysqli_real_escape_string($dbc, trim($hiredate));
 				$email = mysqli_real_escape_string($dbc, trim($email));
