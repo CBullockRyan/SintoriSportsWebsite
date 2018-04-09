@@ -52,7 +52,7 @@ Description: navigation bar to be included on
 					Manage Staff
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Add Staff</a>
+						<a class="dropdown-item" href="staff_create.php">Add Staff</a>
 						<a class="dropdown-item" href="#">Update Staff</a>
 						<a class="dropdown-item" href="#">Delete Staff</a>
 						<a class="dropdown-item" href="#">View Staff</a>
