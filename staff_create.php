@@ -157,7 +157,7 @@ Description: Create new staff member
 
 	<h1>Add New Staff Member</h1>
 	<!-- form to create membership -->
-	<form action="membership_create.php" method="post">
+	<form action="staff_create.php" method="post">
 		<p>Staff Position: <select name="position">
 			<option value="manager">Manager</option>
 			<option value="other">Other</option>
