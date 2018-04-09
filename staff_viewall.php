@@ -51,7 +51,7 @@ Description: View all staff member
 							<td align="left">| ' . $row['fname'] . '</td><td align="left">| '. $row['lname'] . '</td>
 							<td align="left">| ' . $row['email'] . '</td><td align="left">| ' . $row['address'] . '</td>
 							<td align="left">| ' . $row['phone'] . '</td><td align="left">| ' . $row['gender'] . '</td>
-							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['hireDate'] . '</td>' .
+							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['hireDate'] . ' |</td>' .
 							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/staff_update.php?id=" . $row['staffID'] . ">Update</a></td>
 							<td align='left'><a href=http://localhost/SintoriSportsWebsite/staff_delete.php?id=" . $row['staffID'] . ">Delete</a></td></tr>";
 						}
