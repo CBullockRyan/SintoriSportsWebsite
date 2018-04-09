@@ -58,7 +58,7 @@ Description: Make a payment
 				//fill variables
 				$amount = mysqli_real_escape_string($dbc, trim($amount));
 				$paymentDate = mysqli_real_escape_string($dbc, trim($paymentDate));
-				$membershipID = mysqli_real_escape_string($dbc, trim($amount));
+				$membershipID = mysqli_real_escape_string($dbc, trim($membershipID));
 
 				//insert data into payment table
 				$q1 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$amount', '$membershipID')";
