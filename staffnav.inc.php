@@ -55,7 +55,7 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="staff_create.php">Add Staff</a>
 						<a class="dropdown-item" href="#">Update Staff</a>
 						<a class="dropdown-item" href="#">Delete Staff</a>
-						<a class="dropdown-item" href="#">View Staff</a>
+						<a class="dropdown-item" href="staff_viewall.php">View Staff</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown">
