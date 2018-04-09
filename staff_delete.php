@@ -46,7 +46,7 @@ Description: Delete a staff member
 			}
 			else { // If the query did not run OK.
 				echo '<p class="error">The staff member could not be deleted due to a system error.</p>';
-				echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+				//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
 			}
 		}
 		else {
