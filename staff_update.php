@@ -121,7 +121,7 @@ Description: Update a staff member
 	else{
 		echo "<h1>Update a Staff Member</h1>";
 		echo "<p>Staff ID: $staffID</p>";
-		echo "<form action='employee_update.php' method='post'>
+		echo "<form action='staff_update.php' method='post'>
 			<p>Staff Position: <select name='position'>
 				<option value='manager' <?php if($position=='manager'){echo ' selected='selected';} ?> >Manager</option>
 				<option value='other' <?php if($position=='other'){echo ' selected='selected';} ?>>Other</option>
