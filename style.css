@@ -1,5 +1,5 @@
 body {
-    padding-top: 75px; /* to make sure the error messages don't run into the navbar */
+    padding-top: 80px; /* to make sure the error messages don't run into the navbar */
     padding-left: 10px;
     padding-right: 10px;
     background-color: lightblue;
