@@ -71,8 +71,7 @@ Description: navigation bar to be included on
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Add Type</a>
-						<a class="dropdown-item" href="#">Update Type</a>
-						<a class="dropdown-item" href="#">Delete Type</a>
+						<a class="dropdown-item" href="#">View Types</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown">
