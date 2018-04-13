@@ -91,7 +91,7 @@ Description: update a membership to change status.
 		the type of membership, please set current membership to inactive and then
 		create a new membership with the correct type.</p>";
 		//create form
-		echo "<form action='staff_update.php' method='post'>
+		echo "<form action='membership_update.php' method='post'>
 			<p>Membership Status: <select name='status'>
 				<option value='ACTIVE' selected='selected'>ACTIVE</option>
 				<option value='INACTIVE'>INACTIVE</option>
