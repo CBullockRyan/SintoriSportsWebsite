@@ -38,7 +38,7 @@ Description: navigation bar to be included on
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="membership_create.php">New Membership</a>
-						<a class="dropdown-item" href="#">Update Membership</a>
+						<a class="dropdown-item" href="membership_update.php">Update Membership</a>
 					</div>
 				</li>
 				<li class="nav-item">
