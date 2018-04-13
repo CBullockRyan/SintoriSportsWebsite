@@ -50,7 +50,7 @@ Description: View all members
 							<td align="left">| ' . $row['fname'] . '</td><td align="left">| '. $row['lname'] . '</td>
 							<td align="left">| ' . $row['phone'] . '</td><td align="left">| ' . $row['email'] . '</td>
               <td align="left">| ' . $row['address'] . '</td><td align="left">| ' . $row['gender'] . '</td>
-							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['membershipID'] . ' |</td>' .
+							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['membershipID'] . ' </td>' .
 							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/member_update.php?id=" . $row['memberID'] . ">Update</a></td>
 							<td align='left'><a href=http://localhost/SintoriSportsWebsite/member_delete.php?id=" . $row['memberID'] . ">Delete</a></td></tr>";
 						}
