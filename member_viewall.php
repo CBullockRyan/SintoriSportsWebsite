@@ -61,7 +61,7 @@ Description: View all members
 						echo "<br/><br/>There are $num records in the database.";
 					}
 					else{
-						echo "There are no staff in the database<br/>";
+						echo "There are no members in the database<br/>";
 					}
 
 					mysqli_free_result ($r); // Free up the resources.
