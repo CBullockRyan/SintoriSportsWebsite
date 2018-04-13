@@ -68,7 +68,7 @@ Description: Delete a member
 			echo "<h3>Name: $row[0] $row[1] </h3> Are you sure you want to delete this member?";
 
 			// Create the form:
-			echo '<form action="staff_delete.php" method="post">
+			echo '<form action="member_delete.php" method="post">
 			<input type="radio" name="sure" value="Yes" /> Yes
 			<input type="radio" name="sure" value="No" checked="checked" /> No
 			<input type="submit" name="submit" value="Submit" />
