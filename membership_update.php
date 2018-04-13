@@ -66,13 +66,7 @@ Description: update a membership to change status.
 				}
 			}
 			else{
-				//display errors
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
-				foreach($errors as $error){
-					echo " - $error <br/>";
-				}
-				echo "Please try again</br>";
+				echo '<p class="error">The membership was not found. Please try again.</p>';
 			}
 		}
 		else{
