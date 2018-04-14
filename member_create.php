@@ -170,6 +170,7 @@ Description: create a member
 			<p><input type='radio' name='again' value='no' checked='checked' /> No</p>
 			<p><input type='submit' name='submit' value='submit' /></p>";
 		}
+	}
 	?>
 
 </body>
