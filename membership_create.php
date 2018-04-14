@@ -66,10 +66,11 @@ Description: Create membership page, works with
 
 						//check payment query ran.
 						if($r3){
-							require ('redirect.inc.php');
-							//send membershipID, and membership types
-							$page="member_create.php";
-							redirect($page);
+							//send membershipID, and membership type to create members
+							$page="member_create.php?mID=" . $membershipID . "&mType=" . $mType;
+							echo "<h3>Membership Created Successfully</h3>";
+							echo "<p>Please enter member information ";
+							echo "<a href=http://localhost/SintoriSportsWebsite/$page>here</a></p>";
 						}
 						else{
 							echo '<h1>System Error</h1>
@@ -84,6 +85,7 @@ Description: Create membership page, works with
 
 						echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
 					}
+
 
 				//disconnect from database
 				mysqli_close($dbc);
