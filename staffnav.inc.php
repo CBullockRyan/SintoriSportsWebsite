@@ -32,32 +32,68 @@ Description: navigation bar to be included on
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="home.php">Home</a>
-				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Services
+					Manage Membership
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Dance Classes</a>
-						<a class="dropdown-item" href="#">Rock Climbing</a>
-          				<a class="dropdown-item" href="#">Zorbing</a>
-          				<a class="dropdown-item" href="#">Indoor Skydiving</a>
+						<a class="dropdown-item" href="membership_create.php">New Membership</a>
+						<a class="dropdown-item" href="membership_update.php">Update Membership</a>
+						<?php if($_SESSION['user']=='manager') : ?>
+							<a class="dropdown-item" href="membership_viewall.php">View Memberships</a>
+							<a class="dropdown-item" href="member_viewall.php">View Members</a>
+						<?php endif; ?>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Membership</a>
+					<a class="nav-link" href="payment_create.php">Make Payment</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Events</a>
+				<?php
+					//add manager settings
+				if($_SESSION['user']=='manager') : ?>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Manage Staff
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="staff_create.php">Add Staff</a>
+						<a class="dropdown-item" href="staff_viewall.php">View Staff</a>
+					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">News</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Membership Type
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Add Type</a>
+						<a class="dropdown-item" href="#">View Types</a>
+					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Contact Us</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Events
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Add Event</a>
+						<a class="dropdown-item" href="#">Update Event</a>
+					</div>
 				</li>
+				<li class='nav-item'>
+					<a class="nav-link" href="#">Add News</a>
+				</li>
+				<li class='nav-item'>
+					<a class="nav-link" href="#">Enquiries</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Reports
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Enquiries</a>
+						<a class="dropdown-item" href="#">Membership Fees</a>
+					</div>
+				</li>
+			<?php	endif; ?>
 				<li class="nav-item"><?php // Create a login/logout link:
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
