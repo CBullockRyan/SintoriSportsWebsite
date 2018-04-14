@@ -24,7 +24,8 @@ Description: Update a staff member
   <h1>Add a New Member: NOT WRITTEN YET</h1>
   <p>This page hasn't been written yet. This should offer as many slots to enter
   members as each membership type allows. This page can only be accessed by creating
-  a new membership.</p>
+  a new membership. Use redirect.inc.php from membership_create.php to redirect
+	to this page</p>
 
 </body>
 
