@@ -40,6 +40,7 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="membership_create.php">New Membership</a>
 						<a class="dropdown-item" href="membership_update.php">Update Membership</a>
 						<?php if($_SESSION['user']=='manager') : ?>
+							<a class="dropdown-item" href="membership_viewall.php">View Memberships</a>
 							<a class="dropdown-item" href="member_viewall.php">View Members</a>
 						<?php endif; ?>
 					</div>
