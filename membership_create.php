@@ -68,7 +68,7 @@ Description: Create membership page, works with
 						if($r3){
 							require ('redirect.inc.php');
 							//send membershipID, and membership types
-							$page="member_create.php?mID=" . $membershipID . "&mType=" . $mType;
+							$page="member_create.php";
 							redirect($page);
 						}
 						else{
