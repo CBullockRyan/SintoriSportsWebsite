@@ -39,6 +39,9 @@ Description: navigation bar to be included on
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="membership_create.php">New Membership</a>
 						<a class="dropdown-item" href="membership_update.php">Update Membership</a>
+						<?php if($_SESSION['user']=='manager') : ?>
+							<a class="dropdown-item" href="member_viewall.php">View Members</a>
+						<?php endif; ?>
 					</div>
 				</li>
 				<li class="nav-item">
@@ -54,15 +57,6 @@ Description: navigation bar to be included on
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="staff_create.php">Add Staff</a>
 						<a class="dropdown-item" href="staff_viewall.php">View Staff</a>
-					</div>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Manage Members
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="member_create.php">Add Member</a>
-						<a class="dropdown-item" href="member_viewall.php">View Members</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown">
@@ -84,14 +78,14 @@ Description: navigation bar to be included on
 					</div>
 				</li>
 				<li class='nav-item'>
-					<a class="nav-link" href="#">Add News Post</a>
+					<a class="nav-link" href="#">Add News</a>
 				</li>
 				<li class='nav-item'>
-					<a class="nav-link" href="#">View All Enquiries</a>
+					<a class="nav-link" href="#">Enquiries</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					View Reports
+				  Reports
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Enquiries</a>
