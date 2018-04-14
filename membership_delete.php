@@ -65,7 +65,7 @@ Description: Delete a membership
 
 			echo "<h1>Delete a Member</h1>";
 			// Display the record being deleted:
-			echo "<h3>Membership ID: $row[0] </br>Status: $row[3] </h3> Are you sure you want to delete this member?";
+			echo "<h3>Membership ID: $row[0] </br>Status: $row[2] </h3> Are you sure you want to delete this member?";
 
 			// Create the form:
 			echo '<form action="membership_delete.php" method="post">
