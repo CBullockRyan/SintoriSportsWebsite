@@ -61,7 +61,7 @@ Description: navigation bar to be included on
 					Manage Members
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Add Member</a>
+						<a class="dropdown-item" href="member_create.php">Add Member</a>
 						<a class="dropdown-item" href="member_viewall.php">View Members</a>
 					</div>
 				</li>
