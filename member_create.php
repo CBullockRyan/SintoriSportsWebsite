@@ -1,7 +1,7 @@
 <!--************************************************
 Author: Cassidy Bullock
 Date: April 14, 2018
-Description: Update a staff member
+Description: create a member
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
