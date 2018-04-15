@@ -68,7 +68,7 @@ Description: Delete a membership type
 			echo "<h3>$row[0] Membership Type</h3> Are you sure you want to delete this membership type?";
 
 			// Create the form:
-			echo '<form action="staff_delete.php" method="post">
+			echo '<form action="type_delete.php" method="post">
 			<input type="radio" name="sure" value="Yes" /> Yes
 			<input type="radio" name="sure" value="No" checked="checked" /> No
 			<input type="submit" name="submit" value="Submit" />
