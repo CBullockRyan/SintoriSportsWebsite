@@ -66,7 +66,7 @@ Description: staff login page
 				$staffPass = sha1($staffPass);
 
 				//get database staff login info
-				$q = "SELECT staffID, staffPass FROM staff";
+				$q = "SELECT staffID, staffPass, position FROM staff where staffID='$staffID'";
 				$r = @mysqli_query($dbc, $q);
 
 				$row = mysqli_fetch_array($r);
@@ -78,7 +78,7 @@ Description: staff login page
 				if($DBstaffID == $staffID){
 					if($DBstaffPass == $staffPass){
 						//set user
-						$_SESSION['user']="admin";
+						$_SESSION['user']="$row[2]";
 
 						//extra security
 						$_SESSION['agent'] = md5($_SERVER['HTTP_USER_AGENT']);

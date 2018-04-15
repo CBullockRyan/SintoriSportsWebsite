@@ -19,6 +19,7 @@ Description: navigation bar to be included on
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
+
 <body>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<span class="navbar-brand">
@@ -32,7 +33,7 @@ Description: navigation bar to be included on
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Home</a>
+					<a class="nav-link" href="home.php">Home</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

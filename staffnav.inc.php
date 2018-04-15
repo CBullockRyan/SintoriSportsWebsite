@@ -93,7 +93,7 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="#">Membership Fees</a>
 					</div>
 				</li>
-				<?php	endif; ?>
+			<?php	endif; ?>
 				<li class="nav-item"><?php // Create a login/logout link:
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
