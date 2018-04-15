@@ -65,8 +65,8 @@ Description: navigation bar to be included on
 					Membership Type
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Add Type</a>
-						<a class="dropdown-item" href="#">View Types</a>
+						<a class="dropdown-item" href="type_create.php">Add Type</a>
+						<a class="dropdown-item" href="type_viewall.php">View Types</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown">
