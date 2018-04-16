@@ -70,7 +70,7 @@ Description: View all events as manager
 					echo '<p class="error">The current events could not be retrieved. We apologize for any inconvenience.</p>';
 
 					// Debugging message:
-					echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
+					//echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
 
 				}
 
