@@ -343,22 +343,21 @@ Description: create a member
 				echo "Please try again</br>";
 			}
 		}
-		?>
-
-		<h1>Member Creation</h1>
-		<form action='member_create.php' method='post'>
+		else{//create form
+			echo "<h1>Member Creation</h1>";
+			echo" <form action='member_create.php' method='post'>
 			<h2>Primary Member</h2>
-			<p>First Name: <input type='text' name='fname' value='<?php echo $fname ?>' /></p>
-			<p>Last Name: <input type='text' name='lname' value='<?php echo $lname?>' /></p>
-			<p>Mailing Address: <input type='text' name='address' value='<?php echo $address ?>' /></p>
-			<p>Phone: <input type='text' name='phone' value='<?php echo $phone ?>' /></p>
+			<p>First Name: <input type='text' name='fname' value='$fname' /></p>
+			<p>Last Name: <input type='text' name='lname' value='$lname' /></p>
+			<p>Mailing Address: <input type='text' name='address' value='$address' /></p>
+			<p>Phone: <input type='text' name='phone' value='$phone' /></p>
 			<p>Email: <input type='email' name='email' value='$email' /></p>
 			<p>Date of Birth: <input type='date' name='dob' value='$dob' /></p>
 			<p>Gender: </p>
 			<p><input type='radio' name='gender' value='M' /> Male</p>
-			<p><input type='radio' name='gender' value='F' /> Female</p>
-			<?php if($max>1) : ?>
-				<h2>Other Member(s)</h2>
+			<p><input type='radio' name='gender' value='F' /> Female</p>";
+			if($max>1){
+				echo "<h2>Other Member(s)</h2>
 				<p>First Name: <input type='text' name='fname2' value='$fname2' /></p>
 				<p>Last Name: <input type='text' name='lname2' value='$lname2' /></p>
 				<p>Mailing Address: <input type='text' name='address2' value='$address2' /></p>
@@ -367,9 +366,9 @@ Description: create a member
 				<p>Date of Birth: <input type='date' name='dob2' value='$dob2' /></p>
 				<p>Gender: </p>
 				<p><input type='radio' name='gender2' value='M' /> Male</p>
-				<p><input type='radio' name='gender2' value='F' /> Female</p>
-				<?php if($max>3) : ?>
-					<p>First Name: <input type='text' name='fname3' value='$fname3' /></p>
+				<p><input type='radio' name='gender2' value='F' /> Female</p>";
+				if($max>3){
+					echo "<p>First Name: <input type='text' name='fname3' value='$fname3' /></p>
 					<p>Last Name: <input type='text' name='lname3' value='$lname3' /></p>
 					<p>Mailing Address: <input type='text' name='address3' value='$address3' /></p>
 					<p>Phone: <input type='text' name='phone3' value='$phone3' /></p>
@@ -386,10 +385,12 @@ Description: create a member
 					<p>Date of Birth: <input type='date' name='dob4' value='$dob4' /></p>
 					<p>Gender: </p>
 					<p><input type='radio' name='gender4' value='M' /> Male</p>
-					<p><input type='radio' name='gender4' value='F' /> Female</p>
-				<?php endif; ?>
-			<?php endif; ?>
-			<p><input type='submit' name='submit' value='submit' /></p></form>
+					<p><input type='radio' name='gender4' value='F' /> Female</p>";
+				}
+			}
+			echo "<p><input type='submit' name='submit' value='submit' /></p></form>";
+		}
+		?>
 </body>
 
 </html>
