@@ -114,7 +114,7 @@ Description: Create a new event
 	<form action="event_create.php" method="post" id="event">
 		<p>Title of Event: <input type="text" name="title" value="<?php echo $title ?>" /></p>
 		<p>Description of Event: </p>
-    <p><textarea name="desc" form="event" value="<?php echo $desc ?>"></textarea></p>
+    <p><textarea name="desc" form="event" cols="40" value="<?php echo $desc ?>"></textarea></p>
 		<p>Event Start Date: <input type="date" name="date" value="<?php echo $date ?>" /></p>
 		<p>Event Start Time: <input type="time" name="time" value="<?php echo $time ?>" /></p>
 		<p>Maximum Number of Attendees: <input type="number" name="max" value="<?php echo $max ?>" /></p>
