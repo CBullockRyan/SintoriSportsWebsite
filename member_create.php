@@ -343,9 +343,11 @@ Description: create a member
 				echo "Please try again</br>";
 			}
 		}
-		else{ //if form unsubmitted, display
-			echo "<h1>Member Creation</h1>";
-			echo "<form action='member_create.php' method='post'>
+		?>
+
+		<h1>Member Creation</h1>
+		<form action='member_create.php' method='post'>
+			<h2>Primary Member</h2>
 			<p>First Name: <input type='text' name='fname' value='$fname' /></p>
 			<p>Last Name: <input type='text' name='lname' value='$lname' /></p>
 			<p>Mailing Address: <input type='text' name='address' value='$address' /></p>
@@ -355,14 +357,39 @@ Description: create a member
 			<p>Gender: </p>
 			<p><input type='radio' name='gender' value='M' /> Male</p>
 			<p><input type='radio' name='gender' value='F' /> Female</p>
-			<p>Add another member? </p>
-			<p><input type='radio' name='again' value='yes' /> Yes</p>
-			<p><input type='radio' name='again' value='no' checked='checked' /> No</p>
+			<?php if($max>1) : ?>
+				<h2>Other Member(s)</h2>
+				<p>First Name: <input type='text' name='fname2' value='$fname2' /></p>
+				<p>Last Name: <input type='text' name='lname2' value='$lname2' /></p>
+				<p>Mailing Address: <input type='text' name='address2' value='$address2' /></p>
+				<p>Phone: <input type='text' name='phone2' value='$phone2' /></p>
+				<p>Email: <input type='email' name='email2' value='$email2' /></p>
+				<p>Date of Birth: <input type='date' name='dob2' value='$dob2' /></p>
+				<p>Gender: </p>
+				<p><input type='radio' name='gender2' value='M' /> Male</p>
+				<p><input type='radio' name='gender2' value='F' /> Female</p>
+				<?php if($max>3) : ?>
+					<p>First Name: <input type='text' name='fname3' value='$fname3' /></p>
+					<p>Last Name: <input type='text' name='lname3' value='$lname3' /></p>
+					<p>Mailing Address: <input type='text' name='address3' value='$address3' /></p>
+					<p>Phone: <input type='text' name='phone3' value='$phone3' /></p>
+					<p>Email: <input type='email' name='email3' value='$email3' /></p>
+					<p>Date of Birth: <input type='date' name='dob3' value='$dob3' /></p>
+					<p>Gender: </p>
+					<p><input type='radio' name='gender3' value='M' /> Male</p>
+					<p><input type='radio' name='gender3' value='F' /> Female</p>
+					<p>First Name: <input type='text' name='fname4' value='$fname4' /></p>
+					<p>Last Name: <input type='text' name='lname4' value='$lname4' /></p>
+					<p>Mailing Address: <input type='text' name='address4' value='$address4' /></p>
+					<p>Phone: <input type='text' name='phone4' value='$phone4' /></p>
+					<p>Email: <input type='email' name='email4' value='$email4' /></p>
+					<p>Date of Birth: <input type='date' name='dob4' value='$dob4' /></p>
+					<p>Gender: </p>
+					<p><input type='radio' name='gender4' value='M' /> Male</p>
+					<p><input type='radio' name='gender4' value='F' /> Female</p>
+				<? endif; ?>
+			<? endif; ?>
 			<p><input type='submit' name='submit' value='submit' /></p>";
-		}
-	}
-	?>
-
 </body>
 
 </html>
