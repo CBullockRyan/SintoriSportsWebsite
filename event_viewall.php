@@ -27,7 +27,7 @@ Description: View all events as manager
 	require ('connectDB.php');
 
 	//query to bring up all records
-	$q = "SELECT eventID, title, eventTime, eventDate, maxAtendee FROM event ORDER BY eventID";
+	$q = "SELECT eventID, title, eventTime, eventDate, maxAttendee FROM event ORDER BY eventID";
 	$r = @mysqli_query($dbc, $q); //run $query
 
 	//check if ran correctly
