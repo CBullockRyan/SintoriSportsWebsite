@@ -109,7 +109,7 @@ Description: Update an event
 	}
 	//if form not submitted, display form
 	else{
-		echo "<h1>Update a Staff Member</h1>";
+		echo "<h1>Update an Event</h1>";
 		echo "<p>Event ID: $eventID</p>";
 		echo "<form action='event_update.php' method='post' id='event'>
 			<p>Event Title: <input type='text' name='title' value='$title' /></p>
