@@ -28,7 +28,7 @@ Description: create a member
 		$mID = $_POST['mID'];
 		$mType = $_POST['mType'];
 	} else { // No valid ID, kill the script.
-		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/staff_viewall.php>View All Staff page</a> and select employee to delete.</p>';
+		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/membership_create.php>membership creation page</a> to create a new membership.</p>';
 		exit();
 	}
 
@@ -348,10 +348,10 @@ Description: create a member
 		<h1>Member Creation</h1>
 		<form action='member_create.php' method='post'>
 			<h2>Primary Member</h2>
-			<p>First Name: <input type='text' name='fname' value='$fname' /></p>
-			<p>Last Name: <input type='text' name='lname' value='$lname' /></p>
-			<p>Mailing Address: <input type='text' name='address' value='$address' /></p>
-			<p>Phone: <input type='text' name='phone' value='$phone' /></p>
+			<p>First Name: <input type='text' name='fname' value='<?php echo $fname ?>' /></p>
+			<p>Last Name: <input type='text' name='lname' value='<?php echo $lname?>' /></p>
+			<p>Mailing Address: <input type='text' name='address' value='<?php echo $address ?>' /></p>
+			<p>Phone: <input type='text' name='phone' value='<?php echo $phone ?>' /></p>
 			<p>Email: <input type='email' name='email' value='$email' /></p>
 			<p>Date of Birth: <input type='date' name='dob' value='$dob' /></p>
 			<p>Gender: </p>
