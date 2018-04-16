@@ -389,7 +389,7 @@ Description: create a member
 					<p><input type='radio' name='gender4' value='F' /> Female</p>
 				<? endif; ?>
 			<? endif; ?>
-			<p><input type='submit' name='submit' value='submit' /></p>";
+			<p><input type='submit' name='submit' value='submit' /></p>
 </body>
 
 </html>
