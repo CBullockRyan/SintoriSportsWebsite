@@ -313,6 +313,7 @@ Description: create a member
 						else{
 							echo '<h1>System Error</h1>
 							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
+							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
 						}
 					}
 					elseif($r2){
@@ -321,6 +322,7 @@ Description: create a member
 					else{
 						echo '<h1>System Error</h1>
 						<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
+						echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
 					}
 				}
 				elseif($r1){
@@ -329,6 +331,7 @@ Description: create a member
 				else{
 					echo '<h1>System Error</h1>
 					<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
+					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';
 				}
 				//disconnect from database
 				mysqli_close($dbc);
