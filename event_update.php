@@ -114,7 +114,7 @@ Description: Update an event
 		echo "<form action='event_update.php' method='post' id='event'>
 			<p>Event Title: <input type='text' name='title' value='$title' /></p>
 			<p>Event Description:</p>
-      <p><textarea name='desc' form='event' rows='4' cols=40 value='$desc' ></textarea></p>
+      <p><textarea name='desc' form='event' rows='4' cols=40 > $desc </textarea></p>
 			<p>Event Start Time: <input type='time' name='time' value='$time' /></p>
 			<p>Event Start Date: <input type='date' name='date' value='$date' /></p>
       <p>Maximum Number of Attendees: <input type='number' name='max' value='$max' /></p>
