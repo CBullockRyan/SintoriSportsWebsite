@@ -389,6 +389,7 @@ Description: create a member
 				}
 			}
 			echo "<input type='hidden' name='mID' value='" . $mID . "' />";
+			echo "<input type='hidden' name='mType' value='" . $mType . "' />";
 			echo "<p><input type='submit' name='submit' value='submit' /></p></form>";
 		}
 		?>
