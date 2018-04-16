@@ -75,7 +75,7 @@ Description: navigation bar to be included on
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="event_create.php">Add Event</a>
-						<a class="dropdown-item" href="#">Update Event</a>
+						<a class="dropdown-item" href="event_viewall.php">View Events</a>
 					</div>
 				</li>
 				<li class='nav-item'>
