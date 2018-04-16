@@ -30,7 +30,8 @@ Description: Create membership page, works with
 		//check form submission
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$errors = array();
-			//check all fields are filled out
+			
+      //check all fields are filled out
 			if (empty($_POST['payment'])){
 				array_push($errors, "Please add a payment <br/>");
 			}
@@ -39,6 +40,8 @@ Description: Create membership page, works with
 			}
 			//mtype should have a value no matter what
 			$mType = $_POST['mType'];
+
+      //if there are no errors
 			if(empty($errors)){
 				//connect to database
 				require ('connectDB.php');
@@ -52,10 +55,12 @@ Description: Create membership page, works with
 				$membershipID= mysqli_insert_id($dbc);
 				//check membership table query ran
 				if($r1){
+
 						//insert data into payment tables
 						$paymentDate=date('Y-m-d H:i:s');
 						$q3 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$payment', '$membershipID')";
 						$r3 = @mysqli_query($dbc, $q3);
+
 						//check payment query ran.
 						if($r3){
 							//send membershipID, and membership type to create members
@@ -67,16 +72,19 @@ Description: Create membership page, works with
 						else{
 							echo '<h1>System Error</h1>
 							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
-							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
+               //debugging message
+							//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
 						}
 					}
 					else{
 						echo '<h1>System Error</h1>
 						<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
-						echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
+             //debugging message
+						//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
 					}
 				//disconnect from database
 				mysqli_close($dbc);
+
 				exit();
 			}
 			else{
