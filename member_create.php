@@ -387,9 +387,9 @@ Description: create a member
 					<p>Gender: </p>
 					<p><input type='radio' name='gender4' value='M' /> Male</p>
 					<p><input type='radio' name='gender4' value='F' /> Female</p>
-				<? endif; ?>
-			<? endif; ?>
-			<p><input type='submit' name='submit' value='submit' /></p>
+				<?php endif; ?>
+			<?php endif; ?>
+			<p><input type='submit' name='submit' value='submit' /></p></form>
 </body>
 
 </html>
