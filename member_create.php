@@ -388,6 +388,7 @@ Description: create a member
 					<p><input type='radio' name='gender4' value='F' /> Female</p>";
 				}
 			}
+			echo "<input type='hidden' name='mID' value='" . $mID . "' />";
 			echo "<p><input type='submit' name='submit' value='submit' /></p></form>";
 		}
 		?>
