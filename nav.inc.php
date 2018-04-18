@@ -50,7 +50,7 @@ Description: navigation bar to be included on
 					<a class="nav-link" href="#">Membership</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Events</a>
+					<a class="nav-link" href="user_event_view.php">Events</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">News</a>
