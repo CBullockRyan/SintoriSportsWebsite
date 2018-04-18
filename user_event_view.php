@@ -40,7 +40,7 @@ Description: View all events as regular user
 
 			// Fetch and print all the records:
 			while ($row = mysqli_fetch_array($r)) {
-				echo '<h1>' . $row['title'] . '</h1>
+				echo '<h2>' . $row['title'] . '</h2>
 				<p>Date: ' . $row['eventDate'] . '</p>
 				<p>Time: ' . $row['eventTime'] . '</p>
         <p>' . $row['description'] . '</p>';
