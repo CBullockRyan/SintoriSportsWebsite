@@ -47,8 +47,8 @@ Description: View all events as regular user
 
 				//check that max capacity is not reached
 				if($row['maxAttendee'] > $row['currentAttendee']){
-					echo "<p>Register as a <a href=http://localhost/SintoriSportsWebsite/user_event_memberRegister.php>member</a>
-					or a <a href=http://localhost/SintoriSportsWebsite/user_event_nonmemberRegister.php>non-member</a></p>";
+					echo "<p>Register as a <a href=http://localhost/SintoriSportsWebsite/user_event_memberRegister.php?id=" . $row['eventID'] . ">member</a>
+					or a <a href=http://localhost/SintoriSportsWebsite/user_event_nonmemberRegister.php?id=" . $row['eventID'] . ">non-member</a></p>";
 				}
 				else{//display message that no more can register
 					echo "<p>Sorry, this event has reached maximum capacity. Please contact us if you have any questions. </p>";
