@@ -53,7 +53,7 @@ Description: register a member to an event
 		}
 		else{
 			//check if member number is already registered
-			$q1 = "SELECT * FROM eventbooking WHERE eventID = '$id' AND memberID = '" . $_POST['mid'] . "'";
+			$q1 = "SELECT * FROM eventbooking WHERE eventID = '$id' AND memberID = '" . $_POST['mID'] . "'";
 			$r1 = @mysqli_query($dbc, $q1);
 			if(mysqli_num_rows($r1) == 0){
 				//if mID is not empty and does not match previous records save
