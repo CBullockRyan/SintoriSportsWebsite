@@ -88,6 +88,13 @@ Description: register a member to an event
 				echo '<p class="error">Member could not be registered due to a system error. Please try again. If this problem persists please contact us.</p>'; // Public message.
 				//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q2 . '</p>'; // Debugging message.
 			}
+		} else {//display error messages
+			echo "<h1>Errors</h1>";
+			echo "<p>The following errors occurred:<br/>";
+			foreach($errors as $error){
+				echo " - $error <br/>";
+			}
+			echo "Please try again</br>";
 		}
 	}
 	else{//print form
