@@ -35,7 +35,7 @@ Description: register a member to an event
 	require ('connectDB.php');
 
 	//get event
-	$q = "SELECT title, eventDate FROM event WHERE eventID=$id";
+	$q = "SELECT title, eventDate, maxAttendee, currentAttendee FROM event WHERE eventID=$id";
 	$r = @mysqli_query($dbc, $q);
 
 	//get results
@@ -44,6 +44,7 @@ Description: register a member to an event
 	//variable for form
 	$mID="";
 	$numAttendees=1;
+	$maxAttendee= $row['maxAttendee'] - $row['currentAttendee']; //maximum guests that can be registered
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$errors = array();
@@ -64,6 +65,9 @@ Description: register a member to an event
 					//if mID is not empty and does not match previous records save form
 					$mID=trim($_POST['mID']);
 					$numAttendees=trim($_POST['numAttendees']);
+					if($numAttendees>$maxAttendee){
+						array_push($errors, "Number of guests entered is above maximum occupancy. </br>")
+					}
 				} else{
 					array_push($errors, "That membership ID does not exist. </br>");
 				}
@@ -109,6 +113,7 @@ Description: register a member to an event
 	}
 	else{//print form
 		echo "<h1>Register for " . $row[0] . " on " . $row[1] . "</h1>";
+		echo "<p><b>Spaces left in the event: $maxAttendee </b></p>";
 		echo "<form action='user_event_memberRegister.php' method='post'>
 			<p>Membership ID: <input type='text' name='mID' value=\"$mID\" /></p>
 			<p>Number of people attending (including yourself): <input type='number' name='numAttendees' value='$numAttendees' /></p>
