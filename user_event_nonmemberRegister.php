@@ -101,7 +101,7 @@ Description: register a non member to an event
         if($r3){
           echo "<h2>Thank you. You have successfully registered for " . $row[0] . "</h2>";
 				  $q4 = "UPDATE event SET currentAttendee = currentAttendee + 1 WHERE eventID=$id LIMIT 1";
-				  $r4 = @mysqli_query($dbc, $q3);
+				  $r4 = @mysqli_query($dbc, $q4);
 
 				  //check that it ran
 				  if($r4){}
