@@ -66,7 +66,7 @@ Description: register a member to an event
 					$mID=trim($_POST['mID']);
 					$numAttendees=trim($_POST['numAttendees']);
 					if($numAttendees>$maxAttendee){
-						array_push($errors, "Number of guests entered is above maximum occupancy. </br>")
+						array_push($errors, "Number of guests entered is above maximum occupancy. </br>");
 					}
 				} else{
 					array_push($errors, "That membership ID does not exist. </br>");
