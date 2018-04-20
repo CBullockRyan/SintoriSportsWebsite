@@ -26,8 +26,11 @@ Description: View all events as regular user
 	//connect to database
 	require ('connectDB.php');
 
-	//query to bring up all records
-	$q = "SELECT eventID, title, description, eventTime, eventDate, maxAttendee, currentAttendee FROM event ORDER BY eventDate";
+	//current date variable
+	$currentDate=date('Y-m-d H:i:s');
+
+	//query to bring up all events happening today or later
+	$q = "SELECT eventID, title, description, eventTime, eventDate, maxAttendee, currentAttendee FROM event WHERE eventDate > '$currentDate' ORDER BY eventDate";
 	$r = @mysqli_query($dbc, $q); //run $query
 
 	//check if ran correctly
