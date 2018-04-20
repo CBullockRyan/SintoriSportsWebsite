@@ -104,6 +104,6 @@ Description: register a member to an event
 			<input type='hidden' name='id' value='" . $id . "' />
 			<p><input type='submit' name='submit' value='Register' /></p>";
 			//link to non-member registered
-		echo "<p>Not a member? Click <a href=<a href=http://localhost/SintoriSportsWebsite/user_event_nonmemberRegister.php?id=" . $id . ">here</a>
+		echo "<p>Not a member? Click <a href=http://localhost/SintoriSportsWebsite/user_event_nonmemberRegister.php?id=" . $id . ">here</a>
 		to register for the event.</p>";
 	}
