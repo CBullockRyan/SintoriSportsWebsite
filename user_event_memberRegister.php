@@ -84,7 +84,7 @@ Description: register a member to an event
 			$numAttendees = mysqli_real_escape_string($dbc, trim($numAttendees));
 
 			//record in database
-			$q2 = "INSERT INTO eventbooking (eventID, membershipID) values ('$id', '$mID')";
+			$q2 = "INSERT INTO eventbooking (eventID, membershipID, numAttendee) values ('$id', '$mID', '$numAttendees')";
 			$r2 = @mysqli_query($dbc, $q2);
 
 			//check it ran and then increment currentAttendee in event
