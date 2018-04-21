@@ -25,8 +25,7 @@ Description: Create a news post
 		//Create vars for news table
 		$title="";
 		$desc="";
-    $date=date('Y-m-d');
-    $time=date('H:i:s');
+    $date=date('Y-m-d H:i:s');
 		$imgPath="";
 
 		//check form submission
@@ -103,7 +102,7 @@ Description: Create a news post
 				$imgPath = mysqli_real_escape_string($dbc, trim($imgPath));
 
 				//insert data into membership table
-				$q1 = "Insert into news (title, description, newsTime, newsDate, image) values ('$title', '$desc', '$time', '$date', '$imgPath')";
+				$q1 = "Insert into news (title, description, newsDate, image) values ('$title', '$desc', '$date', '$imgPath')";
 				$r1 = @mysqli_query($dbc, $q1); //run query
 
 				//check query ran
@@ -114,7 +113,7 @@ Description: Create a news post
 					echo '<h1>System Error</h1>
 					<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
 
-					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';//debugging message
+				//	echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';//debugging message
 				}
 
 				//disconnect from database
