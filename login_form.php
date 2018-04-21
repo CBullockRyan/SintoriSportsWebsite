@@ -85,7 +85,7 @@ Description: staff login page
 
 						//redirect to logged in
 						require ('redirect.inc.php');
-						redirect('loggedIn.php');
+						redirect('login_success.php');
 					}
 					else{
 						array_push($errors, "ID and password do not match. <br/>");
@@ -118,7 +118,7 @@ Description: staff login page
 	<?php include ('nav.inc.php'); ?>
 
 	<h1>Staff Login</h1>
-	<form action="staffLogin.php" method="post">
+	<form action="login_form.php" method="post">
 		<p>Staff ID: <input type="text" name="staffID" maxlength="20" value='<?php echo $staffID ?>' /></p>
 		<p>Password: <input type="password" name="staffPass" maxlength="40" /></p>
 		<p><input type="submit" name="submit" value="submit" /></p>

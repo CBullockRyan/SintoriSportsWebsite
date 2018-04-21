@@ -79,7 +79,7 @@ Description: navigation bar to be included on
 					</div>
 				</li>
 				<li class='nav-item'>
-					<a class="nav-link" href="#">Add News</a>
+					<a class="nav-link" href="news_create.php">Add News</a>
 				</li>
 				<li class='nav-item'>
 					<a class="nav-link" href="#">Enquiries</a>
@@ -98,7 +98,7 @@ Description: navigation bar to be included on
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
 					} else {
-						echo '<a class="nav-link" href="staffLogin.php">Staff Login</a>';
+						echo '<a class="nav-link" href="login_form.php">Staff Login</a>';
 					} ?>
 				</li>
 			</ul>

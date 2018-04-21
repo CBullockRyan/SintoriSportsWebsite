@@ -33,7 +33,7 @@ Description: navigation bar to be included on
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="home.php">Home</a>
+					<a class="nav-link" href="user_home.php">Home</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +53,7 @@ Description: navigation bar to be included on
 					<a class="nav-link" href="user_event_view.php">Events</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">News</a>
+					<a class="nav-link" href="user_news.php">News</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Contact Us</a>
@@ -62,7 +62,7 @@ Description: navigation bar to be included on
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
 					} else {
-						echo '<a class="nav-link" href="staffLogin.php">Staff Login</a>';
+						echo '<a class="nav-link" href="login_form.php">Staff Login</a>';
 					} ?>
 				</li>
 			</ul>
