@@ -29,15 +29,16 @@ Description: Create a new event
     $time=date('H:i:sa');
 		$imgPath="";
 
-		//vars to upload image
-		$target_dir = "uploads/";
-		$target_file = $target_dir . basename($_FILES["img"]["name"]);
-		$uploadOk = 1;
-		$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-
 		//check form submission
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+			//array to hold all errors
 			$errors = array();
+
+			//vars to upload image
+			$target_dir = "uploads/";
+			$target_file = $target_dir . basename($_FILES["img"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
 			//check all fields are filled out
 			if(empty($_POST['title'])){
