@@ -25,7 +25,7 @@ Description: Create a news post
 		//Create vars for news table
 		$title="";
 		$desc="";
-    $date=date('d-m-Y');
+    $date=date('Y-m-d');
     $time=date('H:i:s');
 		$imgPath="";
 
