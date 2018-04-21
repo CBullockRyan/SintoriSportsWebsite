@@ -56,7 +56,7 @@ Description: navigation bar to be included on
 					<a class="nav-link" href="user_news.php">News</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contact Us</a>
+					<a class="nav-link" href="user_contact.php">Contact Us</a>
 				</li>
 				<li class="nav-item"><?php // Create a login/logout link:
 					if(isset($_SESSION['user'])) {
