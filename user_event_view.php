@@ -30,7 +30,7 @@ Description: View all events as regular user
 	$currentDate=date('Y-m-d H:i:s');
 
 	//query to bring up all events happening today or later
-	$q = "SELECT eventID, title, description, eventTime, eventDate, maxAttendee, currentAttendee FROM event WHERE eventDate > '$currentDate' ORDER BY eventDate";
+	$q = "SELECT eventID, title, description, eventTime, eventDate, maxAttendee, currentAttendee, imgPath FROM event WHERE eventDate > '$currentDate' ORDER BY eventDate";
 	$r = @mysqli_query($dbc, $q); //run $query
 
 	//check if ran correctly
@@ -46,7 +46,7 @@ Description: View all events as regular user
 				echo '<h2>' . $row['title'] . '</h2>
 				<p>Date: ' . $row['eventDate'] . '</p>
 				<p>Time: ' . $row['eventTime'] . '</p>
-				<p><img src="' . $row['image'] . '" alt="News image"></p>
+				<p><img src="' . $row['imgPath'] . '" alt="News image"></p>
         <p>' . $row['description'] . '</p>';
 
 				//check that max capacity is not reached
