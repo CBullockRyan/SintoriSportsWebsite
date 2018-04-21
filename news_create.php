@@ -1,7 +1,7 @@
 <!--************************************************
 Author: Cassidy Bullock
 Date: April 20, 2018
-Description: Create a new event
+Description: Create a news post
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
@@ -26,7 +26,7 @@ Description: Create a new event
 		$title="";
 		$desc="";
     $date=date('d-m-Y');
-    $time=date('H:i:sa');
+    $time=date('H:i:s');
 		$imgPath="";
 
 		//check form submission
