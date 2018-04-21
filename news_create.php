@@ -36,7 +36,7 @@ Description: Create a new event
 
 			//vars to upload image
 			$target_dir = "uploads/";
-			$target_file = $target_dir . basename($_FILES["img"]["name"]);
+			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
@@ -55,7 +55,7 @@ Description: Create a new event
 			}
 
 			//check image type
-			$check = getimagesize($_FILES["img"]["tmp_name"]);
+			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     	if($check !== false) {
         $uploadOk = 1;
     	} else {
@@ -70,7 +70,7 @@ Description: Create a new event
 			}
 
 			// Check file size
-			if ($_FILES["img"]["size"] > 500000) {
+			if ($_FILES["fileToUpload"]["size"] > 500000) {
     		array_push($errors, "Image must be smaller than 500000.");
     		$uploadOk = 0;
 			}
@@ -84,7 +84,7 @@ Description: Create a new event
 
 			// Upload image if there are no errors
 			if ($uploadOk !== 0) {
-    		if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+    		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         	//set image path so that it can be displayed on other pages
 					$imgPath = $target_file;
     		} else {
@@ -140,7 +140,7 @@ Description: Create a new event
 		<p>Title of Post: <input type="text" name="title" value="<?php echo $title ?>" /></p>
 		<p>Description: </p>
     <p><textarea name="desc" form="news" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
-		<p>Image: <input type="file" name="img" id="img" /></p>
+		<p>Image: <input type="file" name="fileToUpload" id="fileToUpload" /></p>
 		<p><input type="submit" name="Submit" value="submit" /></p>
 </body>
 
