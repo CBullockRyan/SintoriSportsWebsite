@@ -46,6 +46,7 @@ Description: View all events as regular user
 				echo '<h2>' . $row['title'] . '</h2>
 				<p>Date: ' . $row['eventDate'] . '</p>
 				<p>Time: ' . $row['eventTime'] . '</p>
+				<p><img src="' . $row['image'] . '" alt="News image"></p>
         <p>' . $row['description'] . '</p>';
 
 				//check that max capacity is not reached

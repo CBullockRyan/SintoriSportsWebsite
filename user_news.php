@@ -42,7 +42,6 @@ Description: View all news as a user
 			while ($row = mysqli_fetch_array($r)) {
 				echo '<h2>' . $row['title'] . '</h2>
 				<p>Date: ' . $row['newsDate'] . '</p>
-        <p><img src="' . $row['image'] . '" alt="News image"></p>
         <p>' . $row['description'] . '</p>';
 			}
 		}
