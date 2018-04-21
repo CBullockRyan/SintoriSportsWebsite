@@ -27,7 +27,7 @@ Description: View all news as a user
 	require ('connectDB.php');
 
 	//query to bring up all events happening today or later
-	$q = "SELECT newsID, title, description, newsDate, image FROM news ORDER BY newsDate DESC";
+	$q = "SELECT newsID, title, description, newsDate FROM news ORDER BY newsDate DESC";
 	$r = @mysqli_query($dbc, $q); //run $query
 
 	//check if ran correctly
@@ -42,7 +42,6 @@ Description: View all news as a user
 			while ($row = mysqli_fetch_array($r)) {
 				echo '<h2>' . $row['title'] . '</h2>
 				<p>Date: ' . $row['newsDate'] . '</p>
-        <p><img src="' . $row['image'] . '" alt="News image"></p>
         <p>' . $row['description'] . '</p>';
 			}
 		}
