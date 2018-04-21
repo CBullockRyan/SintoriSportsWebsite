@@ -62,7 +62,7 @@ Description: navigation bar to be included on
 					if(isset($_SESSION['user'])) {
 						echo '<a class="nav-link" href="logout.php">Logout</a>';
 					} else {
-						echo '<a class="nav-link" href="staffLogin.php">Staff Login</a>';
+						echo '<a class="nav-link" href="login_form.php">Staff Login</a>';
 					} ?>
 				</li>
 			</ul>
