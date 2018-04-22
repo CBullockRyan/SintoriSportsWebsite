@@ -41,7 +41,7 @@ Description: View all enquiries
     if($num > 0){
       //create table
       echo '<table>
-            <tr><td align="left"><b>Enquiry ID</b></td><td align="left"><b>| Subject</b></td>
+            <tr><td align="left"><b>ID</b></td><td align="left"><b>| Subject</b></td>
             <td align="left"><b>| Message</b></td><td align="left"><b>| Resolved?</b></td>
             <td align="left"><b>| Name </b></td><td align="left"><b>| Email</b></td>
             <td align="left"><b>| Phone</b></td></tr>';
