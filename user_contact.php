@@ -58,11 +58,102 @@ Description: View contact information and make enquiry
 
 	//if enquiry posted
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		$errors=array();
 
+		//make sure form is filled out
+		if(empty($_POST['fname'])){
+			array_push($errors, "Please enter the your first name.");
+		}
+		else{
+			$fname=trim($_POST['fname']);
+		}
+		if(empty($_POST['lname'])){
+			array_push($errors, "Please enter the your last name.");
+		}
+		else{
+			$lname=trim($_POST['lname']);
+		}
+		if(empty($_POST['phone'])){
+			array_push($errors, "Please enter the your contact number.");
+		}
+		else{
+			$phone=trim($_POST['phone']);
+		}
+		if(empty($_POST['email'])){
+			array_push($errors, "Please enter the your contact email.");
+		}
+		else{
+			$email=trim($_POST['email']);
+		}
+		if(empty($_POST['subject'])){
+			array_push($errors, "Please enter the subject of your enquiry.");
+		}
+		else{
+			$subject=trim($_POST['subject']);
+		}
+		if(empty($_POST['message'])){
+			array_push($errors, "Please record your enquiry.");
+		}
+		else{
+			$message=trim($_POST['message']);
+		}
+
+		//check errors are empty before sending Email
+		if(empty($errors)){
+			//code to email form... won't work because there is no email server
+			$msg=wordwrap($message,70);
+			mail($Lemail, $subject, $msg);
+
+			//record non-member Details
+			$q = "INSERT INTO nonmember (fname, lname, email, phone) VALUES ('$fname', '$lname', '$email', '$phone')";
+			$r = @mysqli_query($dbc, $q);
+
+			//get nonmember ID
+			$nmID = mysqli_insert_id($dbc);
+
+			//check that query ran
+			if($r){
+				//add enquiry to database since email would not work.
+				$q = "INSERT INTO enquiry (subject, enquiryComment, nonmemberID) VALUES ('$subject', '$message', '$nmID')";
+				$r = @mysqli_query($dbc, $q);
+
+				//check that it ran Successfully
+				if($r){
+					echo "<h2>Enquiry Sent</h2>
+					<p>Thank you for sending in your enquiry. We will get back to you soon.</p>";
+				} else{ //system error
+					echo '<h2>System Error</h2>
+					<p class="error">Your enquiry could not be submitted due to system error. We apologize for any inconvenience.</p>';
+					//debugging message
+					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q . '</p>';
+				}
+			} else{ //system error
+				echo '<h2>System Error</h2>
+				<p class="error">Your enquiry could not be submitted due to system error. We apologize for any inconvenience.</p>';
+				//debugging message
+				echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q . '</p>';
+			}
+		} else{ //display the errors
+			foreach($errors as $error){
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
+			}
+		}
 	} else{//print the form
 		echo "<h2>Get in Touch</h2>";
-		echo "<"
+		echo "<form action='user_contact.php' method='post' id='enquiry'>
+		<p>First Name: <input type='text' name='fname' value='$fname' /></p>
+		<p>Last Name: <input type='text' name='lname' value='$lname' /></p>
+		<p>Phone: <input type='text' name='phone' value='$phone' /></p>
+		<p>Email: <input type='email' name='email' value='$email' /></p>
+		<p>Subject: <input type='text' name='subject' value='$subject' /></p>
+		<p>Message: </p>
+    <p><textarea name='message' form='enquiry' rows='4' cols='40'>$message</textarea></p>
+		<p><input type='submit' name='Submit' value='submit' /></p>";
 	}
+	//disconnect from database
+	mysqli_close($dbc);
+
+	exit();
 ?>
 </body>
 
