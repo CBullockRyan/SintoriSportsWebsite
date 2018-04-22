@@ -30,6 +30,7 @@ Description: update a membership type
 	$row = mysqli_fetch_array($r);
 
 	//create vars for changing contact Details
+	$id=$row[0];
 	$phone=$row[1];
 	$address=$row[2];
 	$email=$row[3];
@@ -77,6 +78,35 @@ Description: update a membership type
 			array_push($errors, "Please enter a closing time for Fri-Sat.");
 		} else{
 			$fs_close=trim($_POST['fs_close']);
+		}
+
+		//make variables readable for sql
+		$phone = mysqli_real_escape_string($dbc, trim($phone));
+		$address = mysqli_real_escape_string($dbc, trim($address));
+		$email = mysqli_real_escape_string($dbc, trim($email));
+		$mt_open = mysqli_real_escape_string($dbc, trim($mt_open));
+		$mt_close = mysqli_real_escape_string($dbc, trim($mt_close));
+		$fs_open = mysqli_real_escape_string($dbc, trim($fs_open));
+		$fs_close = mysqli_real_escape_string($dbc, trim($fs_close));
+
+		//check there are no errors
+		if(empty($errors)){
+			//update information
+			$q = "UPDATE location SET phone='$phone', address='$address', email='$email', mon_thurs_open='$mt_open', mon_thurs_close='$mt_close', fri_sat_open='$fs_open', fri_sat_close='$fs_close'
+			WHERE locationID=$id LIMIT 1";
+			$r = @mysqli_query($dbc, $q);
+
+			//check that it ran
+			if($r){
+				echo "<h2>Details Successfully Updated </h2>";
+			} else{ //system error
+				echo '<p class="error">The contact details could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
+				//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+			}
+		} else{ // display errors
+			foreach($errors as $error){
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
+			}
 		}
 
 	} else{ //create form
