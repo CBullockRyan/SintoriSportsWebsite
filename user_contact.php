@@ -55,6 +55,7 @@ Description: View contact information and make enquiry
 	echo "<p><b>Phone: </b>$Lphone</p>
 				<p><b>Address: </b>$Laddress</p>
 				<p><b>Email: </b>$Lemail</p";
+	echo "<h2>Get in Touch</h2>";
 
 	//if enquiry posted
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -139,7 +140,6 @@ Description: View contact information and make enquiry
 			}
 		}
 	} else{//print the form
-		echo "<h2>Get in Touch</h2>";
 		echo "<form action='user_contact.php' method='post' id='enquiry'>
 		<p>First Name: <input type='text' name='fname' value='$fname' /></p>
 		<p>Last Name: <input type='text' name='lname' value='$lname' /></p>
