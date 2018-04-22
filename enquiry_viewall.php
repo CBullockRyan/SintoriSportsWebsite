@@ -26,10 +26,55 @@ Description: View all enquiries
   //connect to database
   require ('connectDB.php');
 
+	//how many records to display on a page
+	$display=19;
+
+	//get number of pages
+	if (isset($_GET['p']) && is_numeric($_GET['p'])) {  // p sent in url
+		$pages = $_GET['p'];
+	} else {
+		//count number of records for pagination
+		$q = "SELECT COUNT(enquiryID) FROM enquiry";
+		$r = @mysqli_query($dbc, $q);
+		$row = mysqli_fetch_array($r);
+		$records = $row[0];
+
+		//calculate how many pages
+		if($records > $display){
+			$pages= ceil($records/$display);
+		} else {
+			$pages=1;
+		}
+	}
+
+	//where in database to start retrieving records
+	if (isset($_GET['s']) && is_numeric($_GET['s'])) { // get s (start) from the url
+		$start = $_GET['s'];
+	} else {
+		$start = 0;
+	}
+
+	// Determine the sort
+	$sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'res';
+
+	// Determine the sorting order:
+	switch ($sort) {
+		case 'ID':
+			$order_by = 'enquiry.enquiryID';
+			break;
+		case 'res':
+			$order_by = 'enquiry.resolved';
+			break;
+		default:
+			$order_by = 'enquiry.resolved';
+			$sort = 'res';
+			break;
+	}
+
   //query to bring up all records
   $q = "SELECT enquiry.enquiryID, enquiry.subject, enquiry.enquiryComment, enquiry.resolved, nonmember.fname, nonmember.lname, nonmember.email, nonmember.phone
   FROM enquiry INNER JOIN nonmember ON enquiry.nonmemberID = nonmember.nonmemberID
-  ORDER BY enquiry.resolved";
+  ORDER BY $order_by LIMIT $start, $display";
 
   $r = @mysqli_query($dbc, $q); //run $query
 
@@ -39,6 +84,11 @@ Description: View all enquiries
     $num = mysqli_num_rows($r);
     //make sure table isnt empty
     if($num > 0){
+			// sort by links
+			echo "<p>Sort By:
+			<a href='enquiry_viewall.php?sort=ID'>ID </a>
+			<a href='enquiry_viewall.php?sort=res'>Resolved</a></p>";
+
       //create table
       echo '<table>
             <tr><td align="left"><b>ID</b></td><td align="left"><b>| Subject</b></td>
@@ -58,8 +108,33 @@ Description: View all enquiries
 
             echo '</table>'; // Close the table.
 
+						// Make the links to other pages, if necessary.
+						if ($pages > 1) {
+							echo '<br /><p>';
+							$current_page = ($start/$display) + 1;
+
+							// If it's not the first page, make a Previous link:
+							if ($current_page != 1) {
+								echo '<a href="enquiry_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+							}
+
+							// Make all the numbered pages:
+							for ($i = 1; $i <= $pages; $i++) {
+								if ($i != $current_page) {
+									echo '<a href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+								} else {
+									echo $i . ' ';
+								}
+							}
+							// If it's not the last page, make a Next link:
+							if ($current_page != $pages) {
+								echo '<a href="enquiry_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+							}
+							echo '</p>';
+						}
+
             //Show how many records exist
-            echo "<br/><br/>There are $num records in the database.";
+            echo "<br/>There are $num records in the database.";
           }
           else{
             echo "There are no enquiries in the database<br/>";
