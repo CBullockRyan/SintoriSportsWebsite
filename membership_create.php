@@ -21,16 +21,16 @@ Description: Create membership page, works with
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php'); ?>
+	<?php include ('staffnav.inc.php');
 
-	<?php
 		//Create vars for form data
 		$mType="";
 		$payment="";
+		
 		//check form submission
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$errors = array();
-			
+
       //check all fields are filled out
 			if (empty($_POST['payment'])){
 				array_push($errors, "Please add a payment <br/>");
@@ -38,6 +38,7 @@ Description: Create membership page, works with
 			else{
 				$payment = $_POST['payment'];
 			}
+
 			//mtype should have a value no matter what
 			$mType = $_POST['mType'];
 
@@ -45,17 +46,20 @@ Description: Create membership page, works with
 			if(empty($errors)){
 				//connect to database
 				require ('connectDB.php');
+
 				//fill variables
 				$mType = mysqli_real_escape_string($dbc, trim($mType));
 				$payment = mysqli_real_escape_string($dbc, trim($payment));
+
 				//insert data into membership table
 				$q1 = "Insert into membership (infoID) values ('$mType')";
 				$r1 = @mysqli_query($dbc, $q1); //run query
+
 				//get the ID to use as foreign key
 				$membershipID= mysqli_insert_id($dbc);
+
 				//check membership table query ran
 				if($r1){
-
 						//insert data into payment tables
 						$paymentDate=date('Y-m-d H:i:s');
 						$q3 = "Insert into payment (datePaid, amount, membershipID) values ('$paymentDate', '$payment', '$membershipID')";
