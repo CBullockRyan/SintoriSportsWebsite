@@ -27,7 +27,7 @@ Description: View all membership types
 	require ('connectDB.php');
 
 	//how many records to display on a page
-	$display=20;
+	$display=19;
 
 	//get number of pages
 	if (isset($_GET['p']) && is_numeric($_GET['p'])) {  // p sent in url
