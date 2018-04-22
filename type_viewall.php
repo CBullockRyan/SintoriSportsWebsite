@@ -54,8 +54,28 @@ Description: View all membership types
 		$start = 0;
 	}
 
+	// Determine the sort
+	$sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'ID';
+
+	// Determine the sorting order:
+	switch ($sort) {
+		case 'max':
+			$order_by = 'maxMembers';
+			break;
+		case 'fee':
+			$order_by = 'membershipFee';
+			break;
+		case 'ID':
+			$order_by = 'infoID';
+			break;
+		default:
+			$order_by = 'infoID';
+			$sort = 'ID';
+			break;
+	}
+
 	//query to bring up all records
-	$q = "SELECT * FROM membershipinfo ORDER BY infoID LIMIT $start, $display";
+	$q = "SELECT * FROM membershipinfo ORDER BY $order_by LIMIT $start, $display";
 	$r = @mysqli_query($dbc, $q); //run $query
 
 	//check if ran correctly
@@ -65,6 +85,12 @@ Description: View all membership types
 
 		//make sure table isnt empty
 		if($num > 0){
+			// sort by links
+			echo "<p>Sort By:
+			<a href='type_viewall.php?sort=ID'>infoID </a>
+			<a href='type_viewall.php?sort=max'>Maximum Members</a>
+			<a href='type_viewall.php?sort=fee'>Annual Fee</a></p>";
+
 			//create table
 			echo '<table>
 						<tr><td align="left"><b>Type ID</b></td><td align="left"><b>| Type</b></td>
@@ -90,21 +116,20 @@ Description: View all membership types
 
 							// If it's not the first page, make a Previous link:
 							if ($current_page != 1) {
-								echo '<a href="type_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '">Previous</a> ';
+								echo '<a href="type_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
 							}
 
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="type_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '">' . $i . '</a> ';
+									echo '<a href="type_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
 								} else {
 									echo $i . ' ';
 								}
 							}
-
 							// If it's not the last page, make a Next link:
 							if ($current_page != $pages) {
-								echo '<a href="type_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '">Next</a>';
+								echo '<a href="type_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
 							}
 							echo '</p>';
 						}
