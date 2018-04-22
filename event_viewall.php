@@ -87,7 +87,7 @@ Description: View all events as manager
 			// sort by links
 			echo "<p>Sort By:
 			<a href='event_viewall.php?sort=ID'>ID </a>
-			<a href='event_viewall.php?sort=date'>Event Date</a>
+			<a href='event_viewall.php?sort=date'>Event Date </a>
 			<a href='event_viewall.php?sort=att'>Current Number of Attendees</a></p>";
 
 			//create table
