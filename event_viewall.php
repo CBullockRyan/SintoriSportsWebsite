@@ -75,7 +75,7 @@ Description: View all events as manager
 	}
 
 	//query to bring up all records
-	$q = "SELECT eventID, title, eventTime, eventDate, maxAttendee FROM event ORDER BY $order_by LIMIT $start, $display";
+	$q = "SELECT eventID, title, eventTime, eventDate, maxAttendee, currentAttendee FROM event ORDER BY $order_by LIMIT $start, $display";
 	$r = @mysqli_query($dbc, $q); //run $query
 
 	//check if ran correctly
@@ -94,7 +94,8 @@ Description: View all events as manager
 			echo '<table>
 						<tr><td align="left"><b>Event ID</b></td><td align="left"><b>| Title</b></td>
 						<td align="left"><b>| Time</b></td><td align="left"><b>| Date</b></td>
-						<td align="left"><b>| Max. No. of Attendees</b></td><</tr>';
+						<td align="left"><b>| Max. No. of Attendees</b></td>
+						<td align="left"><b>| Current No. of Attendees</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
@@ -102,7 +103,8 @@ Description: View all events as manager
 							<td align="left">| ' . $row['title'] . '</td>
 							<td align="left">| ' . $row['eventTime'] . '</td>
               <td align="left">| ' . $row['eventDate'] . '</td>
-							<td align="left">| ' . $row['maxAttendee'] . '</td>' .
+							<td align="left">| ' . $row['maxAttendee'] . '</td>
+							<td align="left">| ' . $row['currentAttendee'] . '</td>' .
 							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/event_update.php?id=" . $row['eventID'] . ">Update</a></td></tr>";
 						}
 
