@@ -82,7 +82,10 @@ Description: navigation bar to be included on
 					<a class="nav-link" href="news_create.php">Add News</a>
 				</li>
 				<li class='nav-item'>
-					<a class="nav-link" href="#">Enquiries</a>
+					<a class="nav-link" href="enquiry_viewall.php">Enquiries</a>
+				</li>
+				<li class='nav-item'>
+					<a class="nav-link" href="#">Contact Details</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
