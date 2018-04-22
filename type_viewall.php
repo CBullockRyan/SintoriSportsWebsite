@@ -90,13 +90,13 @@ Description: View all membership types
 
 							// If it's not the first page, make a Previous link:
 							if ($current_page != 1) {
-								echo '<a href="view_users.php?s=' . ($start - $display) . '&p=' . $pages . '">Previous</a> ';
+								echo '<a href="type_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '">Previous</a> ';
 							}
 
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="view_users.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '">' . $i . '</a> ';
+									echo '<a href="type_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '">' . $i . '</a> ';
 								} else {
 									echo $i . ' ';
 								}
@@ -104,7 +104,7 @@ Description: View all membership types
 
 							// If it's not the last page, make a Next link:
 							if ($current_page != $pages) {
-								echo '<a href="view_users.php?s=' . ($start + $display) . '&p=' . $pages . '">Next</a>';
+								echo '<a href="type_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '">Next</a>';
 							}
 							echo '</p>';
 						}
