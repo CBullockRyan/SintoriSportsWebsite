@@ -113,7 +113,7 @@ Description: update a membership type
 			echo "<h1>Contact Details and Opening Hours</h1>";
 			echo "<form action='location_update.php' method='post' >
 			<p>Phone: <input type='text' name='phone' value='$phone' /></p>
-			<p>Address: <input type='text' name='phone' value='$address' /></p>
+			<p>Address: <input type='text' name='address' value='$address' /></p>
 			<p>Email: <input type='email' name='email' value='$email' /></p>
 			<p>Monday-Thursday Opening Time: <input type='time' name='mt_open' value='$mt_open' /></p>
 			<p>Monday-Thursday Closing Time: <input type='time' name='mt_close' value='$mt_close' /></p>
