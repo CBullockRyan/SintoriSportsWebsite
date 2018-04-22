@@ -41,7 +41,7 @@ Description: View all membership types
 
 		//calculate how many pages
 		if($records > $display){
-			$pages= ceil($records/$display)
+			$pages= ceil($records/$display);
 		} else {
 			$pages=1;
 		}
