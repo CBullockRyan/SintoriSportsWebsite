@@ -102,7 +102,8 @@ Description: View contact information and make enquiry
 		if(empty($errors)){
 			//code to email form... won't work because there is no email server
 			$msg=wordwrap($message,70);
-			mail($Lemail, $subject, $msg);
+			$header="From: $email";
+			mail($Lemail, $subject, $msg, $header);
 
 			//record non-member Details
 			$q = "INSERT INTO nonmember (fname, lname, email, phone) VALUES ('$fname', '$lname', '$email', '$phone')";
