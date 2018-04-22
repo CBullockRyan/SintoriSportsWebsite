@@ -98,6 +98,14 @@ Description: View contact information and make enquiry
 			$message=trim($_POST['message']);
 		}
 
+		//make all variables readable by sql
+		$fname = mysqli_real_escape_string($dbc, trim($fname));
+		$lname = mysqli_real_escape_string($dbc, trim($lname));
+		$phone = mysqli_real_escape_string($dbc, trim($phone));
+		$email = mysqli_real_escape_string($dbc, trim($email));
+		$subject = mysqli_real_escape_string($dbc, trim($subject));
+		$message = mysqli_real_escape_string($dbc, trim($message));
+
 		//check errors are empty before sending Email
 		if(empty($errors)){
 			//code to email form... won't work because there is no email server
