@@ -26,7 +26,7 @@ Description: redirected from login page, confirms login
 		redirect();
 	}
 	?>
-	<?php include ('staffnav.inc.php'); ?>
+	<?php include ('nav_staff.inc.php'); ?>
 	<h1>Login Success</h1>
 	<p>Welcome you are successfully logged in.</p>
 	<p><a href="logout.php">Logout</a></p>

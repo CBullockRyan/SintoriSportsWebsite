@@ -19,7 +19,7 @@ Description: View all events as manager
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php');
+	<?php include ('nav_staff.inc.php');
 
 	echo '<h1>All Events</h1>';
 

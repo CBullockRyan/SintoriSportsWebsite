@@ -19,7 +19,7 @@ Description: update a membership to change status.
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php');
+	<?php include ('nav_staff.inc.php');
 
 	//error array
 	$errors=array();

@@ -19,7 +19,7 @@ Description: create a member
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php');
+	<?php include ('nav_staff.inc.php');
   // Check for a valid mID and mType, through GET or POST:
 	if ( (isset($_GET['mID'])) && (is_numeric($_GET['mID'])) ) { // From membership_create.php
 		$mID = $_GET['mID'];

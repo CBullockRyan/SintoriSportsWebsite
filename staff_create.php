@@ -19,7 +19,7 @@ Description: Create new staff member
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php'); ?>
+	<?php include ('nav_staff.inc.php'); ?>
 
 	<?php
 		//Create vars for form data

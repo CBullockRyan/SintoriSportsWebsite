@@ -19,7 +19,7 @@ Description: Update a staff member
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php');
+	<?php include ('nav_staff.inc.php');
 
   // Check for a valid user ID, through GET or POST:
 	if ( (isset($_GET['id'])) && (is_numeric($_GET['id'])) ) { // From view_users.php

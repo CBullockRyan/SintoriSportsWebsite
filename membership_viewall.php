@@ -19,7 +19,7 @@ Description: View all memberships
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php');
+	<?php include ('nav_staff.inc.php');
 
 	//connect to database
 	require ('connectDB.php');

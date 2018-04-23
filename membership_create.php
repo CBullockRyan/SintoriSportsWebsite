@@ -21,12 +21,12 @@ Description: Create membership page, works with
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php');
+	<?php include ('nav_staff.inc.php');
 
 		//Create vars for form data
 		$mType="";
 		$payment="";
-		
+
 		//check form submission
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$errors = array();

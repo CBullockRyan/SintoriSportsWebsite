@@ -19,7 +19,7 @@ Description: Create a new event
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php'); ?>
+	<?php include ('nav_staff.inc.php'); ?>
 
 	<?php
 		//Create vars for form data

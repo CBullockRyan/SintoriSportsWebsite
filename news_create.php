@@ -19,7 +19,7 @@ Description: Create a news post
 </head>
 
 <body>
-	<?php include ('staffnav.inc.php'); ?>
+	<?php include ('nav_staff.inc.php'); ?>
 
 	<?php
 		//Create vars for news table
