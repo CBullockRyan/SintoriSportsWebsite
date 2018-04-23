@@ -28,7 +28,10 @@ Description: payment report for user generated date
 
   //check form submission
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $errors=array();
+		//connect to database
+		require ('connectDB.php');
+
+		$errors=array();
 
     //check that all fields were filled out
     if(empty($_POST['start'])){
@@ -52,8 +55,6 @@ Description: payment report for user generated date
 
 		//check that there are no errors
 		if(empty($errors)){
-			//connect to database
-			require ('connectDB.php');
 
 			//query to bring up all records within date range
 			$q = "SELECT * FROM payment
