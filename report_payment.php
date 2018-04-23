@@ -34,12 +34,12 @@ Description: payment report for user generated date
     if(empty($_POST['start'])){
       array_push($errors, "Please enter start of date range.");
     } else {
-      $start = mysqli_real_escape_string(trim($_POST['start']));
+      $start = mysqli_real_escape_string($dbc, trim($_POST['start']));
     }
     if(empty($_POST['end'])){
       array_push($errors, "Please enter end of date range.");
     } else {
-      $end = mysqli_real_escape_string(trim($_POST['end']));
+      $end = mysqli_real_escape_string($dbc, trim($_POST['end']));
     }
 
 		//if start and end date are in the wrong order, switch them
