@@ -17,6 +17,7 @@ Description: payment report for user generated date
 <head>
 	<title>Payment Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="linegraph.js">
 </head>
 
 <body>
