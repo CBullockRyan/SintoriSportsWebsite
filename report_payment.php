@@ -65,6 +65,12 @@ Description: payment report for user generated date
 				while($row = mysqli_fetch_array($r)){
 						array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
 				}
+
+				//test what is in the array
+				$ctr = 0;
+				while($dataPts){
+					echo "Row $ctr: $dataPts[$ctr][] </br>";
+				}
 		} else { // display errors
 			foreach($errors as $error){
 				echo " -$error </br>";
