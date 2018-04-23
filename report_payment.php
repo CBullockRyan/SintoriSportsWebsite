@@ -71,6 +71,7 @@ Description: payment report for user generated date
 				$ctr = 0;
 				while($dataPts){
 					echo "Row $ctr: $dataPts[$ctr][] </br>";
+					$ctr++;
 				}
 		} else { // display errors
 			foreach($errors as $error){
