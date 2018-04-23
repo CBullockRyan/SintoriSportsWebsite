@@ -63,16 +63,10 @@ Description: payment report for user generated date
 
 			//create array with graph values
 			$dataPts = array();
-				while($row = mysqli_fetch_array($r)){
-						array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
-				}
+			while($row = mysqli_fetch_array($r)){
+				array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
+			}
 
-				//test what is in the array
-				$ctr = 0;
-				while($dataPts){
-					echo "Row $ctr: $dataPts[$ctr][] </br>";
-					$ctr++;
-				}
 		} else { // display errors
 			foreach($errors as $error){
 				echo " -$error </br>";
@@ -88,6 +82,9 @@ Description: payment report for user generated date
     <p>End Date: <input type='date' name='end' value=<?php echo $end ?> /></p>
     <p><input type='submit' name='Submit' value='submit' /></p>
   </form>
+	<div class="chart-container">
+		<canvas id="mycanvas"></canvas>
+	</div>
 </body>
 
 </html>
