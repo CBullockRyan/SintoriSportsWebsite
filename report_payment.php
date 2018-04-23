@@ -61,11 +61,10 @@ Description: payment report for user generated date
 			$r = @mysqli_query($dbc, $q);
 
 			//create array with graph values
-			$dataPts = array(
+			$dataPts = array();
 				while($row = mysqli_fetch_array($r)){
-						array("x" => $row['datePaid'], "y" => $row['amount']),
+						array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
 				}
-			);
 		} else { // display errors
 			foreach($errors as $error){
 				echo " -$error </br>";
