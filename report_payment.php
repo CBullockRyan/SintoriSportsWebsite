@@ -8,7 +8,6 @@ Description: payment report for user generated date
 	if(session_status() == PHP_SESSION_NONE){
 		session_start();
 	}
-	header('Content-Type: application/json');
 ?>
 
 <!doctype html>
@@ -18,8 +17,6 @@ Description: payment report for user generated date
 <head>
 	<title>Payment Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
-	</script>
 </head>
 
 <body>
@@ -60,7 +57,7 @@ Description: payment report for user generated date
 		if(empty($errors)){
 
 			//query to bring up all records within date range
-			$q = "SELECT datePaid, amount FROM payment
+			$q = "SELECT * FROM payment
 						WHERE datePaid BETWEEN '$start' AND '$end'";
 			$r = @mysqli_query($dbc, $q);
 
@@ -70,10 +67,6 @@ Description: payment report for user generated date
 				array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
 			}
 
-			//create chart
-			echo "<canvas id='mycanvas'></canvas>";
-			echo "<script>
-			";
 		} else { // display errors
 			foreach($errors as $error){
 				echo " -$error </br>";
@@ -89,6 +82,9 @@ Description: payment report for user generated date
     <p>End Date: <input type='date' name='end' value=<?php echo $end ?> /></p>
     <p><input type='submit' name='Submit' value='submit' /></p>
   </form>
+	<div class="chart-container">
+		<canvas id="mycanvas"></canvas>
+	</div>
 </body>
 
 </html>
