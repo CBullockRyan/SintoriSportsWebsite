@@ -86,8 +86,8 @@ Description: View all enquiries
     if($num > 0){
 			// sort by links
 			echo "<p>Sort By:
-			<a href='enquiry_viewall.php?sort=ID'>ID </a>
-			<a href='enquiry_viewall.php?sort=res'>Resolved</a></p>";
+			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=res'>Resolved</a></p>";
 
       //create table
       echo '<table>
