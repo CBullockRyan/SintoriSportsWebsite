@@ -12,7 +12,7 @@ Description: enquiry status report
   require ('connectDB.php');
 
   //query to get information
-  $q = "SELECT resolved, count(*) GROUP BY resolved";
+  $q = "SELECT resolved, count(*) AS numGroup GROUP BY resolved";
   $r = @mysqli_query($dbc, $q);
 ?>
 
@@ -25,7 +25,6 @@ Description: enquiry status report
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript" src="js/paymentChart.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -37,7 +36,7 @@ Description: enquiry status report
         <?php
           if(mysqli_num_rows($r) > 0){
             while($row = mysqli_fetch_array($r)){
-              echo "['".$row['resolved']."', ".$row['count(*)']."],";
+              echo "['".$row['resolved']."', ".$row['numGroup']."],";
             }
           }
         ?>
