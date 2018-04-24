@@ -84,21 +84,21 @@ Description: View all memberships
 		//make sure table isnt empty
 		if($num > 0){
 			// sort by links
-			echo "<p>Sort By:
+			echo "<h4 class='text-right'>Sort By:
 			<a type='button' class='btn btn-outline-info' href='membership_viewall.php?sort=ID'>ID </a>
-			<a type='button' class='btn btn-outline-info' href='membership_viewall.php?sort=stat'>Status</a></p>";
+			<a type='button' class='btn btn-outline-info' href='membership_viewall.php?sort=stat'>Status</a></h4>";
 
 			//create table
-			echo '<table>
+			echo '<table class="table">
 						<tr><td align="left"><b>Membership ID</b></td>
-            <td align="left"><b>| infoID</b></td>
-						<td align="left"><b>| Status</b></td></tr>';
+            <td align="left"><b>infoID</b></td>
+						<td align="left"><b>Status</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
 							echo '<tr><td align="left">' . $row['membershipID'] . '</td>
-							<td align="left">| ' . $row['infoID'] . '</td>
-							<td align="left">| ' . $row['status'] . '</td>' .
+							<td align="left">' . $row['infoID'] . '</td>
+							<td align="left">' . $row['status'] . '</td>' .
 							"<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/membership_delete.php?id=" . $row['membershipID'] . ">Delete</a></td></tr>";
 						}
 
