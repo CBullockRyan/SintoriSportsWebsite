@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on("click",’.shares’, function (event){
 	$.ajax({
 		url: "http://localhost/SintoriSportsWebsite/data.php",
 		method: "GET",
