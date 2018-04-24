@@ -95,52 +95,48 @@ Description: payment report
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
-	google.charts.load('current', {'packages':['bar']});
-	google.charts.setOnLoadCallback(drawChart);
+	<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
 
-	function drawChart() {
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Opening Move', 'Percentage'],
+          ["King's pawn (e4)", 44],
+          ["Queen's pawn (d4)", 31],
+          ["Knight to King 3 (Nf3)", 12],
+          ["Queen's bishop pawn (c4)", 10],
+          ['Other', 3]
+        ]);
 
-		var data =  new google.visualization.arrayToDataTable([
-			['Month', 'Amount'],
-			['January', 20],
-			['February', 40],
-			['March', 30],
-			['April', 20],
-			['May', 20],
-			['June', 10],
-			['July', 5],
-			['August', 20],
-			['September', 30],
-			['October', 30],
-			['November', 40],
-			['December', 45]
-		]);
-
-		var options = {
-          title: 'Membership Payments by Month',
+        var options = {
+          title: 'Chess opening moves',
           width: 900,
           legend: { position: 'none' },
-          chart: { title: 'Membership Payments',
-                   subtitle: 'Totaled by month' },
+          chart: { title: 'Chess opening moves',
+                   subtitle: 'popularity by percentage' },
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {
             x: {
-              0: { side: 'top', label: 'Dollars'} // Top x-axis.
+              0: { side: 'top', label: 'Percentage'} // Top x-axis.
             }
           },
           bar: { groupWidth: "90%" }
         };
 
-		var chart = new google.visualization.Bar(document.getElementById('barchart'));
-
-		chart.draw(data, options);
-	</script>
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
 </head>
 
 <body>
 	<?php include ('nav_staff.inc.php'); ?>
 
-	<div id="barchart" style="width: 900px; height: 500px;"></div>
+	<div id="top_x_div" style="width: 900px; height: 500px;"></div>
 </body>
 
 </html>
