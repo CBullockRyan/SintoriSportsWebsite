@@ -65,7 +65,7 @@ Description: View all members
 		//make sure table isnt empty
 		if($num > 0){
 			//create table
-			echo '<table class="table">
+			echo '<table class="table table-border">
 						<tr><td align="left"><b>Member ID</b></td>
 						<td align="left"><b>First Name</b></td><td align="left"><b>Last Name</b></td>
 						<td align="left"><b>Phone</b></td><td align="left"><b>Email</b></td>
