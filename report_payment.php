@@ -18,7 +18,7 @@ Description: payment report for user generated date
 	<title>Payment Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-	<script type="text/javascript" src="js/Chart.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" src="js/paymentChart.js"></script>
 </head>
 
@@ -97,9 +97,7 @@ Description: payment report for user generated date
     <p>End Date: <input type='date' name='end' value=<?php echo $end ?> /></p>
     <p><input type='submit' name='Submit' value='submit' /></p>
   </form>
-	<div id="chart-container">
-		<canvas id="paymentChart"></canvas>
-	</div>
+	<div id="chart_div"></div>
 </body>
 
 </html>
