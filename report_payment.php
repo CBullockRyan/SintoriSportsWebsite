@@ -17,7 +17,7 @@ Description: payment report
 	WHERE datePaid BETWEEN '2018-01-01' AND '2018-01-31'";
 	$r = @mysqli_query($dbc, $q);
 	$row = mysqli_fetch_array($r);
-	$jan = 400;
+	$jan = 0;
 	//february
 	$q = "SELECT sum(amount) FROM payment
 	WHERE datePaid BETWEEN '2018-02-01' AND '2018-02-28'";
