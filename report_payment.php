@@ -127,7 +127,7 @@ Description: payment report
           bar: { groupWidth: "90%" }
         };
 
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        var chart = new google.charts.Bar(document.getElementById('barchart'));
         chart.draw(data, options);
       };
     </script>
@@ -136,7 +136,7 @@ Description: payment report
 <body>
 	<?php include ('nav_staff.inc.php'); ?>
 
-	<div id="top_x_div" style="width: 900px; height: 500px;"></div>
+	<div id="barchart" style="width: 900px; height: 500px;"></div>
 </body>
 
 </html>
