@@ -104,7 +104,7 @@ Description: View all membership types
 							<td align="left">| ' . $row['maxMembers'] . '</td>
               <td align="left">| '. $row['membershipFee'] . '</td>' .
 							"<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/type_update.php?id=" . $row['infoID'] . ">Update</a></td>
-							<td align='left'><a href=http://localhost/SintoriSportsWebsite/type_delete.php?id=" . $row['infoID'] . ">Delete</a></td></tr>";
+							<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/type_delete.php?id=" . $row['infoID'] . ">Delete</a></td></tr>";
 						}
 
 						echo '</table>'; // Close the table.
