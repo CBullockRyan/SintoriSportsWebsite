@@ -67,7 +67,7 @@ Description: View all members
 			//create table
 			echo '<table>
 						<tr><td align="left"><b>Member ID</b></td>
-						<td align="left"><b>| First Name</b></td><td align="left"><b>| Last Name</b></td>
+						<td class="card-body" align="left"><b>| First Name</b></td><td align="left"><b>| Last Name</b></td>
 						<td align="left"><b>| Phone</b></td><td align="left"><b>| Email</b></td>
             <td align="left"><b>| Address</b></td><td align="left"><b>| Gender</b></td>
 						<td align="left"><b>| Date of Birth</b></td><td align="left"><b>| Membership ID</b></td></tr>';
