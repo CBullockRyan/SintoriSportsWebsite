@@ -110,7 +110,7 @@ Description: View all enquiries
 
 						// Make the links to other pages, if necessary.
 						if ($pages > 1) {
-							echo '<br /><p><ul class="pagination">';
+							echo '<br /><p><nav aria-label="Page Navigation"><ul class="pagination">';
 							$current_page = ($start/$display) + 1;
 
 							// If it's not the first page, make a Previous link:
@@ -130,7 +130,7 @@ Description: View all enquiries
 							if ($current_page != $pages) {
 								echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a></li>';
 							}
-							echo '</ul></p>';
+							echo '</ul></nav></p>';
 						}
 
             //Show how many records exist
