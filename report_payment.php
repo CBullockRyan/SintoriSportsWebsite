@@ -101,7 +101,7 @@ Description: payment report
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
           ['Month', 'Total Payment'],
-          ["January", 44],
+          ["January", <?php echo $jan ?>],
           ["February", 31],
 					["March", 31],
           ["April", 12],
