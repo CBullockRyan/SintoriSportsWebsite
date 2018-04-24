@@ -116,8 +116,8 @@ Description: payment report
           title: 'Chess opening moves',
           width: 900,
           legend: { position: 'none' },
-          chart: { title: 'Chess opening moves',
-                   subtitle: 'popularity by percentage' },
+          chart: { title: 'Membership Payments',
+                   subtitle: 'Total Dollars per Month' },
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {
             x: {
