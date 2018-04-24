@@ -19,7 +19,7 @@ Description: payment report for user generated date
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="js/Chart.min.js"></script>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="js/myCharts.js"></script>
+	<script type="text/javascript" src="js/paymentChart.js"></script>
 </head>
 
 <body>
