@@ -112,14 +112,14 @@ Description: Update an event
 		echo "<h1>Update an Event</h1>";
 		echo "<p>Event ID: $eventID</p>";
 		echo "<form action='event_update.php' method='post' id='event'>
-			<p>Event Title: <input type='text' name='title' value='$title' /></p>
+			<p>Event Title: <input class='col-3 form-control' type='text' name='title' value='$title' /></p>
 			<p>Event Description:</p>
-      <p><textarea name='desc' form='event' rows='4' cols=40 > $desc </textarea></p>
-			<p>Event Start Time: <input type='time' name='time' value='$time' /></p>
-			<p>Event Start Date: <input type='date' name='date' value='$date' /></p>
-      <p>Maximum Number of Attendees: <input type='number' name='max' value='$max' /></p>
+      <p><textarea class='form-control' name='desc' form='event' rows='4' cols=40 > $desc </textarea></p>
+			<p>Event Start Time: <input class='col-3 form-control' type='time' name='time' value='$time' /></p>
+			<p>Event Start Date: <input class='col-3 form-control' type='date' name='date' value='$date' /></p>
+      <p>Maximum Number of Attendees: <input class='col-3 form-control' type='number' name='max' value='$max' /></p>
 			<input type='hidden' name='id' value='" . $id . "' />
-			<p><input type='submit' name='submit' value='Update' /></p>";
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Update' /></p>";
 	}
 	//disconnect from database
 	mysqli_close($dbc);
