@@ -57,22 +57,24 @@ Description: payment report for user generated date
 		if(empty($errors)){
 
 			//query to bring up all records within date range
-			$q = "SELECT * FROM payment
+			$q = "SELECT datePaid, amount FROM payment
 						WHERE datePaid BETWEEN '$start' AND '$end'";
 			$r = @mysqli_query($dbc, $q);
 
 			//create file with graph values
 			$file = fopen("data.php", "w");
 
-			//array of datapoints
-			$dataPts = array();
+			//write in file
+			fwrite($file, "[\n");
 
 			while($row = mysqli_fetch_array($r)){
-				array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
+				fwrite($file, "{\n");
+				fwrite($file, "\"datePaid\" : \"$row['datePaid']\",\n");
+				fwrite($file, "\"amount\" : \"$row['amount']\"\n},\n");
 			}
 
 			//put graph values in the file
-			fwrite($file, $dataPts);
+			fwrite($file, "]");
 
 			//close file
 			fclose($file);
