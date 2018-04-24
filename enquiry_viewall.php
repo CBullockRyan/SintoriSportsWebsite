@@ -85,7 +85,7 @@ Description: View all enquiries
     //make sure table isnt empty
     if($num > 0){
 			// sort by links
-			echo "<p>Sort By:
+			echo "<p><h3>Sort By:</h3>
 			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=ID'>ID </a>
 			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=res'>Resolved</a></p>";
 
