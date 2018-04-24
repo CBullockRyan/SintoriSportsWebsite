@@ -120,7 +120,7 @@ Description: payment report
 			title: 'Total Membership Payments by Month',
 		};
 
-		var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+		var chart = new google.visualization.Bar(document.getElementById('barchart'));
 
 		chart.draw(data, options);
 	</script>
