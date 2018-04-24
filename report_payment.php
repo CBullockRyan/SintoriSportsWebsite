@@ -104,18 +104,19 @@ Description: payment report
 
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
-          ['Opening Move', 'Percentage'],
-          ["King's pawn (e4)", 44],
-          ["Queen's pawn (d4)", 31],
-          ["Knight to King 3 (Nf3)", 12],
-					["Knight to King 3 (Nf3)", 12],
-					["Knight to King 3 (Nf3)", 12],
-					["Knight to King 3 (Nf3)", 12],
-					["Knight to King 3 (Nf3)", 12],
-					["Knight to King 3 (Nf3)", 12],
-					["Knight to King 3 (Nf3)", 12],
-          ["Queen's bishop pawn (c4)", 10],
-          ['Other', 3]
+          ['Month', 'Total Payment'],
+          ["January", 44],
+          ["February", 31],
+					["March", 31],
+          ["April", 12],
+					["May", 12],
+					["June", 12],
+					["July", 12],
+					["August", 12],
+					["September", 12],
+					["October", 12],
+          ["November", 10],
+          ['December', 3]
         ]);
 
         var options = {
