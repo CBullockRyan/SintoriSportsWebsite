@@ -117,8 +117,19 @@ Description: payment report
 		]);
 
 		var options = {
-			title: 'Total Membership Payments by Month',
-		};
+          title: 'Membership Payments by Month',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Membership Payments',
+                   subtitle: 'Totaled by month' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Dollars'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
 
 		var chart = new google.visualization.Bar(document.getElementById('barchart'));
 
