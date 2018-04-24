@@ -86,23 +86,23 @@ Description: View all membership types
 		//make sure table isnt empty
 		if($num > 0){
 			// sort by links
-			echo "<p>Sort By:
+			echo "<h4 class='text-right'>Sort By:
 			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=ID'>ID </a>
 			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=max'>Maximum Members</a>
-			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=fee'>Annual Fee</a></p>";
+			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=fee'>Annual Fee</a></h4>";
 
 			//create table
-			echo '<table>
-						<tr><td align="left"><b>Type ID</b></td><td align="left"><b>| Type</b></td>
-						<td align="left"><b>| Maximum No. of Members</b></td>
-            <td align="left"><b>| Yearly Fee</b></td></tr>';
+			echo '<table class="table">
+						<tr><td align="left"><b>Type ID</b></td><td align="left"><b>Type</b></td>
+						<td align="left"><b>Maximum No. of Members</b></td>
+            <td align="left"><b>Annual Fee</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
 							echo '<tr><td align="left">' . $row['infoID'] . '</td>
-							<td align="left">| ' . $row['membershipType'] . '</td>
-							<td align="left">| ' . $row['maxMembers'] . '</td>
-              <td align="left">| '. $row['membershipFee'] . '</td>' .
+							<td align="left">' . $row['membershipType'] . '</td>
+							<td align="left">' . $row['maxMembers'] . '</td>
+              <td align="left">'. $row['membershipFee'] . '</td>' .
 							"<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/type_update.php?id=" . $row['infoID'] . ">Update</a></td>
 							<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/type_delete.php?id=" . $row['infoID'] . ">Delete</a></td></tr>";
 						}
