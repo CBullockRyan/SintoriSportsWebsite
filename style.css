@@ -4,3 +4,8 @@ body {
     padding-right: 10px;
     background-color: lightblue;
 }
+
+.chart-container{
+  width: 640px;
+  height: auto;
+}

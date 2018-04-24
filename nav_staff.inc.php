@@ -92,8 +92,9 @@ Description: navigation bar to be included on
 				  Reports
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Enquiries</a>
-						<a class="dropdown-item" href="#">Membership Fees</a>
+						<a class="dropdown-item" href="report_payment.php">Membership Payments</a>
+						<a class="dropdown-item" href="report_membership.php">Membership Status</a>
+						<a class="dropdown-item" href="report_enquiry.php">Enquiry Status</a>
 					</div>
 				</li>
 			<?php	endif; ?>
