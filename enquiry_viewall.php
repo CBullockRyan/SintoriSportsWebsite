@@ -123,7 +123,7 @@ Description: View all enquiries
 								if ($i != $current_page) {
 									echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a></li> ';
 								} else {
-									echo '<li class="page-item"><a class="page-link" href="#"><span class="sr-only">' . $i . '</span></a></li> ';
+									echo '<li class="page-item active"><a class="page-link" href="#"><span class="sr-only">' . $i . '</span></a></li> ';
 								}
 							}
 							// If it's not the last page, make a Next link:
