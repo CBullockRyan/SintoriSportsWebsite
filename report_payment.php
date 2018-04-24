@@ -84,6 +84,44 @@ Description: payment report
 	$r = @mysqli_query($dbc, $q);
 	$row = mysqli_fetch_array($r);
 	$dec = $row[0];
+
+	//make sure none of them are null
+	if(is_null($jan)){
+		$jan = 0;
+	}
+	if(is_null($feb)){
+		$feb = 0;
+	}
+	if(is_null($mar)){
+		$mar = 0;
+	}
+	if(is_null($apr)){
+		$apr = 0;
+	}
+	if(is_null($may)){
+		$may = 0;
+	}
+	if(is_null($jun)){
+		$jun = 0;
+	}
+	if(is_null($jul)){
+		$jul = 0;
+	}
+	if(is_null($aug)){
+		$aug = 0;
+	}
+	if(is_null($sept)){
+		$sept = 0;
+	}
+	if(is_null($oct)){
+		$oct = 0;
+	}
+	if(is_null($nov)){
+		$nov = 0;
+	}
+	if(is_null($dec)){
+		$dec = 0;
+	}
 ?>
 
 <!doctype html>
@@ -102,17 +140,17 @@ Description: payment report
         var data = new google.visualization.arrayToDataTable([
           ['Month', 'Total Payment'],
           ["January", <?php echo $jan ?>],
-          ["February", 31],
-					["March", 31],
-          ["April", 12],
-					["May", 12],
-					["June", 12],
-					["July", 12],
-					["August", 12],
-					["September", 12],
-					["October", 12],
-          ["November", 10],
-          ['December', 3]
+          ["February", <?php echo $feb ?>],
+					["March", <?php echo $mar ?>],
+          ["April", <?php echo $apr ?>],
+					["May", <?php echo $may ?>],
+					["June", <?php echo $jun ?>],
+					["July", <?php echo $jul ?>],
+					["August", <?php echo $aug ?>],
+					["September", <?php echo $sep ?>],
+					["October", <?php echo $oct ?>],
+          ["November", <?php echo $nov ?>],
+          ['December', <?php echo $dec ?>]
         ]);
 
         var options = {
