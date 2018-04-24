@@ -1,94 +1,65 @@
-[
-{
-"datePaid" : "2018-04-07",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-09",
-"amount" : "300.00"
-},
-{
-"datePaid" : "2018-04-09",
-"amount" : "32.00"
-},
-{
-"datePaid" : "2018-04-09",
-"amount" : "253.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "522.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "535.00"
-},
-{
-"datePaid" : "2018-04-14",
-"amount" : "101.00"
-},
-{
-"datePaid" : "2018-04-15",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "200.00"
-},
-{
-"datePaid" : "2018-04-16",
-"amount" : "300.00"
-},
-]
+<!--************************************************
+Author: Cassidy Bullock
+Date: April 24, 2018
+Description: enquiry status report
+************************************************-->
+<?php
+	if(session_status() == PHP_SESSION_NONE){
+		session_start();
+	}
+
+  //connect to database
+  require ('connectDB.php');
+
+  //query to get information
+  $q = "SELECT resolved, count(*) AS numGroup GROUP BY resolved";
+  $r = @mysqli_query($dbc, $q);
+?>
+
+<!doctype html>
+
+<html>
+
+<head>
+	<title>Enquiry Status Report</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Resolved', 'Unresolved'],
+        <?php
+          if(mysqli_num_rows($r) > 0){
+            while($row = mysqli_fetch_array($r)){
+              echo "['".$row['resolved']."', ".$row['numGroup']."],";
+            }
+          }
+        ?>
+      ]);
+
+      var options = {
+        title: 'Percentage of Resolved Enquiries',
+        width: 900,
+        height: 500,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+}
+</script>
+</head>
+
+<body>
+	<?php include ('nav_staff.inc.php'); ?>
+
+
+	<div id="piechart"></div>
+</body>
+
+</html>
