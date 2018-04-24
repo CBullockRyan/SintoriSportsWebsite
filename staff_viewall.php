@@ -86,9 +86,9 @@ Description: View all staff member
 		if($num > 0){
 			// sort by links
 			echo "<p>Sort By:
-			<a href='staff_viewall.php?sort=ID'>ID </a>
-			<a href='staff_viewall.php?sort=pos'>Position</a>
-			<a href='staff_viewall.php?sort=hd'>Hire Date</a></p>";
+			<a type='button' class='btn btn-outline-info' href='staff_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='staff_viewall.php?sort=pos'>Position</a>
+			<a type='button' class='btn btn-outline-info' href='staff_viewall.php?sort=hd'>Hire Date</a></p>";
 
 			//create table
 			echo '<table>
@@ -106,8 +106,8 @@ Description: View all staff member
 							<td align="left">| ' . $row['email'] . '</td><td align="left">| ' . $row['address'] . '</td>
 							<td align="left">| ' . $row['phone'] . '</td><td align="left">| ' . $row['gender'] . '</td>
 							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['hireDate'] . ' |</td>' .
-							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/staff_update.php?id=" . $row['staffID'] . ">Update</a></td>
-							<td align='left'><a href=http://localhost/SintoriSportsWebsite/staff_delete.php?id=" . $row['staffID'] . ">Delete</a></td></tr>";
+							"<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/staff_update.php?id=" . $row['staffID'] . ">Update</a></td>
+							<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/staff_delete.php?id=" . $row['staffID'] . ">Delete</a></td></tr>";
 						}
 
 						echo '</table>'; // Close the table.
