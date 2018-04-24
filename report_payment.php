@@ -69,8 +69,8 @@ Description: payment report for user generated date
 
 			while($row = mysqli_fetch_array($r)){
 				fwrite($file, "{\n");
-				fwrite($file, "\"datePaid\" : \"$row['datePaid']\",\n");
-				fwrite($file, "\"amount\" : \"$row['amount']\"\n},\n");
+				fwrite($file, "\"datePaid\" : \"$row[datePaid]\",\n");
+				fwrite($file, "\"amount\" : \"$row[amount]\"\n},\n");
 			}
 
 			//put graph values in the file
