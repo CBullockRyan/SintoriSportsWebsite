@@ -110,8 +110,8 @@ Description: payment report
 	if(is_null($aug)){
 		$aug = 0;
 	}
-	if(is_null($sept)){
-		$sept = 0;
+	if(is_null($sep)){
+		$sep = 0;
 	}
 	if(is_null($oct)){
 		$oct = 0;
