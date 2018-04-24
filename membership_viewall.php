@@ -85,8 +85,8 @@ Description: View all memberships
 		if($num > 0){
 			// sort by links
 			echo "<p>Sort By:
-			<a href='membership_viewall.php?sort=ID'>ID </a>
-			<a href='membership_viewall.php?sort=stat'>Status</a></p>";
+			<a type='button' class='btn btn-outline-info' href='membership_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='membership_viewall.php?sort=stat'>Status</a></p>";
 
 			//create table
 			echo '<table>
@@ -99,7 +99,7 @@ Description: View all memberships
 							echo '<tr><td align="left">' . $row['membershipID'] . '</td>
 							<td align="left">| ' . $row['infoID'] . '</td>
 							<td align="left">| ' . $row['status'] . '</td>' .
-							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/membership_delete.php?id=" . $row['membershipID'] . ">Delete</a></td></tr>";
+							"<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/membership_delete.php?id=" . $row['membershipID'] . ">Delete</a></td></tr>";
 						}
 
 						echo '</table>'; // Close the table.
