@@ -113,7 +113,7 @@ Description: payment report
         ]);
 
         var options = {
-          title: 'Chess opening moves',
+          title: 'Membership Payments',
           width: 900,
           legend: { position: 'none' },
           chart: { title: 'Membership Payments',
