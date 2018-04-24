@@ -95,12 +95,12 @@ Description: payment report
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
-	google.charts.load('current', {'packages':['corechart']});
+	google.charts.load('current', {'packages':['bar']});
 	google.charts.setOnLoadCallback(drawChart);
 
 	function drawChart() {
 
-		var data = google.visualization.arrayToDataTable([
+		var data =  new google.visualization.arrayToDataTable([
 			['Month', 'Amount'],
 			['January', <?php echo $jan ?>],
 			['February', <?php echo $feb ?>],
