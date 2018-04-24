@@ -17,6 +17,9 @@ Description: payment report for user generated date
 <head>
 	<title>Payment Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/Chart.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/myCharts.js"></script>
 </head>
 
 <body>
@@ -95,7 +98,7 @@ Description: payment report for user generated date
     <p><input type='submit' name='Submit' value='submit' /></p>
   </form>
 	<div class="chart-container">
-		<canvas id="mycanvas"></canvas>
+		<canvas id="paymentChart"></canvas>
 	</div>
 </body>
 
