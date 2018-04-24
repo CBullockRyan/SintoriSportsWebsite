@@ -1,13 +1,89 @@
 <!--************************************************
 Author: Cassidy Bullock
 Date: April 23, 2018
-Description: payment report for user generated date
-        range
+Description: payment report
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
 		session_start();
 	}
+
+	//connect to database
+	require ('connectDB.php');
+
+	//get numbers for each month of incoming money
+	//january
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-01-01' AND '2018-01-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$jan = $row[0];
+	//february
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-02-01' AND '2018-02-28'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$feb = $row[0];
+	//march
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-03-01' AND '2018-03-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$mar = $row[0];
+	//april
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-04-01' AND '2018-04-30'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$apr = $row[0];
+	//may
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-05-01' AND '2018-05-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$may = $row[0];
+	//june
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-06-01' AND '2018-06-30'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$jun = $row[0];
+	//july
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-07-01' AND '2018-07-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$jul = $row[0];
+	//august
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-08-01' AND '2018-08-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$aug = $row[0];
+	//september
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-09-01' AND '2018-09-30'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$sep = $row[0];
+	//october
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-10-01' AND '2018-10-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$oct = $row[0];
+	//november
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-11-01' AND '2018-11-30'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$nov = $row[0];
+	//december
+	$q = "SELECT sum(amount) FROM payment
+	WHERE datePaid BETWEEN '2018-12-01' AND '2018-12-31'";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$dec = $row[0];
 ?>
 
 <!doctype html>
@@ -17,87 +93,43 @@ Description: payment report for user generated date
 <head>
 	<title>Payment Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript" src="js/paymentChart.js"></script>
+	<script type="text/javascript">
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+
+		var data = google.visualization.arrayToDataTable([
+			['Month', 'Amount'],
+			['January', <?php echo $jan ?>],
+			['February', <?php echo $feb ?>],
+			['March', <?php echo $mar ?>],
+			['April', <?php echo $apr ?>],
+			['May', <?php echo $may ?>],
+			['June', <?php echo $jun ?>],
+			['July', <?php echo $jul ?>],
+			['August', <?php echo $aug ?>],
+			['September', <?php echo $sep ?>],
+			['October', <?php echo $oct ?>],
+			['November', <?php echo $nov ?>],
+			['December', <?php echo $dec ?>]
+		]);
+
+		var options = {
+			title: 'Total Membership Payments by Month',
+		};
+
+		var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+
+		chart.draw(data, options);
+	</script>
 </head>
 
 <body>
-	<?php include ('nav_staff.inc.php');
+	<?php include ('nav_staff.inc.php'); ?>
 
-  //create variables to hold date range
-  $start="";
-  $end="";
-
-  //check form submission
-  if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		//connect to database
-		require ('connectDB.php');
-
-		$errors=array();
-
-    //check that all fields were filled out
-    if(empty($_POST['start'])){
-      array_push($errors, "Please enter start of date range.");
-    } else {
-      $start = mysqli_real_escape_string($dbc, trim($_POST['start']));
-    }
-    if(empty($_POST['end'])){
-      array_push($errors, "Please enter end of date range.");
-    } else {
-      $end = mysqli_real_escape_string($dbc, trim($_POST['end']));
-    }
-
-		//if start and end date are in the wrong order, switch them
-		if($start>$end){
-			$temp = $start;
-			$start = $end;
-			$end = $temp;
-			unset($temp);
-		}
-
-		//check that there are no errors
-		if(empty($errors)){
-
-			//query to bring up all records within date range
-			$q = "SELECT datePaid, amount FROM payment
-						WHERE datePaid BETWEEN '$start' AND '$end'";
-			$r = @mysqli_query($dbc, $q);
-
-			//create file with graph values
-			$file = fopen("data.php", "w");
-
-			//write in file
-			fwrite($file, "[\n");
-
-			while($row = mysqli_fetch_array($r)){
-				fwrite($file, "{\n");
-				fwrite($file, "\"datePaid\" : \"$row[datePaid]\",\n");
-				fwrite($file, "\"amount\" : \"$row[amount]\"\n},\n");
-			}
-
-			//put graph values in the file
-			fwrite($file, "]");
-
-			//close file
-			fclose($file);
-
-		} else { // display errors
-			foreach($errors as $error){
-				echo " -$error </br>";
-			}
-			echo "Please try again </br>";
-		}
-  }
-  ?>
-  <h1>Membership Payment Report</h1>
-  <p>Please pick a date range to see the report on payments made from members</p>
-  <form action='report_payment.php' method='post'>
-    <p>Start Date: <input type='date' name='start' value=<?php echo $start ?> /></p>
-    <p>End Date: <input type='date' name='end' value=<?php echo $end ?> /></p>
-    <p><input type='submit' name='Submit' value='submit' /></p>
-  </form>
-	<div id="chart_div"></div>
+	<div id="barchart" style="width: 900px; height: 500px;"></div>
 </body>
 
 </html>
