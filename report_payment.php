@@ -10,7 +10,7 @@ Description: payment report
 
 	//connect to database
 	require ('connectDB.php');
-/*
+
 	//get numbers for each month of incoming money
 	//january
 	$q = "SELECT sum(amount) FROM payment
@@ -83,7 +83,7 @@ Description: payment report
 	WHERE datePaid BETWEEN '2018-12-01' AND '2018-12-31'";
 	$r = @mysqli_query($dbc, $q);
 	$row = mysqli_fetch_array($r);
-	$dec = $row[0]; */
+	$dec = $row[0];
 ?>
 
 <!doctype html>
