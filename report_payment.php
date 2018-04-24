@@ -10,7 +10,7 @@ Description: payment report
 
 	//connect to database
 	require ('connectDB.php');
-
+/*
 	//get numbers for each month of incoming money
 	//january
 	$q = "SELECT sum(amount) FROM payment
@@ -83,7 +83,7 @@ Description: payment report
 	WHERE datePaid BETWEEN '2018-12-01' AND '2018-12-31'";
 	$r = @mysqli_query($dbc, $q);
 	$row = mysqli_fetch_array($r);
-	$dec = $row[0];
+	$dec = $row[0]; */
 ?>
 
 <!doctype html>
@@ -102,18 +102,18 @@ Description: payment report
 
 		var data =  new google.visualization.arrayToDataTable([
 			['Month', 'Amount'],
-			['January', <?php echo $jan ?>],
-			['February', <?php echo $feb ?>],
-			['March', <?php echo $mar ?>],
-			['April', <?php echo $apr ?>],
-			['May', <?php echo $may ?>],
-			['June', <?php echo $jun ?>],
-			['July', <?php echo $jul ?>],
-			['August', <?php echo $aug ?>],
-			['September', <?php echo $sep ?>],
-			['October', <?php echo $oct ?>],
-			['November', <?php echo $nov ?>],
-			['December', <?php echo $dec ?>]
+			['January', 20],
+			['February', 40],
+			['March', 30],
+			['April', 20],
+			['May', 20],
+			['June', 10],
+			['July', 5],
+			['August', 20],
+			['September', 30],
+			['October', 30],
+			['November', 40],
+			['December', 45]
 		]);
 
 		var options = {
