@@ -31,16 +31,6 @@ $(document).ready(function(){
 			var barGraph = new Chart(ctx, {
 				type: 'bar',
 				data: chartdata
-        options: {
-              scales: {
-                  xAxes: [{
-                      stacked: true
-                  }],
-                  yAxes: [{
-                      stacked: true
-                  }]
-              }
-          }
 			});
 		},
 		error: function(data) {
