@@ -87,9 +87,9 @@ Description: View all membership types
 		if($num > 0){
 			// sort by links
 			echo "<p>Sort By:
-			<a href='type_viewall.php?sort=ID'>ID </a>
-			<a href='type_viewall.php?sort=max'>Maximum Members</a>
-			<a href='type_viewall.php?sort=fee'>Annual Fee</a></p>";
+			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=max'>Maximum Members</a>
+			<a type='button' class='btn btn-outline-info' href='type_viewall.php?sort=fee'>Annual Fee</a></p>";
 
 			//create table
 			echo '<table>
