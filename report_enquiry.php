@@ -11,9 +11,16 @@ Description: enquiry status report
   //connect to database
   require ('connectDB.php');
 
-  //query to get information
-  $q = "SELECT resolved, count(*) FROM enquiry GROUP BY resolved";
+  //get numbers for resolved and unresolved enquiries
+  $q = "SELECT count(*) FROM enquiry where resolved = 'N'";
   $r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$unresolved = $row[0];
+	$q = "SELECT count(*) FROM enquiry where resolved = 'Y'";
+  $r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+	$resolved = $row[0];
+
 ?>
 
 <!doctype html>
@@ -23,7 +30,6 @@ Description: enquiry status report
 <head>
 	<title>Enquiry Status Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
@@ -32,20 +38,13 @@ Description: enquiry status report
     function drawChart() {
 
       var data = google.visualization.arrayToDataTable([
-        ['Resolved', 'Unresolved'],
-        <?php
-          if(mysqli_num_rows($r) > 0){
-            while($row = mysqli_fetch_array($r)){
-              echo "['".$row['resolved']."', ".$row['numGroup']."],";
-            }
-          }
-        ?>
+        ['Status', 'Amount'],
+        ['Resolved', <?php echo $resolved ?>],
+				['Unresolved', <?php echo $unresolved ?>]
       ]);
 
       var options = {
         title: 'Percentage of Resolved Enquiries',
-        width: 900,
-        height: 500,
       };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -59,7 +58,7 @@ Description: enquiry status report
 	<?php include ('nav_staff.inc.php'); ?>
 
 
-	<div id="piechart"></div>
+	<div id="piechart" style="width: 900px; height: 500px;"></div>
 </body>
 
 </html>
