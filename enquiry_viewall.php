@@ -123,7 +123,7 @@ Description: View all enquiries
 								if ($i != $current_page) {
 									echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a></li> ';
 								} else {
-									echo $i . ' ';
+									echo '<li class="page-item">' . $i . '</li> ';
 								}
 							}
 							// If it's not the last page, make a Next link:
@@ -149,7 +149,7 @@ Description: View all enquiries
           echo '<p class="error">The current enquiries could not be retrieved. We apologize for any inconvenience.</p>';
 
           // Debugging message:
-        	echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
+        	//echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
 
         }
 
@@ -157,15 +157,7 @@ Description: View all enquiries
 
       ?>
 
-			<nav aria-label="Page navigation example">
-			  <ul class="pagination">
-			    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-			  </ul>
-			</nav>
+
 </body>
 
 </html>
