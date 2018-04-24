@@ -61,11 +61,21 @@ Description: payment report for user generated date
 						WHERE datePaid BETWEEN '$start' AND '$end'";
 			$r = @mysqli_query($dbc, $q);
 
-			//create array with graph values
+			//create file with graph values
+			$file = fopen("data.php", "w");
+
+			//array of datapoints
 			$dataPts = array();
+
 			while($row = mysqli_fetch_array($r)){
 				array_push($dataPts, array("x" => $row['datePaid'], "y" => $row['amount']));
 			}
+
+			//put graph values in the file
+			fwrite($file, $dataPts);
+
+			//close file
+			fclose($file);
 
 		} else { // display errors
 			foreach($errors as $error){
