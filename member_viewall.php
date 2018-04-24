@@ -67,18 +67,18 @@ Description: View all members
 			//create table
 			echo '<table class="table">
 						<tr><td align="left"><b>Member ID</b></td>
-						<td align="left"><b>| First Name</b></td><td align="left"><b>| Last Name</b></td>
-						<td align="left"><b>| Phone</b></td><td align="left"><b>| Email</b></td>
-            <td align="left"><b>| Address</b></td><td align="left"><b>| Gender</b></td>
-						<td align="left"><b>| Date of Birth</b></td><td align="left"><b>| Membership ID</b></td></tr>';
+						<td align="left"><b>First Name</b></td><td align="left"><b>Last Name</b></td>
+						<td align="left"><b>Phone</b></td><td align="left"><b>Email</b></td>
+            <td align="left"><b>Address</b></td><td align="left"><b>Gender</b></td>
+						<td align="left"><b>Date of Birth</b></td><td align="left"><b>Membership ID</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
 							echo '<tr><td align="left">' . $row['memberID'] . '</td>
-							<td align="left">| ' . $row['fname'] . '</td><td align="left">| '. $row['lname'] . '</td>
-							<td align="left">| ' . $row['phone'] . '</td><td align="left">| ' . $row['email'] . '</td>
-              <td align="left">| ' . $row['address'] . '</td><td align="left">| ' . $row['gender'] . '</td>
-							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['membershipID'] . ' </td>' .
+							<td align="left">' . $row['fname'] . '</td><td align="left">'. $row['lname'] . '</td>
+							<td align="left">' . $row['phone'] . '</td><td align="left">' . $row['email'] . '</td>
+              <td align="left">' . $row['address'] . '</td><td align="left">' . $row['gender'] . '</td>
+							<td align="left">' . $row['DoB'] . '</td><td align="left">' . $row['membershipID'] . ' </td>' .
 							"<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/member_update.php?id=" . $row['memberID'] . ">Update</a></td>
 							<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/member_delete.php?id=" . $row['memberID'] . ">Delete</a></td></tr>";
 						}
