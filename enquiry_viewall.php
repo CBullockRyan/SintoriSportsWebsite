@@ -110,27 +110,27 @@ Description: View all enquiries
 
 						// Make the links to other pages, if necessary.
 						if ($pages > 1) {
-							echo '<br /><p>';
+							echo '<br /><p><ul class="pagination">';
 							$current_page = ($start/$display) + 1;
 
 							// If it's not the first page, make a Previous link:
 							if ($current_page != 1) {
-								echo '<a href="enquiry_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+								echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a></li> ';
 							}
 
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+									echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a></li> ';
 								} else {
 									echo $i . ' ';
 								}
 							}
 							// If it's not the last page, make a Next link:
 							if ($current_page != $pages) {
-								echo '<a href="enquiry_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+								echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a></li>';
 							}
-							echo '</p>';
+							echo '</ul></p>';
 						}
 
             //Show how many records exist
