@@ -80,7 +80,7 @@ Description: View all members
               <td align="left">| ' . $row['address'] . '</td><td align="left">| ' . $row['gender'] . '</td>
 							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['membershipID'] . ' </td>' .
 							"<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/member_update.php?id=" . $row['memberID'] . ">Update</a></td>
-							<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/member_delete.php?id=" . $row['memberID'] . ">Delete</a></td></tr>";
+							<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/member_delete.php?id=" . $row['memberID'] . ">Delete</a></td></tr>";
 						}
 
 						echo '</table>'; // Close the table.
