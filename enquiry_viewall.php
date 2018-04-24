@@ -90,20 +90,20 @@ Description: View all enquiries
 			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=res'>Resolved</a></p>";
 
       //create table
-      echo '<table>
-            <tr><td align="left"><b>ID</b></td><td align="left"><b>| Subject</b></td>
-            <td align="left"><b>| Message</b></td><td align="left"><b>| Resolved?</b></td>
-            <td align="left"><b>| Name </b></td><td align="left"><b>| Email</b></td>
-            <td align="left"><b>| Phone</b></td></tr>';
+      echo '<table class="table">
+            <tr><td align="left"><b>ID</b></td><td align="left"><b>Subject</b></td>
+            <td align="left"><b>Message</b></td><td align="left"><b>Resolved?</b></td>
+            <td align="left"><b>Name</b></td><td align="left"><b>Email</b></td>
+            <td align="left"><b>Phone</b></td></tr>';
 
             // Fetch and print all the records:
             while ($row = mysqli_fetch_array($r)) {
               echo '<tr><td align="left">' . $row[0] . '</td>
-              <td align="left">| ' . $row[1] . '</td>
-              <td align="left">| ' . $row[2] . '</td><td align="left">| '. $row[3] . '</td>
-              <td align="left">| ' . $row[4] . ' ' . $row[5] . '</td>
-              <td align="left">| ' . $row[6] . '</td>
-							<td align="left">| ' . $row[7] . ' |</td></tr>';
+              <td align="left">' . $row[1] . '</td>
+              <td align="left">' . $row[2] . '</td><td align="left">' . $row[3] . '</td>
+              <td align="left">' . $row[4] . ' ' . $row[5] . '</td>
+              <td align="left">' . $row[6] . '</td>
+							<td align="left">' . $row[7] . '</td></tr>';
             }
 
             echo '</table>'; // Close the table.
