@@ -121,13 +121,13 @@ Description: Update a member
 		echo "<h1>Update a Member</h1>";
 		echo "<p>Member ID: $memberID</p>";
 		echo "<form action='member_update.php' method='post'>
-			<p>First Name: <input type='text' name='fname' value=\"$fname\" /></p>
-			<p>Last Name: <input type='text' name='lname' value=\"$lname\" /></p>
-			<p>Email: <input type='email' name='email' value='$email' /></p>
-			<p>Address: <input type='text' name='address' value='$address' /></p>
-			<p>Phone: <input type='text' name='phone' value='$phone' /></p>
+			<p>First Name: <input class='col-3 form-control' type='text' name='fname' value=\"$fname\" /></p>
+			<p>Last Name: <input class='col-3 form-control' type='text' name='lname' value=\"$lname\" /></p>
+			<p>Email: <input class='col-3 form-control' type='email' name='email' value='$email' /></p>
+			<p>Address: <input class='col-5 form-control' type='text' name='address' value='$address' /></p>
+			<p>Phone: <input class='col-3 form-control' type='text' name='phone' value='$phone' /></p>
 			<input type='hidden' name='id' value='" . $id . "' />
-			<p><input type='submit' name='submit' value='Update' /></p>";
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Update' /></p>";
 	}
 	//disconnect from database
 	mysqli_close($dbc);
