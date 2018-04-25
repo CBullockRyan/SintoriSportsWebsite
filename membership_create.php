@@ -106,13 +106,13 @@ Description: Create membership page, works with
 	<h1>Add Membership</h1>
 	<!-- form to create membership -->
 	<form action="membership_create.php" method="post">
-		<p>Membership Type: <select name="mType">
+		<p>Membership Type: <select class='col-3 form-control' name="mType">
 			<option value="1">Single Membership</option>
 			<option value="2">Family Membership</option>
 			<option value="3">Couple Membership</option>
 		</select></p>
-		<p>Payment: <input type="number" min="0.00" max="10000.00" step="0.01" name="payment" value="<?php echo $payment ?>" /></p>
-		<p><input type="submit" name="Submit" value="submit" /></p>
+		<p>Payment: <input class='col-3 form-control' type="number" min="0.00" max="10000.00" step="0.01" name="payment" value="<?php echo $payment ?>" /></p>
+		<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
 </body>
 
 </html>
