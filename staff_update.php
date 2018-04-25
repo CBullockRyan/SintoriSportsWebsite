@@ -132,7 +132,7 @@ Description: Update a staff member
 			<p>Address: <input class='col-5 form-control' type='text' name='address' value='$address' /></p>
 			<p>Phone: <input class='col-3 form-control' type='text' name='phone' value='$phone' /></p>
 			<input type='hidden' name='id' value='" . $id . "' />
-			<p><input type='btn btn-outline-info' type='submit' name='submit' value='Update' /></p>";
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Update' /></p>";
 	}
 	//disconnect from database
 	mysqli_close($dbc);
