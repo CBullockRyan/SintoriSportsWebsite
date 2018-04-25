@@ -90,10 +90,10 @@ Description: Create a news post
 	<h1>Add News Post</h1>
 	<!-- form to create news post -->
 	<form action="news_create.php" method="post" id="news">
-		<p>Title of Post: <input type="text" name="title" value="<?php echo $title ?>" /></p>
+		<p>Title of Post: <input class='col-3 form-control' type="text" name="title" value="<?php echo $title ?>" /></p>
 		<p>Description: </p>
-    <p><textarea name="desc" form="news" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
-		<p><input type="submit" name="Submit" value="submit" /></p>
+    <p><textarea class='form-control' name="desc" form="news" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
+		<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
 </body>
 
 </html>
