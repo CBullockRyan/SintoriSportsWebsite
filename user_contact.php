@@ -150,14 +150,14 @@ Description: View contact information and make enquiry
 	} else{//print the form
 		echo "<h2>Get in Touch</h2>";
 		echo "<form action='user_contact.php' method='post' id='enquiry'>
-		<p>First Name: <input type='text' name='fname' value='$fname' /></p>
-		<p>Last Name: <input type='text' name='lname' value='$lname' /></p>
-		<p>Phone: <input type='text' name='phone' value='$phone' /></p>
-		<p>Email: <input type='email' name='email' value='$email' /></p>
-		<p>Subject: <input type='text' name='subject' value='$subject' /></p>
+		<p>First Name: <input class='col-3 form-control' type='text' name='fname' value='$fname' /></p>
+		<p>Last Name: <input class='col-3 form-control' type='text' name='lname' value='$lname' /></p>
+		<p>Phone: <input class='col-3 form-control' type='text' name='phone' value='$phone' /></p>
+		<p>Email: <input class='col-3 form-control' type='email' name='email' value='$email' /></p>
+		<p>Subject: <input class='col-3 form-control' type='text' name='subject' value='$subject' /></p>
 		<p>Message: </p>
-    <p><textarea name='message' form='enquiry' rows='4' cols='40'>$message</textarea></p>
-		<p><input type='submit' name='Submit' value='submit' /></p>";
+    <p><textarea class='col-8 form-control' name='message' form='enquiry' rows='4' cols='40'>$message</textarea></p>
+		<p><input class='btn btn-outline-info' type='submit' name='Submit' value='submit' /></p>";
 	}
 	//disconnect from database
 	mysqli_close($dbc);
