@@ -97,10 +97,10 @@ Description: Make a new membership type
 	<h1>Create New Membership Type</h1>
 	<!-- form to create new membership type -->
 	<form action="type_create.php" method="post">
-		<p>Name of Membership Type: <input type="text" name="type" value="<?php echo $type ?>" /></p>
-		<p>Maximum number of Members: <input type="number" name="maxMember" value="<?php echo $maxMember ?>" /></p>
-    <p>Annual Fee: <input type="number" min="0.00" max="10000.00" step="0.01" name="fee" value="<?php echo $fee ?>" /></p>
-  	<p><input type="submit" name="Submit" value="submit" /></p>
+		<p>Name of Membership Type: <input class='col-3 form-control' type="text" name="type" value="<?php echo $type ?>" /></p>
+		<p>Maximum number of Members: <input class='col-3 form-control' type="number" name="maxMember" value="<?php echo $maxMember ?>" /></p>
+    <p>Annual Fee: <input class='col-3 form-control' type="number" min="0.00" max="10000.00" step="0.01" name="fee" value="<?php echo $fee ?>" /></p>
+  	<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
 </body>
 
 </html>
