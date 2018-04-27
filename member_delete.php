@@ -71,7 +71,7 @@ Description: Delete a member
 			echo '<form action="member_delete.php" method="post">
 			<input type="radio" name="sure" value="Yes" /> Yes
 			<input type="radio" name="sure" value="No" checked="checked" /> No
-			<input type="submit" name="submit" value="Submit" />
+			<input class="btn btn-outline-info" type="submit" name="submit" value="Submit" />
 			<input type="hidden" name="id" value="' . $id . '" />
 			</form>';
 

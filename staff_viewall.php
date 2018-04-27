@@ -85,56 +85,56 @@ Description: View all staff member
 		//make sure table isnt empty
 		if($num > 0){
 			// sort by links
-			echo "<p>Sort By:
-			<a href='staff_viewall.php?sort=ID'>ID </a>
-			<a href='staff_viewall.php?sort=pos'>Position</a>
-			<a href='staff_viewall.php?sort=hd'>Hire Date</a></p>";
+			echo "<h4 class='text-right'>Sort By:
+			<a type='button' class='btn btn-outline-info' href='staff_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='staff_viewall.php?sort=pos'>Position</a>
+			<a type='button' class='btn btn-outline-info' href='staff_viewall.php?sort=hd'>Hire Date</a></h4>";
 
 			//create table
-			echo '<table>
-						<tr><td align="left"><b>Staff ID</b></td><td align="left"><b>| Position</b></td>
-						<td align="left"><b>| First Name</b></td><td align="left"><b>| Last Name</b></td>
-						<td align="left"><b>| Email</b></td><td align="left"><b>| Address</b></td>
-						<td align="left"><b>| Phone</b></td><td align="left"><b>| Gender</b></td>
-						<td align="left"><b>| Date of Birth</b></td><td align="left"><b>| Hire Date</b></td></tr>';
+			echo '<table class="table">
+						<tr><td align="left"><b>Staff ID</b></td><td align="left"><b>Position</b></td>
+						<td align="left"><b>First Name</b></td><td align="left"><b>Last Name</b></td>
+						<td align="left"><b>Email</b></td><td align="left"><b>Address</b></td>
+						<td align="left"><b>Phone</b></td><td align="left"><b>Gender</b></td>
+						<td align="left"><b>Date of Birth</b></td><td align="left"><b>Hire Date</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
 							echo '<tr><td align="left">' . $row['staffID'] . '</td>
-							<td align="left">| ' . $row['position'] . '</td>
-							<td align="left">| ' . $row['fname'] . '</td><td align="left">| '. $row['lname'] . '</td>
-							<td align="left">| ' . $row['email'] . '</td><td align="left">| ' . $row['address'] . '</td>
-							<td align="left">| ' . $row['phone'] . '</td><td align="left">| ' . $row['gender'] . '</td>
-							<td align="left">| ' . $row['DoB'] . '</td><td align="left">| ' . $row['hireDate'] . ' |</td>' .
-							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/staff_update.php?id=" . $row['staffID'] . ">Update</a></td>
-							<td align='left'><a href=http://localhost/SintoriSportsWebsite/staff_delete.php?id=" . $row['staffID'] . ">Delete</a></td></tr>";
+							<td align="left">' . $row['position'] . '</td>
+							<td align="left">' . $row['fname'] . '</td><td align="left">'. $row['lname'] . '</td>
+							<td align="left">' . $row['email'] . '</td><td align="left">' . $row['address'] . '</td>
+							<td align="left">' . $row['phone'] . '</td><td align="left">' . $row['gender'] . '</td>
+							<td align="left">' . $row['DoB'] . '</td><td align="left">' . $row['hireDate'] . '</td>' .
+							"<td align='left'><a type='button' class='btn btn-outline-secondary btn-sm' href=http://localhost/SintoriSportsWebsite/staff_update.php?id=" . $row['staffID'] . ">Update</a></td>
+							<td align='left'><a type='button' class='btn btn-outline-danger btn-sm' href=http://localhost/SintoriSportsWebsite/staff_delete.php?id=" . $row['staffID'] . ">Delete</a></td></tr>";
 						}
 
 						echo '</table>'; // Close the table.
 
 						// Make the links to other pages, if necessary.
 						if ($pages > 1) {
-							echo '<br /><p>';
+							echo '<br /><p><ul class="pagination">';
 							$current_page = ($start/$display) + 1;
 
 							// If it's not the first page, make a Previous link:
 							if ($current_page != 1) {
-								echo '<a href="staff_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+								echo '<li class="page-item"><a class="page-link" href="staff_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '">Previous</a></li> ';
 							}
 
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="staff_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+									echo '<li class="page-item"><a class="page-link" href="staff_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '">' . $i . '</a></li> ';
 								} else {
-									echo $i . ' ';
+									echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '<span class="sr-only">(current)</span></a></li> ';
 								}
 							}
 							// If it's not the last page, make a Next link:
 							if ($current_page != $pages) {
-								echo '<a href="staff_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+								echo '<li class="page-item"><a class="page-link" href="staff_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '">Next</a></li>';
 							}
-							echo '</p>';
+							echo '</ul></p>';
 						}
 
 						//Show how many records exist

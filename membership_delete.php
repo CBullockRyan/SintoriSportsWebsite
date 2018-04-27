@@ -46,7 +46,7 @@ Description: Delete a membership
 			}
 			else { // If the query did not run OK.
 				echo '<p class="error">The membership could not be deleted due to a system error.</p>';
-				echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+				//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
 			}
 		}
 		else {
@@ -71,7 +71,7 @@ Description: Delete a membership
 			echo '<form action="membership_delete.php" method="post">
 			<input type="radio" name="sure" value="Yes" /> Yes
 			<input type="radio" name="sure" value="No" checked="checked" /> No
-			<input type="submit" name="submit" value="Submit" />
+			<input class="btn btn-outline-info" type="submit" name="submit" value="Submit" />
 			<input type="hidden" name="id" value="' . $id . '" />
 			</form>';
 

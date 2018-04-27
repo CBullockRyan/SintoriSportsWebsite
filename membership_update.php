@@ -86,12 +86,12 @@ Description: update a membership to change status.
 		create a new membership with the correct type.</p>";
 		//create form
 		echo "<form action='membership_update.php' method='post'>
-			<p>Membership Status: <select name='status'>
+			<p>Membership Status: <select class='col-3 form-control' name='status'>
 				<option value='ACTIVE' selected='selected'>ACTIVE</option>
 				<option value='INACTIVE'>INACTIVE</option>
 			</select></p>
-			<p>Membership ID: <input type='text' name='mID' /></p>
-			<p><input type='submit' name='submit' value='Update' /></p>";
+			<p>Membership ID: <input class='col-3 form-control' type='text' name='mID' /></p>
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Update' /></p>";
 	}
   ?>
 </body>

@@ -103,11 +103,11 @@ Description: update a membership type
 		echo "<h1>Update a Staff Member</h1>";
 		echo "<p>Type ID: $id</p>";
 		echo "<form action='type_update.php' method='post'>
-			<p>Membership Type Name: <input type='text' name='type' value=\"$type\" /></p>
-			<p>Maximum Number of Members: <input type='number' name='maxMember' value=\"$maxMember\" /></p>
-			<p>Annual Fee: <input type='number' min='0.00' max='10000.00' step='0.01' name='fee' value='$fee' /></p>
+			<p>Membership Type Name: <input class='col-3 form-control' type='text' name='type' value=\"$type\" /></p>
+			<p>Maximum Number of Members: <input class='col-3 form-control' type='number' name='maxMember' value=\"$maxMember\" /></p>
+			<p>Annual Fee: <input class='col-3 form-control' type='number' min='0.00' max='10000.00' step='0.01' name='fee' value='$fee' /></p>
 			<input type='hidden' name='id' value='" . $id . "' />
-			<p><input type='submit' name='submit' value='Update' /></p>";
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Update' /></p>";
 	}
 	//disconnect from database
 	mysqli_close($dbc);

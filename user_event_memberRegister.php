@@ -115,10 +115,10 @@ Description: register a member to an event
 		echo "<h1>Register for " . $row[0] . " on " . $row[1] . "</h1>";
 		echo "<p><b>Spaces left in the event: $maxAttendee </b></p>";
 		echo "<form action='user_event_memberRegister.php' method='post'>
-			<p>Membership ID: <input type='text' name='mID' value=\"$mID\" /></p>
-			<p>Number of people attending (including yourself): <input type='number' name='numAttendees' value='$numAttendees' /></p>
+			<p>Membership ID: <input class='col-3 form-control' type='text' name='mID' value=\"$mID\" /></p>
+			<p>Number of people attending (including yourself): <input class='col-3 form-control' type='number' name='numAttendees' value='$numAttendees' /></p>
 			<input type='hidden' name='id' value='" . $id . "' />
-			<p><input type='submit' name='submit' value='Register' /></p>";
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Register' /></p>";
 			//link to non-member registered
 		echo "<p>Not a member? Click <a href=http://localhost/SintoriSportsWebsite/user_event_nonmemberRegister.php?id=" . $id . ">here</a>
 		to register for the event.</p>";

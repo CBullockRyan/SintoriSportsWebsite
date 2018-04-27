@@ -87,7 +87,7 @@ Description: Make a payment
 							echo '<h1>System Error</h1>
 							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
 
-							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
+							//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
 						}
 
 						//disconnect from database
@@ -115,10 +115,10 @@ Description: Make a payment
 	<h1>Make a Payment</h1>
 	<!-- form to create membership -->
 	<form action="payment_create.php" method="post">
-		<p>Membership Number: <input type="number" name="membershipID" value="<?php echo $membershipID ?>" /></p>
-		<p>Payment Amount: <input type="number" min="0.00" max="10000.00" step="0.01" name="amount" value="<?php echo $amount ?>" /></p>
-    <p>Date of Payment: <input type="date" name="paymentDate" value="<?php echo $paymentDate ?>" /></p>
-  	<p><input type="submit" name="Submit" value="submit" /></p>
+		<p>Membership Number: <input class='col-3 form-control' type="number" name="membershipID" value="<?php echo $membershipID ?>" /></p>
+		<p>Payment Amount: <input class='col-3 form-control' type="number" min="0.00" max="10000.00" step="0.01" name="amount" value="<?php echo $amount ?>" /></p>
+    <p>Date of Payment: <input class='col-3 form-control' type="date" name="paymentDate" value="<?php echo $paymentDate ?>" /></p>
+  	<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
 </body>
 
 </html>

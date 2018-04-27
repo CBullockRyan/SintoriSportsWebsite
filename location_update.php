@@ -112,14 +112,14 @@ Description: update a membership type
 	} else{ //create form
 			echo "<h1>Contact Details and Opening Hours</h1>";
 			echo "<form action='location_update.php' method='post' >
-			<p>Phone: <input type='text' name='phone' value='$phone' /></p>
-			<p>Address: <input type='text' name='address' value='$address' /></p>
-			<p>Email: <input type='email' name='email' value='$email' /></p>
-			<p>Monday-Thursday Opening Time: <input type='time' name='mt_open' value='$mt_open' /></p>
-			<p>Monday-Thursday Closing Time: <input type='time' name='mt_close' value='$mt_close' /></p>
-			<p>Friday-Saturday Opening Time: <input type='time' name='fs_open' value='$fs_open' /></p>
-			<p>Friday-Saturday Closing Time: <input type='time' name='fs_close' value='$fs_close' /></p>
-			<p><input type='submit' name='Submit' value='submit' /></p>";
+			<p>Phone: <input class='col-3 form-control' type='text' name='phone' value='$phone' /></p>
+			<p>Address: <input class='col-3 form-control' type='text' name='address' value='$address' /></p>
+			<p>Email: <input class='col-3 form-control' type='email' name='email' value='$email' /></p>
+			<p>Monday-Thursday Opening Time: <input class='col-3 form-control' type='time' name='mt_open' value='$mt_open' /></p>
+			<p>Monday-Thursday Closing Time: <input class='col-3 form-control' type='time' name='mt_close' value='$mt_close' /></p>
+			<p>Friday-Saturday Opening Time: <input class='col-3 form-control' type='time' name='fs_open' value='$fs_open' /></p>
+			<p>Friday-Saturday Closing Time: <input class='col-3 form-control' type='time' name='fs_close' value='$fs_close' /></p>
+			<p><input class='btn btn-outline-info' type='submit' name='Submit' value='submit' /></p>";
 	}
   ?>
 </body>

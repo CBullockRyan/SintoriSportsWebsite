@@ -85,52 +85,52 @@ Description: View all enquiries
     //make sure table isnt empty
     if($num > 0){
 			// sort by links
-			echo "<p>Sort By:
-			<a href='enquiry_viewall.php?sort=ID'>ID </a>
-			<a href='enquiry_viewall.php?sort=res'>Resolved</a></p>";
+			echo "<h4 class='text-right'>Sort By:
+			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='enquiry_viewall.php?sort=res'>Resolved</a></h4>";
 
       //create table
-      echo '<table>
-            <tr><td align="left"><b>ID</b></td><td align="left"><b>| Subject</b></td>
-            <td align="left"><b>| Message</b></td><td align="left"><b>| Resolved?</b></td>
-            <td align="left"><b>| Name </b></td><td align="left"><b>| Email</b></td>
-            <td align="left"><b>| Phone</b></td></tr>';
+      echo '<table class="table">
+            <tr><td align="left"><b>ID</b></td><td align="left"><b>Subject</b></td>
+            <td align="left"><b>Message</b></td><td align="left"><b>Resolved?</b></td>
+            <td align="left"><b>Name</b></td><td align="left"><b>Email</b></td>
+            <td align="left"><b>Phone</b></td></tr>';
 
             // Fetch and print all the records:
             while ($row = mysqli_fetch_array($r)) {
               echo '<tr><td align="left">' . $row[0] . '</td>
-              <td align="left">| ' . $row[1] . '</td>
-              <td align="left">| ' . $row[2] . '</td><td align="left">| '. $row[3] . '</td>
-              <td align="left">| ' . $row[4] . ' ' . $row[5] . '</td>
-              <td align="left">| ' . $row[6] . '</td>
-							<td align="left">| ' . $row[7] . ' |</td></tr>';
+              <td align="left">' . $row[1] . '</td>
+              <td align="left">' . $row[2] . '</td><td align="left">' . $row[3] . '</td>
+              <td align="left">' . $row[4] . ' ' . $row[5] . '</td>
+              <td align="left">' . $row[6] . '</td>
+							<td align="left">' . $row[7] . '</td></tr>';
             }
 
             echo '</table>'; // Close the table.
 
 						// Make the links to other pages, if necessary.
 						if ($pages > 1) {
-							echo '<br /><p>';
+							echo '<br /><p><nav aria-label="Page Navigation"><ul class="pagination">';
 							$current_page = ($start/$display) + 1;
 
 							// If it's not the first page, make a Previous link:
 							if ($current_page != 1) {
-								echo '<a href="enquiry_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+								echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a></li> ';
 							}
 
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+									echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a></li> ';
 								} else {
-									echo $i . ' ';
+									echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '<span class="sr-only">(current)</span></a></li> ';
 								}
 							}
 							// If it's not the last page, make a Next link:
 							if ($current_page != $pages) {
-								echo '<a href="enquiry_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+								echo '<li class="page-item"><a class="page-link" href="enquiry_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a></li>';
 							}
-							echo '</p>';
+							echo '</ul></nav></p>';
 						}
 
             //Show how many records exist
@@ -149,13 +149,14 @@ Description: View all enquiries
           echo '<p class="error">The current enquiries could not be retrieved. We apologize for any inconvenience.</p>';
 
           // Debugging message:
-        	echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
+        	//echo '<p>' . mysqli_error($dbc) . '<br /><br />Query: ' . $q . '</p>';
 
         }
 
       mysqli_close($dbc); // Close the database connection.
 
       ?>
+
 
 </body>
 

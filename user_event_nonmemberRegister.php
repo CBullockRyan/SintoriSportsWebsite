@@ -106,7 +106,7 @@ Description: register a non member to an event
 				  //check that it ran
 				  if($r4){}
 				  else{
-					     echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q3 . '</p>'; // Debugging message.
+					     //echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q3 . '</p>'; // Debugging message.
 				  }
 			  } else{
 				    echo '<p class="error">You could not be registered due to a system error. Please try again. If this problem persists please contact us.</p>'; // Public message.
@@ -128,10 +128,10 @@ Description: register a non member to an event
 	else{//print form
 		echo "<h1>Register for " . $row[0] . " on " . $row[1] . "</h1>";
 		echo "<form action='user_event_nonmemberRegister.php' method='post'>
-			<<p>First Name: <input type='text' name='fname' value=\"$fname\" /></p>
-			<p>Last Name: <input type='text' name='lname' value=\"$lname\" /></p>
-			<p>Email: <input type='email' name='email' value='$email' /></p>
-			<p>Phone: <input type='text' name='phone' value='$phone' /></p>
+			<<p>First Name: <input class='col-3 form-control' type='text' name='fname' value=\"$fname\" /></p>
+			<p>Last Name: <input class='col-3 form-control' type='text' name='lname' value=\"$lname\" /></p>
+			<p>Email: <input class='col-5 form-control' type='email' name='email' value='$email' /></p>
+			<p>Phone: <input class='col-3 form-control' type='text' name='phone' value='$phone' /></p>
 			<input type='hidden' name='id' value='" . $id . "' />
-			<p><input type='submit' name='submit' value='Register' /></p>";
+			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Register' /></p>";
 	}

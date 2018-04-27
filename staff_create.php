@@ -135,7 +135,7 @@ Description: Create new staff member
 					echo '<h1>System Error</h1>
 					<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
 
-					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
+					//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
 				}
 
 				//disconnect from database
@@ -158,22 +158,22 @@ Description: Create new staff member
 	<h1>Add New Staff Member</h1>
 	<!-- form to create membership -->
 	<form action="staff_create.php" method="post">
-		<p>Staff Position: <select name="position">
+		<p>Staff Position: <select class='col-3 form-control' name="position">
 			<option value="manager">Manager</option>
 			<option value="other">Other</option>
 		</select></p>
-		<p>Create Password: <input type="password" name="staffPass" /></p>
-		<p>First Name: <input type="text" name="fname" value="<?php echo $fname ?>" /></p>
-		<p>Last Name: <input type="text" name="lname" value="<?php echo $lname ?>" /></p>
-		<p>Mailing Address: <input type="text" name="address" value="<?php echo $address ?>" /></p>
-		<p>Mobile Phone: <input type="text" name="phone" value="<?php echo $phone ?>" /></p>
-		<p>Email: <input type="email" name="email" value="<?php echo $email ?>" /></p>
-		<p>Date of Birth: <input type="date" name="dob" value="<?php echo $Dob ?>" /></p>
-		<p>Hire Date: <input type="date" name="hiredate" value="<?php echo $hiredate ?>" /></p>
+		<p>Create Password: <input class='col-3 form-control' type="password" name="staffPass" /></p>
+		<p>First Name: <input class='col-3 form-control' type="text" name="fname" value="<?php echo $fname ?>" /></p>
+		<p>Last Name: <input class='col-3 form-control' type="text" name="lname" value="<?php echo $lname ?>" /></p>
+		<p>Mailing Address: <input class='col-5 form-control' type="text" name="address" value="<?php echo $address ?>" /></p>
+		<p>Mobile Phone: <input class='col-3 form-control' type="text" name="phone" value="<?php echo $phone ?>" /></p>
+		<p>Email: <input class='col-3 form-control' type="email" name="email" value="<?php echo $email ?>" /></p>
+		<p>Date of Birth: <input class='col-3 form-control' type="date" name="dob" value="<?php echo $Dob ?>" /></p>
+		<p>Hire Date: <input class='col-3 form-control' type="date" name="hiredate" value="<?php echo $hiredate ?>" /></p>
 		<p>Gender: </p>
 		<p><input type="radio" name="gender" value="M" <?php if($gender=="M"){echo " checked=\"checked\" ";} ?> /> Male</p>
 		<p><input type="radio" name="gender" value="F" <?php if($gender=="F"){echo " checked=\"checked\" ";} ?> /> Female</p>
-		<p><input type="submit" name="Submit" value="submit" /></p>
+		<p><input class="btn btn-outline-info" type="submit" name="Submit" value="submit" /></p>
 </body>
 
 </html>

@@ -119,9 +119,9 @@ Description: staff login page
 
 	<h1>Staff Login</h1>
 	<form action="login_form.php" method="post">
-		<p>Staff ID: <input type="text" name="staffID" maxlength="20" value='<?php echo $staffID ?>' /></p>
-		<p>Password: <input type="password" name="staffPass" maxlength="40" /></p>
-		<p><input type="submit" name="submit" value="submit" /></p>
+		<p>Staff ID: <input class="col-3 form-control" type="text" name="staffID" maxlength="20" value='<?php echo $staffID ?>' /></p>
+		<p>Password: <input class="col-3 form-control" type="password" name="staffPass" maxlength="40" /></p>
+		<p><input class="btn btn-outline-info" type="submit" name="submit" value="submit" /></p>
 </body>
 
 </html>

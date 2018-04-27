@@ -158,14 +158,14 @@ Description: Create a new event
 	<h1>Add New Event</h1>
 	<!-- form to create event -->
 	<form action="event_create.php" method="post" id="event" enctype="multipart/form-data">
-		<p>Title of Event: <input type="text" name="title" value="<?php echo $title ?>" /></p>
+		<p>Title of Event: <input class='col-3 form-control' type="text" name="title" value="<?php echo $title ?>" /></p>
 		<p>Description of Event: </p>
-    <p><textarea name="desc" form="event" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
-		<p>Event Start Date: <input type="date" name="date" value="<?php echo $date ?>" /></p>
-		<p>Event Start Time: <input type="time" name="time" value="<?php echo $time ?>" /></p>
-		<p>Maximum Number of Attendees: <input type="number" name="max" value="<?php echo $max ?>" /></p>
-		<p>Image: <input type="file" name="fileToUpload" id="fileToUpload" /></p>
-		<p><input type="submit" name="Submit" value="submit" /></p>
+    <p><textarea class=' form-control' name="desc" form="event" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
+		<p>Event Start Date: <input class='col-3 form-control' type="date" name="date" value="<?php echo $date ?>" /></p>
+		<p>Event Start Time: <input class='col-3 form-control' type="time" name="time" value="<?php echo $time ?>" /></p>
+		<p>Maximum Number of Attendees: <input class='col-3 form-control' type="number" name="max" value="<?php echo $max ?>" /></p>
+		<p>Image: <input class='col-3 form-control' type="file" name="fileToUpload" id="fileToUpload" /></p>
+		<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
 </body>
 
 </html>
