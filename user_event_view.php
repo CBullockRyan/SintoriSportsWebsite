@@ -46,7 +46,7 @@ Description: View all events as regular user
 				echo '<div class="card">
 				<img class="card-img-top" src="' . $row['imgPath'] . '" alt="News image">
 				<h2 Class="card-title">' . $row['title'] . '</h2>
-				<p class="card-subtitle">Date and Time: ' . $row['eventDate'] . $row['eventTime'] . '</p>
+				<p class="card-subtitle mb-2 text-muted">Date and Time: ' . $row['eventDate'] . $row['eventTime'] . '</p>
         <p class="card-text">' . $row['description'] . '</p></div>';
 
 				//check that max capacity is not reached
