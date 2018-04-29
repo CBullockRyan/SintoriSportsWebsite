@@ -22,7 +22,7 @@ Description: Home page
 	<?php include ('nav.inc.php'); ?>
 
 	<div id="carouselSlides" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner" style=" width:100%; max-height: 400px !important;">
+		<div class="carousel-inner" style=" width:100%; max-height: 400px !important; clip: rect(400px, 0px, 0px, 0px);">
 			<div class="carousel-item active">
 				<img class="d-block w-100" src="uploads/dance.jpg" alt="First slide">
 			</div>
