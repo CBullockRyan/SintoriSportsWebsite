@@ -87,13 +87,13 @@ Description: create a member
 				array_push($errors, "Please enter your first name <br/>");
 			}
 			else{
-				$fname=trim($_POST['fname']);
+				$fname=htmlspecialchars(trim($_POST['fname']));
 			}
 			if(empty($_POST['lname'])){
 				array_push($errors, "Please enter your last name <br/>");
 			}
 			else{
-				$lname=trim($_POST['lname']);
+				$lname=htmlspecialchars(trim($_POST['lname']));
 			}
 			if (empty($_POST['gender'])){
 				array_push($errors, "Please select your gender <br/>");
@@ -111,7 +111,7 @@ Description: create a member
 				array_push($errors, "Please enter valid email address <br/>");
 			}
 			else{
-				$email=trim($_POST['email']);
+				$email=htmlspecialchars(trim($_POST['email']));
 			}
 			if (empty($_POST['phone'])){
 				array_push($errors, "Please enter a phone number <br/>");
@@ -123,7 +123,7 @@ Description: create a member
 				array_push($errors, "Please enter your address. <br/>");
 			}
 			else{
-				$address = $_POST['address'];
+				$address = htmlspecialchars(trim($_POST['address']));
 			}
 			//if additional member info is missing
 			if($max>1){
@@ -131,13 +131,13 @@ Description: create a member
 					array_push($errors, "Please enter your first name <br/>");
 				}
 				else{
-					$fname2=trim($_POST['fname2']);
+					$fname2=htmlspecialchars(trim($_POST['fname2']));
 				}
 				if(empty($_POST['lname2'])){
 					array_push($errors, "Please enter your last name <br/>");
 				}
 				else{
-					$lname2=trim($_POST['lname2']);
+					$lname2=htmlspecialchars(trim($_POST['lname2']));
 				}
 				if (empty($_POST['gender2'])){
 					array_push($errors, "Please select your gender <br/>");
@@ -155,7 +155,7 @@ Description: create a member
 					array_push($errors, "Please enter valid email address <br/>");
 				}
 				else{
-					$email2=trim($_POST['email2']);
+					$email2=htmlspecialchars(trim($_POST['email2']));
 				}
 				if (empty($_POST['phone2'])){
 					array_push($errors, "Please enter a phone number <br/>");
@@ -167,7 +167,7 @@ Description: create a member
 					array_push($errors, "Please enter your address. <br/>");
 				}
 				else{
-					$address2 = $_POST['address2'];
+					$address2 = htmlspecialchars(trim($_POST['address2']));
 				}
 				// handling of child members, they should not require a fourth members
 				// and children should not be required to have a phone or email associated
@@ -176,13 +176,13 @@ Description: create a member
 						array_push($errors, "Please enter your first name <br/>");
 					}
 					else{
-						$fname3=trim($_POST['fname3']);
+						$fname3=htmlspecialchars(trim($_POST['fname3']));
 					}
 					if(empty($_POST['lname3'])){
 						array_push($errors, "Please enter your last name <br/>");
 					}
 					else{
-						$lname3=trim($_POST['lname3']);
+						$lname3=htmlspecialchars(trim($_POST['lname3']));
 					}
 					if (empty($_POST['gender3'])){
 						array_push($errors, "Please select your gender <br/>");
@@ -198,7 +198,7 @@ Description: create a member
 					}
 					if(empty($_POST['email3'])){}
 					else{
-						$email3=trim($_POST['email3']);
+						$email3=htmlspecialchars(trim($_POST['email3']));
 					}
 					if (empty($_POST['phone3'])){}
 					else{
@@ -206,15 +206,15 @@ Description: create a member
 					}
 					if (empty($_POST['address3'])){}
 					else{
-						$address3 = $_POST['address3'];
+						$address3 = htmlspecialchars(trim($_POST['address3']));
 					}
 					if(empty($_POST['fname4'])){}
 					else{
-						$fname4=trim($_POST['fname4']);
+						$fname4=htmlspecialchars(trim($_POST['fname4']));
 					}
 					if(empty($_POST['lname4'])){}
 					else{
-						$lname4=trim($_POST['lname4']);
+						$lname4=htmlspecialchars(trim($_POST['lname4']));
 					}
 					if (empty($_POST['gender4'])){}
 					else{
@@ -226,7 +226,7 @@ Description: create a member
 					}
 					if(empty($_POST['email4'])){}
 					else{
-						$email4=trim($_POST['email4']);
+						$email4=htmlspecialchars(trim($_POST['email4']));
 					}
 					if (empty($_POST['phone4'])){}
 					else{
@@ -234,7 +234,7 @@ Description: create a member
 					}
 					if (empty($_POST['address4'])){}
 					else{
-						$address4 = $_POST['address4'];
+						$address4 = htmlspecialchars(trim($_POST['address4']));
 					}
 				}
 			}
@@ -313,7 +313,7 @@ Description: create a member
 						else{
 							echo '<h1>System Error</h1>
 							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
-							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
+						//	echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q3 . '</p>';
 						}
 					}
 					elseif($r2){
@@ -322,7 +322,7 @@ Description: create a member
 					else{
 						echo '<h1>System Error</h1>
 						<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
-						echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
+						//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
 					}
 				}
 				elseif($r1){
@@ -331,19 +331,16 @@ Description: create a member
 				else{
 					echo '<h1>System Error</h1>
 					<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
-					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';
+					//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q1 . '</p>';
 				}
 				//disconnect from database
 				mysqli_close($dbc);
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 		else{//create form

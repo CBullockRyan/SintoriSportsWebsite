@@ -101,11 +101,6 @@ Description: staff login page
 						echo "<font color=\"red\">ERROR: $error </font>";
 					}
 				}
-
-				//diconnect from database
-			//	mysqli_close($dbc);
-
-			//	exit();
 			}
 			else{
 				foreach($errors as $error){
