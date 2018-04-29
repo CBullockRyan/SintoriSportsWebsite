@@ -59,8 +59,8 @@ Description: Create a news post
 				$title = mysqli_real_escape_string($dbc, trim($title));
         $content = mysqli_real_escape_string($dbc, trim($content));
 
-				//insert data into membership table
-				$q1 = "Insert into content (title, content) values ('$title', '$content')";
+				//insert data
+				$q1 = "UPDATE content SET title = '$title', content='$content' WHERE contentID=1 LIMIT 1";
 				$r1 = @mysqli_query($dbc, $q1); //run query
 
 				//check query ran
