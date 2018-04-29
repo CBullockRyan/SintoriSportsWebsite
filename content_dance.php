@@ -97,10 +97,16 @@ Description: Create a news post
 	<form action="content_dance.php" method="post" id="dance">
 		<p>Title of Page: <input class='col-3 form-control' type="text" name="title"  value="<?php echo $title ?>" /></p>
 		<p>Description: </p>
-    <p><textarea class='col-8 form-control' name="content" id = "content" form="dance" rows="4" cols="40" ><?php echo $content ?></textarea></p>
+    <p><textarea class='col-8 form-control' name="content" id = "editor" form="dance" rows="4" cols="40" ><?php echo $content ?></textarea></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Save" value="submit" /></p>
     <script>
-      CKEDITOR.replace('content');
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ) )
+				.catch( error => {
+						console.error( error );
+				} );
+</script>
     </script>
   </form>
 </body>
