@@ -14,7 +14,7 @@ Description: rock climbing page
 <html>
 
 <head>
-	<title>Edit Content for the Dance Page</title>
+	<title>Rock Climbing</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
