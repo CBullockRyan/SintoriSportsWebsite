@@ -1,7 +1,7 @@
 <!--************************************************
 Author: Cassidy Bullock
 Date: April 29, 2018
-Description: edit content for dance page
+Description: Create a news post
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
@@ -14,7 +14,7 @@ Description: edit content for dance page
 <html>
 
 <head>
-	<title>Edit Content for Dance Classes</title>
+	<title>Edit Content for Rock Climbing</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
@@ -26,7 +26,7 @@ Description: edit content for dance page
     require ('connectDB.php');
 
     //query to get data for Dance
-    $q = "SELECT title, content FROM content WHERE contentID = 1";
+    $q = "SELECT title, content FROM content WHERE contentID = 2";
     $r = @mysqli_query($dbc, $q);
     $row = mysqli_fetch_array($r);
 
@@ -61,7 +61,7 @@ Description: edit content for dance page
         $content = mysqli_real_escape_string($dbc, trim($content));
 
 				//insert data
-				$q1 = "UPDATE content SET title = '$title', content='$content' WHERE contentID=1 LIMIT 1";
+				$q1 = "UPDATE content SET title = '$title', content='$content' WHERE contentID=2 LIMIT 1";
 				$r1 = @mysqli_query($dbc, $q1); //run query
 
 				//check query ran
@@ -91,12 +91,12 @@ Description: edit content for dance page
 		}
 	?>
 
-	<h1>Edit Content for Dance Classes</h1>
+	<h1>Edit Content for Rock Climbing</h1>
 	<!-- form to edit content -->
-	<form action="content_dance.php" method="post" id="dance">
+	<form action="content_dance.php" method="post" id="rock">
 		<p>Title of Page: <input class='col-3 form-control' type="text" name="title"  value="<?php echo $title ?>" /></p>
 		<p>Description: </p>
-    <p><textarea class='col-8 form-control' name="content" id = "editor" form="dance" rows="4" cols="40" ><?php echo $content ?></textarea></p>
+    <p><textarea class='col-8 form-control' name="content" id = "editor" form="rock" rows="4" cols="40" ><?php echo $content ?></textarea></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Save" value="Save" /></p>
     <script>
 			ClassicEditor
