@@ -100,7 +100,7 @@ Description: Create a news post
     <p><textarea class='col-8 form-control' name="content" id = "content" form="dance" rows="4" cols="40" ><?php echo $content ?></textarea></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Save" value="submit" /></p>
     <script>
-      CKEDITOR.replace('myeditor');
+      CKEDITOR.replace('content');
     </script>
   </form>
 </body>
