@@ -14,7 +14,7 @@ Description: Dance page
 <html>
 
 <head>
-	<title>Edit Content for the Dance Page</title>
+	<title>Dance Classes</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
