@@ -33,6 +33,9 @@ Description: Dance page
 	//variables
 	$title = $row[0];
 	$content = $row[1];
+
+	//close database
+	mysqli_close($dbc);
 	?>
 
 	<!--View the page content-->
