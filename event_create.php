@@ -45,13 +45,13 @@ Description: Create a new event
 				array_push($errors, "Please enter the event title. <br/>");
 			}
 			else{
-				$title=trim($_POST['title']);
+				$title=htmlspecialchars(trim($_POST['title']));
 			}
 			if(empty($_POST['desc'])){
 				array_push($errors, "Please enter a description of the event. <br/>");
 			}
 			else{
-				$desc=trim($_POST['desc']);
+				$desc=htmlspecialchars(trim($_POST['desc']));
 			}
 			if (empty($_POST['date'])){
 				array_push($errors, "Please select the date of the event. <br/>");
@@ -123,11 +123,11 @@ Description: Create a new event
 				$max = mysqli_real_escape_string($dbc, trim($max));
 				$imgPath = mysqli_real_escape_string($dbc, trim($imgPath));
 
-				//insert data into membership table
+				//insert data into event table
 				$q1 = "Insert into event (title, description, eventTime, eventDate, maxAttendee, imgPath) values ('$title', '$desc', '$time', '$date', '$max', '$imgPath')";
 				$r1 = @mysqli_query($dbc, $q1); //run query
 
-				//check membership table query ran
+				//check event table query ran
 				if($r1){
 					echo "<h2>New event successfully created</h2>";
 				}
@@ -143,13 +143,10 @@ Description: Create a new event
 
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>

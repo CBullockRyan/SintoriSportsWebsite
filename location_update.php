@@ -47,37 +47,37 @@ Description: update a membership type
 		if(empty($_POST['phone'])){
 			array_push($errors, "Please enter a phone number.");
 		} else{
-			$phone=trim($_POST['phone']);
+			$phone=htmlspecialchars(trim($_POST['phone']));
 		}
 		if(empty($_POST['address'])){
 			array_push($errors, "Please enter an address.");
 		} else{
-			$address=trim($_POST['address']);
+			$address=htmlspecialchars(trim($_POST['address']));
 		}
 		if(empty($_POST['email'])){
 			array_push($errors, "Please enter an email address.");
 		} else{
-			$email=trim($_POST['email']);
+			$email=htmlspecialchars(trim($_POST['email']));
 		}
 		if(empty($_POST['mt_open'])){
 			array_push($errors, "Please enter an opening time for Mon-Thurs.");
 		} else{
-			$mt_open=trim($_POST['mt_open']);
+			$mt_open=htmlspecialchars(trim($_POST['mt_open']));
 		}
 		if(empty($_POST['mt_close'])){
 			array_push($errors, "Please enter a closing time for Mon-Thurs.");
 		} else{
-			$mt_close=trim($_POST['mt_close']);
+			$mt_close=htmlspecialchars(trim($_POST['mt_close']));
 		}
 		if(empty($_POST['fs_open'])){
 			array_push($errors, "Please enter an opening time for Fri-Sat.");
 		} else{
-			$fs_open=trim($_POST['fs_open']);
+			$fs_open=htmlspecialchars(trim($_POST['fs_open']));
 		}
 		if(empty($_POST['fs_close'])){
 			array_push($errors, "Please enter a closing time for Fri-Sat.");
 		} else{
-			$fs_close=trim($_POST['fs_close']);
+			$fs_close=htmlspecialchars(trim($_POST['fs_close']));
 		}
 
 		//make variables readable for sql

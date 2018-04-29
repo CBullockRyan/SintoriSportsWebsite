@@ -27,7 +27,7 @@ Description: Update an event
 	} elseif ( (isset($_POST['id'])) && (is_numeric($_POST['id'])) ) { // Form submission.
 		$id = $_POST['id'];
 	} else { // No valid ID, kill the script.
-		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/2961692/assign2/event_viewall.php>View All Events page</a> and select event to update.</p>';
+		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/event_viewall.php>View All Events page</a> and select event to update.</p>';
 		exit();
 	}
 
@@ -57,27 +57,27 @@ Description: Update an event
 		if (empty($_POST['title'])) {
 			$errors[] = "You forgot to enter the title of the event";
 		} else {
-			$title = mysqli_real_escape_string($dbc, trim($_POST['title']));
+			$title = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['title'])));
 		}
 		if (empty($_POST['desc'])) {
 			$errors[] = "You forgot to enter the event description.";
 		} else {
-			$desc = mysqli_real_escape_string($dbc, trim($_POST['desc']));
+			$desc = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['desc'])));
 		}
 		if (empty($_POST['time'])) {
 			$errors[] = 'You forgot to enter the start time.';
 		} else {
-			$time = mysqli_real_escape_string($dbc, trim($_POST['time']));
+			$time = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['time'])));
 		}
 		if (empty($_POST['date'])){
 			$errors[] = 'You forgot to enter a start date.';
 		} else {
-			$date = mysqli_real_escape_string($dbc, trim($_POST['date']));
+			$date = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['date'])));
 		}
 		if (empty($_POST['max'])) {
 			$errors[] = "You forgot to enter a maximum number of attendees.";
 		} else {
-			$max = mysqli_real_escape_string($dbc, trim($_POST['max']));
+			$max = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['max'])));
 		}
 
 		//Check that there are 0 errors:
@@ -99,12 +99,9 @@ Description: Update an event
 				//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
 			}
 		} else { // Report the errors.
-
-			echo '<p class="error">The following error(s) occurred:<br />';
-			foreach ($errors as $msg) { // Print each error.
-				echo " - $msg<br />\n";
+			foreach($errors as $error){
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
 			}
-			echo '</p><p>Please try again.</p>';
 		}
 	}
 	//if form not submitted, display form
