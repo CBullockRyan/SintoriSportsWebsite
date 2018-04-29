@@ -43,7 +43,7 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="user_dance.php">Dance Classes</a>
 						<a class="dropdown-item" href="user_rock.php">Rock Climbing</a>
           				<a class="dropdown-item" href="user_hurling.php">Hurling/Camogie</a>
-          				<a class="dropdown-item" href="user_skydive.php">Indoor Skydiving</a>
+          				<a class="dropdown-item" href="user_skydiving.php">Indoor Skydiving</a>
 					</div>
 				</li>
 				<li class="nav-item">
