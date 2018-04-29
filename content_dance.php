@@ -16,7 +16,6 @@ Description: Create a news post
 <head>
 	<title>Edit Content for Dance Classes</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -91,6 +90,7 @@ Description: Create a news post
 		}
 	?>
 
+  <script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 
 	<h1>Edit Content for Dance Classes</h1>
 	<!-- form to edit content -->
