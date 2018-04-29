@@ -97,6 +97,17 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="report_enquiry.php">Enquiry Status</a>
 					</div>
 				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  User Content
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="content_dance.php">Dance Classes</a>
+						<a class="dropdown-item" href="content_rock.php">Rock Climbing</a>
+						<a class="dropdown-item" href="content_hurling.php">Hurling/Camogie</a>
+						<a class="dropdown-item" href="content_skydive.php">Indoor Skydiving</a>
+					</div>
+				</li>
 			<?php	endif; ?>
 				<li class="nav-item"><?php // Create a login/logout link:
 					if(isset($_SESSION['user'])) {
