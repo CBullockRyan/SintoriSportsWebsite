@@ -14,9 +14,33 @@ Description: Dance page
 <html>
 
 <head>
-	<title>Dance Classes</title>
+	<title>Edit Content for the Dance Page</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
-	<?php include ('nav.inc.php'); ?>
+	<?php include ('nav.inc.php');
+
+	//connect to database
+	require ('connectDB.php');
+
+	//get dance page information
+	$q = "SELECT title, content FROM content WHERE contentID=1";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+
+	//variables
+	$title = $row[0];
+	$content = $row[1];
+	?>
+
+	<!--View the page content-->
+	<h1><?php echo $title ?></h1>
+	<div>
+		<?php echo $content ?>
+	</div>
+
+</body>
+
+</html>
