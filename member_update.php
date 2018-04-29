@@ -14,7 +14,7 @@ Description: Update a member
 <html>
 
 <head>
-	<title>Update a Staff Member</title>
+	<title>Update a Member</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -27,7 +27,7 @@ Description: Update a member
 	} elseif ( (isset($_POST['id'])) && (is_numeric($_POST['id'])) ) { // Form submission.
 		$id = $_POST['id'];
 	} else { // No valid ID, kill the script.
-		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/2961692/assign2/employees_viewall.php>View All Employees page</a> and select employee to update.</p>';
+		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/member_viewall.php>View All Employees page</a> and select employee to update.</p>';
 		exit();
 	}
 
@@ -57,27 +57,27 @@ Description: Update a member
 		if (empty($_POST['fname'])) {
 			$errors[] = "You forgot to enter the first name";
 		} else {
-			$fname = mysqli_real_escape_string($dbc, trim($_POST['fname']));
+			$fname = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['fname'])));
 		}
 		if (empty($_POST['lname'])) {
 			$errors[] = "You forgot to enter the last name";
 		} else {
-			$lname = mysqli_real_escape_string($dbc, trim($_POST['lname']));
+			$lname = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['lname'])));
 		}
 		if (empty($_POST['email'])) {
 			$errors[] = 'You forgot to enter email address.';
 		} else {
-			$email = mysqli_real_escape_string($dbc, trim($_POST['email']));
+			$email = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['email'])));
 		}
 		if (empty($_POST['address'])){
 			$errors[] = 'You forgot to enter an address.';
 		} else {
-			$address = mysqli_real_escape_string($dbc, trim($_POST['address']));
+			$address = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['address'])));
 		}
 		if (empty($_POST['phone'])) {
 			$errors[] = "You forgot to enter a phone number";
 		} else {
-			$phone = mysqli_real_escape_string($dbc, trim($_POST['phone']));
+			$phone = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['phone'])));
 		}
 
 		//Check that there are 0 errors:
@@ -108,12 +108,9 @@ Description: Update a member
 				echo '<p class="error">The email address has already been registered.</p>';
 			}
 		} else { // Report the errors.
-
-			echo '<p class="error">The following error(s) occurred:<br />';
-			foreach ($errors as $msg) { // Print each error.
-				echo " - $msg<br />\n";
+			foreach($errors as $error){
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
 			}
-			echo '</p><p>Please try again.</p>';
 		}
 	}
 	//if form not submitted, display form

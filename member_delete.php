@@ -26,7 +26,7 @@ Description: Delete a member
 	} elseif ( (isset($_POST['id'])) && (is_numeric($_POST['id'])) ) { // Form submission.
 		$id = $_POST['id'];
 	} else { // No valid ID, kill the script.
-		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/staff_viewall.php>View All Staff page</a> and select employee to delete.</p>';
+		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/member_viewall.php>View All Members page</a> and select a member to delete.</p>';
 
 		exit();
 	}
