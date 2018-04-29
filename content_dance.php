@@ -57,6 +57,7 @@ Description: edit content for dance page
 			if(empty($errors)){
 
 				//fill variables
+				$title = htmlspecialchars($title);
 				$title = mysqli_real_escape_string($dbc, trim($title));
         $content = mysqli_real_escape_string($dbc, trim($content));
 
