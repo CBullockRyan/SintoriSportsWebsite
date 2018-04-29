@@ -1,7 +1,7 @@
 <!--************************************************
 Author: Cassidy Bullock
-Date: April 27, 2018
-Description: Dance page
+Date: April 29, 2018
+Description: rock climbing page
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
@@ -14,7 +14,7 @@ Description: Dance page
 <html>
 
 <head>
-	<title>Dance Classes</title>
+	<title>Rock Climbing</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
@@ -26,7 +26,7 @@ Description: Dance page
 	require ('connectDB.php');
 
 	//get dance page information
-	$q = "SELECT title, content FROM content WHERE contentID=1";
+	$q = "SELECT title, content FROM content WHERE contentID=2";
 	$r = @mysqli_query($dbc, $q);
 	$row = mysqli_fetch_array($r);
 
@@ -38,7 +38,7 @@ Description: Dance page
 	mysqli_close($dbc);
 	?>
 
-	<img src="uploads/dance.jpg" class="img-fluid" alt="dance_img">
+	<img src="uploads/rock.jpg" class="img-fluid" alt="rock climbing img">
 	<!--View the page content-->
 	<h1><?php echo $title ?></h1>
 	<div>

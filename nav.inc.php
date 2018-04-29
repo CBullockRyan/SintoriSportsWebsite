@@ -40,10 +40,10 @@ Description: navigation bar to be included on
 					Services
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Dance Classes</a>
-						<a class="dropdown-item" href="#">Rock Climbing</a>
-          				<a class="dropdown-item" href="#">Zorbing</a>
-          				<a class="dropdown-item" href="#">Indoor Skydiving</a>
+						<a class="dropdown-item" href="user_dance.php">Dance Classes</a>
+						<a class="dropdown-item" href="user_rock.php">Rock Climbing</a>
+          				<a class="dropdown-item" href="user_hurling.php">Hurling/Camogie</a>
+          				<a class="dropdown-item" href="user_skydiving.php">Indoor Skydiving</a>
 					</div>
 				</li>
 				<li class="nav-item">
