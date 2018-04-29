@@ -1,0 +1,50 @@
+<!--************************************************
+Author: Cassidy Bullock
+Date: April 29, 2018
+Description: hurling and camogie page
+************************************************-->
+<?php
+	if(session_status() == PHP_SESSION_NONE){
+		session_start();
+	}
+?>
+
+<!doctype html>
+
+<html>
+
+<head>
+	<title>Hurling/Camogie</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
+</head>
+
+<body>
+	<?php include ('nav.inc.php');
+
+	//connect to database
+	require ('connectDB.php');
+
+	//get hurling page information
+	$q = "SELECT title, content FROM content WHERE contentID=3";
+	$r = @mysqli_query($dbc, $q);
+	$row = mysqli_fetch_array($r);
+
+	//variables
+	$title = $row[0];
+	$content = $row[1];
+
+	//close database
+	mysqli_close($dbc);
+	?>
+
+	<img src="uploads/hurling.jpg" class="img-fluid" alt="hurling image img">
+	<!--View the page content-->
+	<h1><?php echo $title ?></h1>
+	<div>
+		<?php echo $content ?>
+	</div>
+
+</body>
+
+</html>
