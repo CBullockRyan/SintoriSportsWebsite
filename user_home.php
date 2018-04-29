@@ -35,10 +35,22 @@ Description: Home page
 		</div>
 	</div>
 
+	<?php //get opening time information
+		require ('connectDB.php');
+		$q = "SELECT mon_thurs_open, mon_thurs_close, fri_sat_open, fri_sat_close FROM location WHERE locationID=1";
+		$r = @mysqli_query($dbc, $q);
+		$row = mysqli_fetch_array($r);
+		$mt_open = $row[0];
+		$mt_close = $row[1];
+		$fs_open = $row[2];
+		$fs_close = $row[3];
+		mysqli_close($dbc);
+	?>
+
 	<div>
 		<h1>Opening Times</h1>
-		<p>Monday-Thursday 7:00am - 10:00pm</p>
-		<p>Friday-Saturday 9:00am - 8:00pm</p>
+		<p>Monday-Thursday <?php echo $mt_open . "-" . $mt_close; ?></p>
+		<p>Friday-Saturday <?php echo $fs_open . "-" . $fs_close; ?></p>
 	</div>
 </body>
 
