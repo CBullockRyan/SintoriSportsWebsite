@@ -100,13 +100,11 @@ Description: Create a news post
     <p><textarea class='col-8 form-control' name="content" id = "editor" form="dance" rows="4" cols="40" ><?php echo $content ?></textarea></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Save" value="submit" /></p>
     <script>
-		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.catch( error => {
 						console.error( error );
 				} );
-</script>
     </script>
   </form>
 </body>
