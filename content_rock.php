@@ -93,7 +93,7 @@ Description: Create a news post
 
 	<h1>Edit Content for Rock Climbing</h1>
 	<!-- form to edit content -->
-	<form action="content_dance.php" method="post" id="rock">
+	<form action="content_rock.php" method="post" id="rock">
 		<p>Title of Page: <input class='col-3 form-control' type="text" name="title"  value="<?php echo $title ?>" /></p>
 		<p>Description: </p>
     <p><textarea class='col-8 form-control' name="content" id = "editor" form="rock" rows="4" cols="40" ><?php echo $content ?></textarea></p>
