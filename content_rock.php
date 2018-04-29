@@ -1,7 +1,7 @@
 <!--************************************************
 Author: Cassidy Bullock
 Date: April 29, 2018
-Description: Create a news post
+Description: edit content for rock climbing
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){
@@ -57,6 +57,7 @@ Description: Create a news post
 			if(empty($errors)){
 
 				//fill variables
+				$title = htmlspecialchars($title);
 				$title = mysqli_real_escape_string($dbc, trim($title));
         $content = mysqli_real_escape_string($dbc, trim($content));
 
