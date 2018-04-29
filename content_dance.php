@@ -81,13 +81,10 @@ Description: edit content for dance page
 
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>
