@@ -21,6 +21,7 @@ Description: Home page
 <body>
 	<?php include ('nav.inc.php'); ?>
 
+	<!-- Image carousel -->
 	<div id="carouselSlides" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner" style=" width:100%; height: 500px !important;">
 			<div class="carousel-item active">
