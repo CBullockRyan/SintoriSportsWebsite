@@ -1,6 +1,6 @@
 <!--************************************************
 Author: Cassidy Bullock
-Date: April 27, 2018
+Date: April 29, 2018
 Description: rock climbing page
 ************************************************-->
 <?php
