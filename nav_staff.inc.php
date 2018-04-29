@@ -105,7 +105,7 @@ Description: navigation bar to be included on
 						<a class="dropdown-item" href="content_dance.php">Dance Classes</a>
 						<a class="dropdown-item" href="content_rock.php">Rock Climbing</a>
 						<a class="dropdown-item" href="content_hurling.php">Hurling/Camogie</a>
-						<a class="dropdown-item" href="content_skydive.php">Indoor Skydiving</a>
+						<a class="dropdown-item" href="content_skydiving.php">Indoor Skydiving</a>
 					</div>
 				</li>
 			<?php	endif; ?>
