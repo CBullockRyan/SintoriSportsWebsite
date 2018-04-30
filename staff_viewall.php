@@ -1,7 +1,7 @@
 <!--************************************************
 Author: Cassidy Bullock
 Date: April 9, 2018
-Description: View all staff member
+Description: View all staff members
 ************************************************-->
 <?php
 	if(session_status() == PHP_SESSION_NONE){

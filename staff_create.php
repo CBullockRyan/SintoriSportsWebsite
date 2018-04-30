@@ -43,13 +43,13 @@ Description: Create new staff member
 				array_push($errors, "Please enter your first name <br/>");
 			}
 			else{
-				$fname=trim($_POST['fname']);
+				$fname=htmlspecialchars(trim($_POST['fname']));
 			}
 			if(empty($_POST['lname'])){
 				array_push($errors, "Please enter your last name <br/>");
 			}
 			else{
-				$lname=trim($_POST['lname']);
+				$lname=htmlspecialchars(trim($_POST['lname']));
 			}
 			if (empty($_POST['gender'])){
 				array_push($errors, "Please select your gender <br/>");
@@ -73,7 +73,7 @@ Description: Create new staff member
 				array_push($errors, "Please enter valid email address <br/>");
 			}
 			else{
-				$email=trim($_POST['email']);
+				$email=htmlspecialchars(trim($_POST['email']));
 			}
 			if (empty($_POST['phone'])){
 				array_push($errors, "Please enter a phone number <br/>");
@@ -85,7 +85,7 @@ Description: Create new staff member
 				array_push($errors, "Please enter your address. <br/>");
 			}
 			else{
-				$address = $_POST['address'];
+				$address = htmlspecialchars(trim($_POST['address']));
 			}
 			if (empty($_POST['position'])){
 				array_push($errors, "Please select position <br/>");
@@ -119,7 +119,7 @@ Description: Create new staff member
         //encode Password
         $staffPass = sha1($staffPass);
 
-				//insert data into membership table
+				//insert data into staff table
 				$q1 = "Insert into staff (position, staffPass, fname, lname, email, address, phone, gender, DoB, hireDate) values ('$position', '$staffPass', '$fname', '$lname', '$email', '$address', '$phone', '$gender', '$Dob', '$hiredate')";
 				$r1 = @mysqli_query($dbc, $q1); //run query
 
@@ -143,20 +143,17 @@ Description: Create new staff member
 
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>
 
 
 	<h1>Add New Staff Member</h1>
-	<!-- form to create membership -->
+	<!-- form to create new staff-->
 	<form action="staff_create.php" method="post">
 		<p>Staff Position: <select class='col-3 form-control' name="position">
 			<option value="manager">Manager</option>
