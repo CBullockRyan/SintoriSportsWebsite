@@ -30,8 +30,6 @@ Description: Membership page
 	//variables
 	$title = $row[0];
 	$content = $row[1];
-
-  mysqli_close($dbc);
   ?>
 
   <img src="..." alt="membership">
@@ -41,7 +39,6 @@ Description: Membership page
   </div>
 
 	<?php //get membership type information
-		require ('connectDB.php');
 		$q = "SELECT membershipType, maxMembers, membershipFee FROM membershipinfo";
 		$r = @mysqli_query($dbc, $q);
     echo "<ul>";
