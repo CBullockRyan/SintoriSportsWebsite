@@ -33,21 +33,23 @@ Description: Membership page
   ?>
 
   <img src="..." alt="membership">
-  <h1><?php echo $title ?></h1>
-  <div>
-    <?php echo $content ?>
-  </div>
+	<div class="jumbotron">
+		<h1><?php echo $title ?></h1>
+  	<div>
+    	<?php echo $content ?>
+  	</div>
 
-	<?php //get membership type information
-		$q = "SELECT membershipType, maxMembers, membershipFee FROM membershipinfo";
-		$r = @mysqli_query($dbc, $q);
-    echo "<ul>";
-    while($row = mysqli_fetch_array($r)){
-      echo "<li><strong>$row[0] Membership</strong> includes $row[1] members for $ $row[2] a year.</li>";
-    }
-    echo "</ul>";
-		mysqli_close($dbc);
-	?>
+		<?php //get membership type information
+			$q = "SELECT membershipType, maxMembers, membershipFee FROM membershipinfo";
+			$r = @mysqli_query($dbc, $q);
+    	echo "<ul>";
+    	while($row = mysqli_fetch_array($r)){
+      	echo "<li><strong>$row[0] Membership</strong> includes $row[1] members for $ $row[2] a year.</li>";
+    	}
+    	echo "</ul>";
+			mysqli_close($dbc);
+		?>
+	</div>
 </body>
 
 </html>
