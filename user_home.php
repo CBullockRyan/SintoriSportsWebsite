@@ -62,11 +62,11 @@ Description: Home page
 		<div>
 			<?php echo $content ?>
 		</div>
-	</div>
-	<div>
-		<h3>Opening Times</h3>
-		<p>Monday-Thursday <?php echo $mt_open . "-" . $mt_close; ?></p>
-		<p>Friday-Saturday <?php echo $fs_open . "-" . $fs_close; ?></p>
+		<div>
+			<h3>Opening Times</h3>
+			<p>Monday-Thursday <?php echo $mt_open . "-" . $mt_close; ?></p>
+			<p>Friday-Saturday <?php echo $fs_open . "-" . $fs_close; ?></p>
+		</div>
 	</div>
 </body>
 
