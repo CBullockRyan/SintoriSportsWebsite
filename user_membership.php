@@ -32,7 +32,7 @@ Description: Membership page
 	$content = $row[1];
   ?>
 
-  <img src="..." alt="membership">
+  <img src="uploads/membership.jpg" alt="membership">
 	<div class="jumbotron">
 		<h1><?php echo $title ?></h1>
   	<div>
@@ -50,7 +50,6 @@ Description: Membership page
 			mysqli_close($dbc);
 		?>
 	</div>
-	<?php include ('footer.inc.php'); ?>
 </body>
 
 </html>
