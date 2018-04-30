@@ -48,8 +48,8 @@ Description: Create membership page, works with
 				require ('connectDB.php');
 
 				//fill variables
-				$mType = mysqli_real_escape_string($dbc, trim($mType));
-				$payment = mysqli_real_escape_string($dbc, trim($payment));
+				$mType = mysqli_real_escape_string($dbc, htmlspecialchars(trim($mType)));
+				$payment = mysqli_real_escape_string($dbc, htmlspecialchars(trim($payment)));
 
 				//insert data into membership table
 				$q1 = "Insert into membership (infoID) values ('$mType')";
@@ -91,13 +91,10 @@ Description: Create membership page, works with
 
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>

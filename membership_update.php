@@ -44,7 +44,7 @@ Description: update a membership to change status.
 
 			//fill variables
 			$mID = mysqli_real_escape_string($dbc, trim($_POST['mID']));
-			$status = mysqli_real_escape_string($dbc, trim($_POST['status']));
+			$status = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['status'])));
 
 			//check that membership ID exists
 			$q1 = "SELECT * FROM membership WHERE membershipID = $mID";
@@ -71,12 +71,9 @@ Description: update a membership to change status.
 		}
 		else{
 			//display errors
-			echo "<h1>Errors</h1>";
-			echo "<p>The following errors occurred:<br/>";
 			foreach($errors as $error){
-				echo " - $error <br/>";
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
 			}
-			echo "Please try again</br>";
 		}
 	}
 	else{ // create Form if unsubmitted
