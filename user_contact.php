@@ -47,7 +47,7 @@ Description: View contact information and make enquiry
 	$Laddress=$row['address'];
 
 	//display top part of page with contact Details
-	echo "<div class='row jumbotron'><div class='col-xs-3'><h1>Contact Us</h1>";
+	echo "<div class='row jumbotron'><div class='col-4'><h1>Contact Us</h1>";
 	echo "<h2>Opening Hours</h2>";
 	echo "<p>Monday-Thursday $mt_open - $mt_close</p>";
 	echo "<p>Friday-Saturday $fs_open - $fs_close</p>";
@@ -148,7 +148,7 @@ Description: View contact information and make enquiry
 			}
 		}
 	} else{//print the form
-		echo "<div class='col-9'><h2>Get in Touch</h2>";
+		echo "<div class='col-8'><h2>Get in Touch</h2>";
 		echo "<form action='user_contact.php' method='post' id='enquiry'>
 		<p>First Name: <input class='col-3 form-control' type='text' name='fname' value='$fname' /></p>
 		<p>Last Name: <input class='col-3 form-control' type='text' name='lname' value='$lname' /></p>
