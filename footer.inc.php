@@ -17,6 +17,6 @@ Description: footer inclusion
 
 <footer class="footer">
   <div class="container">
-    <span class="text-muted"><?php echo $phone . " - " . $address . " - " . $email</span>
+    <span class="text-muted"><?php echo $phone . " - " . $address . " - " . $email?></span>
   </div>
 </footer>
