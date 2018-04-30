@@ -16,6 +16,7 @@ Description: Create a news post
 <head>
 	<title>Create News Post</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@ Description: Create a news post
 				array_push($errors, "Please enter the event title.");
 			}
 			else{
-				$title=trim($_POST['title']);
+				$title=htmlspecialchars(trim($_POST['title']));
 			}
 			if(empty($_POST['desc'])){
 				array_push($errors, "Please enter a description of the event.");
@@ -46,7 +47,7 @@ Description: Create a news post
 				$desc=trim($_POST['desc']);
 			}
 
-			//if there are no errors from the form or from uploading the image
+			//if there are no errors from the form
 			if(empty($errors)){
 				//connect to database
 				require ('connectDB.php');
@@ -75,13 +76,10 @@ Description: Create a news post
 
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>
@@ -92,8 +90,16 @@ Description: Create a news post
 	<form action="news_create.php" method="post" id="news">
 		<p>Title of Post: <input class='col-3 form-control' type="text" name="title" value="<?php echo $title ?>" /></p>
 		<p>Description: </p>
-    <p><textarea class='col-8 form-control' name="desc" form="news" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
+    <p><textarea class='col-8 form-control' name="desc" id="editor" form="news" rows="4" cols="40" ><?php echo $desc ?></textarea></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
+		<!-- script to make wysiwyg text box-->
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ) )
+				.catch( error => {
+						console.error( error );
+				} );
+    </script>
 </body>
 
 </html>

@@ -36,13 +36,13 @@ Description: Make a payment
 				array_push($errors, "Please enter your membership number <br/>");
 			}
 			else{
-				$membershipID = trim($_POST['membershipID']);
+				$membershipID = htmlspecialchars(trim($_POST['membershipID']));
 			}
 			if(empty($_POST['amount'])){
 				array_push($errors, "Please enter payment amount <br/>");
 			}
 			else{
-				$amount = trim($_POST['amount']);
+				$amount = htmlspecialchars(trim($_POST['amount']));
 			}
 			if (empty($_POST['paymentDate'])){
 				array_push($errors, "Please enter the date of payment. <br/>");
@@ -100,13 +100,10 @@ Description: Make a payment
 					array_push($errors, "Membership not found. <br/>");
 				}
 			}
-			if($errors){
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			if($errors){ // display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>

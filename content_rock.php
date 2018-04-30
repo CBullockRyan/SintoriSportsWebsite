@@ -96,7 +96,8 @@ Description: edit content for rock climbing
 		<p>Description: </p>
     <p><textarea class='col-8 form-control' name="content" id = "editor" form="rock" rows="4" cols="40" ><?php echo $content ?></textarea></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Save" value="Save" /></p>
-    <script>
+		<!-- script to make wysiwyg text box-->
+		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ) )
 				.catch( error => {
