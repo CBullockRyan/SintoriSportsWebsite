@@ -43,7 +43,7 @@ Description: View all news as a user
 				echo '<div class="card col-6">
 				<h2 class="card-title">' . $row['title'] . '</h2>
 				<p class="card-subtitle mb-2 text-muted">Date: ' . $row['newsDate'] . '</p>
-        <p class="card-text">' . $row['description'] . '</p>';
+        <p class="card-text">' . $row['description'] . '</p></div>';
 			}
 		}
 		else{
