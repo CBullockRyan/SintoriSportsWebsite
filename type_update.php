@@ -27,7 +27,7 @@ Description: update a membership type
 	} elseif ( (isset($_POST['id'])) && (is_numeric($_POST['id'])) ) { // Form submission.
 		$id = $_POST['id'];
 	} else { // No valid ID, kill the script.
-		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/2961692/assign2/employees_viewall.php>View All Employees page</a> and select employee to update.</p>';
+		echo '<p class="error">This page has not been accessed correctly, please go back to the <a href=http://localhost/SintoriSportsWebsite/type_viewall.php>View All Types page</a> and select a membership type to update.</p>';
 		exit();
 	}
 
@@ -56,19 +56,19 @@ Description: update a membership type
       $errors[]= "Please enter the membership type name.";
     }
     else{
-      $type = mysqli_real_escape_string($dbc, trim($_POST['type']));
+      $type = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['type'])));
     }
     if(empty($_POST['maxMember'])){
       $errors[]= "Please enter the maximum number of members.";
     }
     else{
-      $maxMember = mysqli_real_escape_string($dbc, trim($_POST['maxMember']));
+      $maxMember = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['maxMember'])));
     }
     if (empty($_POST['fee'])){
       $errors[]= "Please enter the annual fee.";
     }
     else{
-      $fee = mysqli_real_escape_string($dbc, trim($_POST['fee']));
+      $fee = mysqli_real_escape_string($dbc, htmlspecialchars(trim($_POST['fee'])));
     }
 
 		//Check that there are 0 errors:
@@ -90,12 +90,9 @@ Description: update a membership type
 				}
 		}
 		else { // Report the errors.
-
-			echo '<p class="error">The following error(s) occurred:<br />';
-			foreach ($errors as $msg) { // Print each error.
-				echo " - $msg<br />\n";
+			foreach($errors as $error){
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
 			}
-			echo '</p><p>Please try again.</p>';
 		}
 	}
 	//if form not submitted, display form

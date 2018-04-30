@@ -36,19 +36,19 @@ Description: Make a new membership type
 				array_push($errors, "Please enter the membership type name. <br/>");
 			}
 			else{
-				$type = trim($_POST['type']);
+				$type = htmlspecialchars(trim($_POST['type']));
 			}
 			if(empty($_POST['maxMember'])){
 				array_push($errors, "Please enter maximum number of members. <br/>");
 			}
 			else{
-				$maxMember = trim($_POST['maxMember']);
+				$maxMember = htmlspecialchars(trim($_POST['maxMember']));
 			}
 			if (empty($_POST['fee'])){
 				array_push($errors, "Please enter the associated annual fee. <br/>");
 			}
 			else{
-				$fee = $_POST['fee'];
+				$fee = htmlspecialchars(trim($_POST['fee']));
 			}
 
 			//connect to database
@@ -82,13 +82,10 @@ Description: Make a new membership type
 
 				exit();
 			}
-			else{
-				echo "<h1>Errors</h1>";
-				echo "<p>The following errors occurred:<br/>";
+			else{ //display errors
 				foreach($errors as $error){
-					echo " - $error <br/>";
+					echo "<font color=\"red\">ERROR: $error </font><br/>";
 				}
-				echo "Please try again</br>";
 			}
 		}
 	?>
