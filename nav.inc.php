@@ -23,7 +23,6 @@ Description: navigation bar to be included on
 <body>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<span class="navbar-brand">
-			<!--<img src="img/navLogo.jpg" width="30" height="30" alt="">-->
 			Sintori Sports Club
 		</span>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +46,7 @@ Description: navigation bar to be included on
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Membership</a>
+					<a class="nav-link" href="user_membership.php">Membership</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="user_event_view.php">Events</a>

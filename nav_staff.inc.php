@@ -23,7 +23,6 @@ Description: navigation bar to be included on
 <body>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 		<span class="navbar-brand">
-			<!--<img src="img/navLogo.jpg" width="30" height="30" alt="">-->
 			Sintori Sports Club
 		</span>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
