@@ -55,25 +55,25 @@ Description: register a non member to an event
 			array_push($errors, "Please enter your first name. </br>");
 		}
 		else{
-			$fname=trim($_POST['fname']);
+			$fname=htmlspecialchars(trim($_POST['fname']));
 		}
     if(empty($_POST['lname'])){
 			array_push($errors, "Please enter your last name. </br>");
 		}
 		else{
-			$lname=trim($_POST['lname']);
+			$lname=htmlspecialchars(trim($_POST['lname']));
 		}
     if(empty($_POST['phone'])){
 			array_push($errors, "Please enter a contact number. </br>");
 		}
 		else{
-			$phone=trim($_POST['phone']);
+			$phone=htmlspecialchars(trim($_POST['phone']));
 		}
     if(empty($_POST['email'])){
 			array_push($errors, "Please enter an email. </br>");
 		}
 		else{
-			$email=trim($_POST['email']);
+			$email=htmlspecialchars(trim($_POST['email']));
 		}
 
 		//check for Errors
@@ -117,12 +117,9 @@ Description: register a non member to an event
           //echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q2 . '</p>'; // Debugging message.
       }
 		} else {//display error messages
-			echo "<h1>Errors</h1>";
-			echo "<p>The following errors occurred:<br/>";
 			foreach($errors as $error){
-				echo " - $error <br/>";
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
 			}
-			echo "Please try again</br>";
 		}
 	}
 	else{//print form
@@ -135,3 +132,7 @@ Description: register a non member to an event
 			<input type='hidden' name='id' value='" . $id . "' />
 			<p><input class='btn btn-outline-info' type='submit' name='submit' value='Register' /></p>";
 	}
+?>
+</body>
+
+</html>

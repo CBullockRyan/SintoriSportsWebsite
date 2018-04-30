@@ -80,8 +80,8 @@ Description: register a member to an event
 		//check for Errors
 		if(empty($errors)){
 			//save $mID
-			$mID = mysqli_real_escape_string($dbc, trim($mID));
-			$numAttendees = mysqli_real_escape_string($dbc, trim($numAttendees));
+			$mID = mysqli_real_escape_string($dbc, htmlspecialchars(trim($mID)));
+			$numAttendees = mysqli_real_escape_string($dbc, htmlspecialchars(trim($numAttendees)));
 
 			//record in database
 			$q2 = "INSERT INTO eventbooking (eventID, membershipID, numAttendee) values ('$id', '$mID', '$numAttendees')";
@@ -103,12 +103,9 @@ Description: register a member to an event
 				//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q2 . '</p>'; // Debugging message.
 			}
 		} else {//display error messages
-			echo "<h1>Errors</h1>";
-			echo "<p>The following errors occurred:<br/>";
 			foreach($errors as $error){
-				echo " - $error <br/>";
+				echo "<font color=\"red\">ERROR: $error </font><br/>";
 			}
-			echo "Please try again</br>";
 		}
 	}
 	else{//print form
@@ -123,3 +120,7 @@ Description: register a member to an event
 		echo "<p>Not a member? Click <a href=http://localhost/SintoriSportsWebsite/user_event_nonmemberRegister.php?id=" . $id . ">here</a>
 		to register for the event.</p>";
 	}
+	?>
+</body>
+
+</html>

@@ -65,37 +65,37 @@ Description: View contact information and make enquiry
 			array_push($errors, "Please enter the your first name.");
 		}
 		else{
-			$fname=trim($_POST['fname']);
+			$fname=htmlspecialchars(trim($_POST['fname']));
 		}
 		if(empty($_POST['lname'])){
 			array_push($errors, "Please enter the your last name.");
 		}
 		else{
-			$lname=trim($_POST['lname']);
+			$lname=htmlspecialchars(trim($_POST['lname']));
 		}
 		if(empty($_POST['phone'])){
 			array_push($errors, "Please enter the your contact number.");
 		}
 		else{
-			$phone=trim($_POST['phone']);
+			$phone=htmlspecialchars(trim($_POST['phone']));
 		}
 		if(empty($_POST['email'])){
 			array_push($errors, "Please enter the your contact email.");
 		}
 		else{
-			$email=trim($_POST['email']);
+			$email=htmlspecialchars(trim($_POST['email']));
 		}
 		if(empty($_POST['subject'])){
 			array_push($errors, "Please enter the subject of your enquiry.");
 		}
 		else{
-			$subject=trim($_POST['subject']);
+			$subject=htmlspecialchars(trim($_POST['subject']));
 		}
 		if(empty($_POST['message'])){
 			array_push($errors, "Please record your enquiry.");
 		}
 		else{
-			$message=trim($_POST['message']);
+			$message=htmlspecialchars(trim($_POST['message']));
 		}
 
 		//make all variables readable by sql
@@ -134,13 +134,13 @@ Description: View contact information and make enquiry
 					echo '<h2>System Error</h2>
 					<p class="error">Your enquiry could not be submitted due to system error. We apologize for any inconvenience.</p>';
 					//debugging message
-					echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q . '</p>';
+					//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q . '</p>';
 				}
 			} else{ //system error
 				echo '<h2>System Error</h2>
 				<p class="error">Your enquiry could not be submitted due to system error. We apologize for any inconvenience.</p>';
 				//debugging message
-				echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q . '</p>';
+				//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q . '</p>';
 			}
 		} else{ //display the errors
 			foreach($errors as $error){
