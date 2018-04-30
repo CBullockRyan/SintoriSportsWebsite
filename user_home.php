@@ -36,8 +36,17 @@ Description: Home page
 		</div>
 	</div>
 
-	<?php //get opening time information
+	<?php
 		require ('connectDB.php');
+
+		//get Home page information
+		$q = "SELECT title, content FROM content WHERE contentID=6";
+		$r = @mysqli_query($dbc, $q);
+		$row = mysqli_fetch_array($r);
+		$title = $row[0];
+		$content = $row[1];
+
+		//opening time information
 		$q = "SELECT mon_thurs_open, mon_thurs_close, fri_sat_open, fri_sat_close FROM location WHERE locationID=1";
 		$r = @mysqli_query($dbc, $q);
 		$row = mysqli_fetch_array($r);
@@ -45,9 +54,13 @@ Description: Home page
 		$mt_close = $row[1];
 		$fs_open = $row[2];
 		$fs_close = $row[3];
+
 		mysqli_close($dbc);
 	?>
-
+	<h1><?php echo $title ?></h1>
+	<div>
+		<?php echo $content ?>
+	</div>
 	<div>
 		<h3>Opening Times</h3>
 		<p>Monday-Thursday <?php echo $mt_open . "-" . $mt_close; ?></p>
