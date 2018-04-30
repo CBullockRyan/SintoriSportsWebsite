@@ -1,6 +1,6 @@
 <!--************************************************
 Author: Cassidy Bullock
-Date: April 29, 2018
+Date: April 30, 2018
 Description: edit content for membership page
 ************************************************-->
 <?php
