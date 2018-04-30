@@ -40,7 +40,7 @@ Description: View all news as a user
 
 			// Fetch and print all the records:
 			while ($row = mysqli_fetch_array($r)) {
-				echo '<div class="card col-6">
+				echo '<div class="card col-8">
 				<h2 class="card-title">' . $row['title'] . '</h2>
 				<p class="card-subtitle mb-2 text-muted">Date: ' . $row['newsDate'] . '</p>
         <p class="card-text">' . $row['description'] . '</p></div>';

@@ -43,7 +43,7 @@ Description: View all events as regular user
 
 			// Fetch and print all the records:
 			while ($row = mysqli_fetch_array($r)) {
-				echo '<div class="card col-6">
+				echo '<div class="card col-8">
 				<img class="card-img-top" src="' . $row['imgPath'] . '" alt="News image">
 				<h2 Class="card-title">' . $row['title'] . '</h2>
 				<p class="card-subtitle mb-2 text-muted">Date and Time: ' . $row['eventDate'] . ' ' . $row['eventTime'] . '</p>
