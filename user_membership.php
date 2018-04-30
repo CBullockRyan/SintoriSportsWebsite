@@ -43,7 +43,7 @@ Description: Membership page
 		$r = @mysqli_query($dbc, $q);
     echo "<ul>";
     while($row = mysqli_fetch_array($r)){
-      echo "<li><strong>$row[0] Membership</strong> includes $row[1] members for $row[2]</li>";
+      echo "<li><strong>$row[0] Membership</strong> includes $row[1] members for $ $row[2] a year.</li>";
     }
     echo "</ul>";
 		mysqli_close($dbc);
