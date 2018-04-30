@@ -57,9 +57,11 @@ Description: Home page
 
 		mysqli_close($dbc);
 	?>
-	<h1><?php echo $title ?></h1>
-	<div>
-		<?php echo $content ?>
+	<div class="jumbotron">
+		<h1><?php echo $title ?></h1>
+		<div>
+			<?php echo $content ?>
+		</div>
 	</div>
 	<div>
 		<h3>Opening Times</h3>
