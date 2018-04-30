@@ -89,7 +89,7 @@ Description: edit content for home page
 		}
 	?>
 
-	<h1>Edit Content for Dance Classes</h1>
+	<h1>Edit Content for the Home Page</h1>
 	<!-- form to edit content -->
 	<form action="content_home.php" method="post" id="home">
 		<p>Title of Page: <input class='col-3 form-control' type="text" name="title"  value="<?php echo $title ?>" /></p>
