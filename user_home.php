@@ -23,7 +23,7 @@ Description: Home page
 
 	<!-- Image carousel -->
 	<div id="carouselSlides" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner" style=" width:100%; height: 500px !important;">
+		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img class="d-block w-100" src="uploads/dance.jpg" alt="First slide">
 			</div>
