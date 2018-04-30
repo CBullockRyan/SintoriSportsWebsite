@@ -1,7 +1,7 @@
 body {
     padding-top: 80px; /* to make sure the error messages don't run into the navbar */
     padding-left: 100px;
-    padding-right: 10px;
+    padding-right: 100px;
     background-color: lightblue;
 }
 
