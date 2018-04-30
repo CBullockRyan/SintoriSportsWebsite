@@ -50,6 +50,7 @@ Description: Membership page
 			mysqli_close($dbc);
 		?>
 	</div>
+	<?php include ('footer.inc.php'); ?>
 </body>
 
 </html>
