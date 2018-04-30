@@ -38,8 +38,8 @@ Description: Dance page
 	mysqli_close($dbc);
 	?>
 
-	<div class="jumbotron">
 		<img src="uploads/dance.jpg" class="img-fluid" alt="dance_img">
+	<div class="jumbotron">
 		<!--View the page content-->
 		<h1><?php echo $title ?></h1>
 		<div>
