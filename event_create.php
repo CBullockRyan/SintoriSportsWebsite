@@ -16,6 +16,7 @@ Description: Create a new event
 <head>
 	<title>New Event</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -157,12 +158,20 @@ Description: Create a new event
 	<form action="event_create.php" method="post" id="event" enctype="multipart/form-data">
 		<p>Title of Event: <input class='col-3 form-control' type="text" name="title" value="<?php echo $title ?>" /></p>
 		<p>Description of Event: </p>
-    <p><textarea class=' form-control' name="desc" form="event" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
+    <p><textarea class=' form-control' name="desc" id="editor" form="event" rows="4" cols="40" value="<?php echo $desc ?>"></textarea></p>
 		<p>Event Start Date: <input class='col-3 form-control' type="date" name="date" value="<?php echo $date ?>" /></p>
 		<p>Event Start Time: <input class='col-3 form-control' type="time" name="time" value="<?php echo $time ?>" /></p>
 		<p>Maximum Number of Attendees: <input class='col-3 form-control' type="number" name="max" value="<?php echo $max ?>" /></p>
 		<p>Image: <input class='col-3 form-control' type="file" name="fileToUpload" id="fileToUpload" /></p>
 		<p><input class='btn btn-outline-info' type="submit" name="Submit" value="submit" /></p>
+		<!-- script to make wysiwyg text box-->
+		<script>
+			ClassicEditor
+				.create( document.querySelector( '#editor' ) )
+				.catch( error => {
+						console.error( error );
+				} );
+    </script>
 </body>
 
 </html>
