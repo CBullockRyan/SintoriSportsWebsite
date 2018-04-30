@@ -38,11 +38,13 @@ Description: indoor skydiving page
 	mysqli_close($dbc);
 	?>
 
-	<img src="uploads/skydiving.jpg" class="img-fluid" alt="skydiving img">
-	<!--View the page content-->
-	<h1><?php echo $title ?></h1>
-	<div>
-		<?php echo $content ?>
+	<div class="jumbotron">
+		<img src="uploads/skydiving.jpg" class="img-fluid" alt="skydiving img">
+		<!--View the page content-->
+		<h1><?php echo $title ?></h1>
+		<div>
+			<?php echo $content ?>
+		</div>
 	</div>
 
 </body>

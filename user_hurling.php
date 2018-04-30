@@ -38,13 +38,15 @@ Description: hurling and camogie page
 	mysqli_close($dbc);
 	?>
 
-	<img src="uploads/hurling.jpg" class="img-fluid" alt="hurling image img">
-	<!--View the page content-->
-	<h1><?php echo $title ?></h1>
-	<div>
-		<?php echo $content ?>
+	<div class= "jumbotron">
+		<img src="uploads/hurling.jpg" class="img-fluid" alt="hurling image img">
+		<!--View the page content-->
+		<h1><?php echo $title ?></h1>
+		<div>
+			<?php echo $content ?>
+		</div>
 	</div>
-
+	
 </body>
 
 </html>

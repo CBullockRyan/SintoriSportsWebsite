@@ -38,13 +38,15 @@ Description: rock climbing page
 	mysqli_close($dbc);
 	?>
 
-	<img src="uploads/rock.jpg" class="img-fluid" alt="rock climbing img">
-	<!--View the page content-->
-	<h1><?php echo $title ?></h1>
-	<div>
-		<?php echo $content ?>
+	<div class="jumbotron">
+		<img src="uploads/rock.jpg" class="img-fluid" alt="rock climbing img">
+		<!--View the page content-->
+		<h1><?php echo $title ?></h1>
+		<div>
+			<?php echo $content ?>
+		</div>
 	</div>
-
+	
 </body>
 
 </html>
