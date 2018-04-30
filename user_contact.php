@@ -47,14 +47,14 @@ Description: View contact information and make enquiry
 	$Laddress=$row['address'];
 
 	//display top part of page with contact Details
-	echo "<h1>Contact Us</h1>";
+	echo "<div class='jumbotron'><h1>Contact Us</h1>";
 	echo "<h2>Opening Hours</h2>";
 	echo "<p>Monday-Thursday $mt_open - $mt_close</p>";
 	echo "<p>Friday-Saturday $fs_open - $fs_close</p>";
 	echo "<h2>Contact Details</h2>";
 	echo "<p><b>Phone: </b>$Lphone</p>
 				<p><b>Address: </b>$Laddress</p>
-				<p><b>Email: </b>$Lemail</p>";
+				<p><b>Email: </b>$Lemail</p></div>";
 
 	//if enquiry posted
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
