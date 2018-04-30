@@ -1,6 +1,6 @@
 <!--************************************************
 Author: Cassidy Bullock
-Date: March 30, 2018
+Date: April 30, 2018
 Description: Membership page
 ************************************************-->
 <?php
@@ -14,7 +14,7 @@ Description: Membership page
 <html>
 
 <head>
-	<title>Home</title>
+	<title>Membership</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
