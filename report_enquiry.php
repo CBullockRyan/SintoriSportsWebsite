@@ -31,7 +31,8 @@ Description: enquiry status report
 	<title>Enquiry Status Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
+	<!-- script to draw pie chart of resolved vs unresolved enquiries -->
+	<script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -57,7 +58,7 @@ Description: enquiry status report
 <body>
 	<?php include ('nav_staff.inc.php'); ?>
 
-
+	<!--Display the pie chart-->
 	<div id="piechart" style="width: 900px; height: 500px;"></div>
 </body>
 

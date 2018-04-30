@@ -132,6 +132,7 @@ Description: payment report
 	<title>Payment Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<!-- script to create bar graph of membership payments made per month only for 2018 -->
 	<script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawStuff);
@@ -177,6 +178,7 @@ Description: payment report
 <body>
 	<?php include ('nav_staff.inc.php'); ?>
 
+	<!-- Draw bar graph -->
 	<div id="barchart" style="width: 900px; height: 500px;"></div>
 </body>
 

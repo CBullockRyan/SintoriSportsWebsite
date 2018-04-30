@@ -31,7 +31,8 @@ Description: Membership Status report
 	<title>Membership Status Report</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
+	<!-- script to create pie chart of active vs inactive memberships-->
+	<script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -57,7 +58,7 @@ Description: Membership Status report
 <body>
 	<?php include ('nav_staff.inc.php'); ?>
 
-
+	<!-- Display pie chart -->
 	<div id="piechart" style="width: 900px; height: 500px;"></div>
 </body>
 
