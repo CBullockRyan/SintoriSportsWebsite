@@ -49,7 +49,7 @@ Description: Home page
 	?>
 
 	<div>
-		<h1>Opening Times</h1>
+		<h3>Opening Times</h3>
 		<p>Monday-Thursday <?php echo $mt_open . "-" . $mt_close; ?></p>
 		<p>Friday-Saturday <?php echo $fs_open . "-" . $fs_close; ?></p>
 	</div>
