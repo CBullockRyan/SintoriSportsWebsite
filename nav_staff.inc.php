@@ -101,6 +101,8 @@ Description: navigation bar to be included on
 				  User Content
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="content_home.php">Home</a>
+						<a class="dropdown-item" href="content_membership.php">Memberships</a>
 						<a class="dropdown-item" href="content_dance.php">Dance Classes</a>
 						<a class="dropdown-item" href="content_rock.php">Rock Climbing</a>
 						<a class="dropdown-item" href="content_hurling.php">Hurling/Camogie</a>
