@@ -54,7 +54,7 @@ Description: View contact information and make enquiry
 	echo "<h2>Contact Details</h2>";
 	echo "<p><b>Phone: </b>$Lphone</p>
 				<p><b>Address: </b>$Laddress</p>
-				<p><b>Email: </b>$Lemail</p></div>";
+				<p><b>Email: </b>$Lemail</p>";
 
 	//if enquiry posted
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
