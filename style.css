@@ -5,6 +5,11 @@ body {
     background-color: lightblue;
 }
 
+img {
+  height:auto;
+  max-height: 300px;
+}
+
 .chart-container{
   width: 640px;
   height: auto;
