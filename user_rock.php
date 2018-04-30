@@ -39,7 +39,7 @@ Description: rock climbing page
 	?>
 
 
-		<img src="uploads/rock.jpg" class="img-fluid" alt="rock climbing img">
+		<img src="uploads/rock.jpg" class="w-100" alt="rock climbing img">
 	<div class="jumbotron">
 		<!--View the page content-->
 		<h1><?php echo $title ?></h1>
