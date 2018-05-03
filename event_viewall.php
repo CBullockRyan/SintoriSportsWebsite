@@ -86,53 +86,53 @@ Description: View all events as manager
 		if($num > 0){
 			// sort by links
 			echo "<p>Sort By:
-			<a href='event_viewall.php?sort=ID'>ID </a>
-			<a href='event_viewall.php?sort=date'>Event Date </a>
-			<a href='event_viewall.php?sort=att'>Current Number of Attendees</a></p>";
+			<a type='button' class='btn btn-outline-info' href='event_viewall.php?sort=ID'>ID </a>
+			<a type='button' class='btn btn-outline-info' href='event_viewall.php?sort=date'>Event Date </a>
+			<a type='button' class='btn btn-outline-info' href='event_viewall.php?sort=att'>Current Number of Attendees</a></p>";
 
 			//create table
-			echo '<table>
-						<tr><td align="left"><b>Event ID</b></td><td align="left"><b>| Title</b></td>
-						<td align="left"><b>| Time</b></td><td align="left"><b>| Date</b></td>
-						<td align="left"><b>| Max. No. of Attendees</b></td>
-						<td align="left"><b>| Current No. of Attendees</b></td></tr>';
+			echo '<table class="table">
+						<tr><td align="left"><b>Event ID</b></td><td align="left"><b>Title</b></td>
+						<td align="left"><b>Time</b></td><td align="left"><b>Date</b></td>
+						<td align="left"><b>Max. No. of Attendees</b></td>
+						<td align="left"><b>Current No. of Attendees</b></td></tr>';
 
 						// Fetch and print all the records:
 						while ($row = mysqli_fetch_array($r)) {
 							echo '<tr><td align="left">' . $row['eventID'] . '</td>
-							<td align="left">| ' . $row['title'] . '</td>
-							<td align="left">| ' . $row['eventTime'] . '</td>
-              <td align="left">| ' . $row['eventDate'] . '</td>
-							<td align="left">| ' . $row['maxAttendee'] . '</td>
-							<td align="left">| ' . $row['currentAttendee'] . '</td>' .
-							"<td align='left'><a href=http://localhost/SintoriSportsWebsite/event_update.php?id=" . $row['eventID'] . ">Update</a></td></tr>";
+							<td align="left">' . $row['title'] . '</td>
+							<td align="left">' . $row['eventTime'] . '</td>
+              <td align="left">' . $row['eventDate'] . '</td>
+							<td align="left">' . $row['maxAttendee'] . '</td>
+							<td align="left">' . $row['currentAttendee'] . '</td>' .
+							"<td align='left'><a type='button' class='btn btn-outline-secondary' href=http://localhost/SintoriSportsWebsite/event_update.php?id=" . $row['eventID'] . ">Update</a></td></tr>";
 						}
 
 						echo '</table>'; // Close the table.
 
 						// Make the links to other pages, if necessary.
 						if ($pages > 1) {
-							echo '<br /><p>';
+							echo '<br /><p><ul class="pagination">';
 							$current_page = ($start/$display) + 1;
 
 							// If it's not the first page, make a Previous link:
 							if ($current_page != 1) {
-								echo '<a href="event_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+								echo '<li class="page-item"><a class="page-link" href="event_viewall.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a></li> ';
 							}
 
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="event_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+									echo '<li class="page-item"><a class="page-link" href="event_viewall.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a></li> ';
 								} else {
-									echo $i . ' ';
+									echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '<span class="sr-only">(current)</span></a></li> ';
 								}
 							}
 							// If it's not the last page, make a Next link:
 							if ($current_page != $pages) {
-								echo '<a href="event_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+								echo '<li class="page-item"><a class="page-link" href="event_viewall.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a></li>';
 							}
-							echo '</p>';
+							echo '</ul></p>';
 						}
 
 						//Show how many records exist
