@@ -87,7 +87,7 @@ Description: Make a payment
 							echo '<h1>System Error</h1>
 							<p class="error">You could not be registered due to system error. We apologize for any inconvenience.</p>';
 
-							echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
+							//echo '<p>' . mysqli_error($dbc) . '<br/><br/>Query: ' . $q2 . '</p>';
 						}
 
 						//disconnect from database
