@@ -44,10 +44,10 @@ Description: Update an event
 	//fill all variables from Query
 	$eventID = $id;
 	$title = $row[1];
-	$desc = $row[2];
-	$time = $row[3];
-	$date = $row[4];
-	$max = $row[5];
+	$desc = $row[3];
+	$time = $row[4];
+	$date = $row[5];
+	$max = $row[6];
 
 	//check if form has been submitted
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
