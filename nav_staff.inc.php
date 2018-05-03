@@ -12,7 +12,7 @@ Description: navigation bar to be included on
 <head>
 	<!-- css style sheet -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- Sketchy Theme from bootswatch.com -->
+	<!-- Minty Theme from bootswatch.com -->
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<!-- BootstrapCDN links-->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
